@@ -15,7 +15,7 @@ router.get('/.well-known/ucp', async (req, res) => {
   res.json({
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Easy Google UCP Shop",
+    "name": "Easy UCP Store",
     "ucp_version": "2026-01-11",
     "services": [
       {

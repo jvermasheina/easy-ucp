@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Easy Google UCP - Manage AI Shopping Easily</title>
+      <title>Easy UCP - AI Shopping for Your Store</title>
       <style>
         * {
           margin: 0;
@@ -304,7 +304,7 @@ app.get('/', (req, res) => {
                 <path d="M6 8h12M6 12h8M6 16h12" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
               </svg>
             </div>
-            <span class="logo-text">Easy Google UCP</span>
+            <span class="logo-text">Easy UCP</span>
           </div>
           ${shop ? `<a href="https://${shop}/admin" class="back-btn">← Back to Shopify</a>` : ''}
         </div>
@@ -312,65 +312,67 @@ app.get('/', (req, res) => {
         <!-- Success Banner -->
         ${installed ? `
           <div class="success-banner">
-            ✓ Installation successful! Your store <strong>${shop}</strong> is now connected to Google UCP.
+            ✓ Installation successful! Your store <strong>${shop}</strong> is now discoverable by AI shopping agents.
           </div>
         ` : ''}
 
         <!-- Hero -->
         <div class="hero">
-          <div class="badge">✅ Active</div>
-          <h1>Your store is connected to <span class="highlight">Google AI Shopping</span></h1>
-          <p>Google AI agents can now discover and purchase products from your store automatically.</p>
+          <div class="badge">✓ Everything is working</div>
+          <h1>You're all set!<br><span class="highlight">AI shopping agents can now find your store</span></h1>
+          <p>When people ask ChatGPT, Gemini, Claude, or any AI to shop, your products can appear in the results. Sales happen automatically through your existing Shopify checkout.</p>
         </div>
 
         <!-- Status Cards -->
         <div class="features">
           <div class="feature-card">
-            <div class="feature-icon">✅</div>
-            <h3>UCP Active</h3>
-            <p>Your store is discoverable by Google AI agents</p>
+            <div class="feature-icon">🤖</div>
+            <h3>AI Shopping Ready</h3>
+            <p>Your store uses Universal Commerce Protocol (UCP) — the industry standard used by ChatGPT, Gemini, Claude, and other AI shopping agents.</p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">🔗</div>
-            <h3>Connected</h3>
-            <p>Shopify integration is working correctly</p>
+            <div class="feature-icon">🛡️</div>
+            <h3>Secure & Safe</h3>
+            <p>Your store data is protected. All transactions go through Shopify's secure payment system. No changes to your checkout.</p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">📊</div>
-            <h3>Ready for Orders</h3>
-            <p>AI agents can create checkout sessions</p>
+            <div class="feature-icon">📈</div>
+            <h3>Track Everything</h3>
+            <p>All orders appear in your regular Shopify admin. Nothing changes about how you run your business.</p>
           </div>
         </div>
 
         <!-- What's Next -->
-        <h2 class="features-title">What happens next?</h2>
-        <p class="features-subtitle">Your store is now part of the AI shopping ecosystem</p>
+        <h2 class="features-title">What to expect</h2>
+        <p class="features-subtitle">Here's how AI shopping works for your store</p>
 
         <div class="pricing">
           <div class="price-card">
-            <h3>No action needed</h3>
+            <h3>✓ You're ready</h3>
             <ul class="plan-features">
-              <li>Google AI will automatically discover your products</li>
-              <li>Orders will appear in your Shopify admin</li>
-              <li>You'll be notified of all transactions</li>
+              <li>Your products are discoverable by ChatGPT, Gemini, Claude, and other AI agents</li>
+              <li>Customers can ask AI to find and shop your products</li>
+              <li>Sales work exactly like your regular orders</li>
             </ul>
           </div>
 
           <div class="price-card featured">
-            <h3>Monitor activity</h3>
+            <h3>What happens now</h3>
             <ul class="plan-features">
-              <li>Check your Shopify orders for AI purchases</li>
-              <li>UCP sessions are tracked automatically</li>
-              <li>All data syncs in real-time</li>
+              <li>AI agents learn about your products automatically</li>
+              <li>When customers ask AI to shop, your products can appear</li>
+              <li>Orders appear in your Shopify admin like normal</li>
+              <li>You get paid through Shopify as usual</li>
+              <li>No extra work needed from you</li>
             </ul>
           </div>
         </div>
 
         <!-- Footer -->
         <div class="footer">
-          © 2026 Easy Google UCP. All rights reserved.
+          © 2026 Easy UCP. All rights reserved.
         </div>
       </div>
     </body>
@@ -379,12 +381,12 @@ app.get('/', (req, res) => {
 });
 
 // 404
-app.use((req, res) => {
+app.use((_req, res) => {
   res.status(404).json({ error: 'Not found' });
 });
 
 // Error handler
-app.use((err, req, res, next) => {
+app.use((err, _req, res, _next) => {
   console.error('Error:', err);
   res.status(500).json({ error: 'Internal server error' });
 });

@@ -1,6 +1,6 @@
 # Shopify App Configuration
 client_id = "413c15a706dc04d18f5c516152086bf9"
-name = "Easy Google UCP"
+name = "Easy UCP"
 application_url = "https://easy-ucp-production.up.railway.app"
 embedded = false
 
