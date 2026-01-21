@@ -318,73 +318,53 @@ app.get('/', (req, res) => {
 
         <!-- Hero -->
         <div class="hero">
-          <div class="badge">✨ New version 2.0 released</div>
-          <h1>Manage Google UCP<br><span class="highlight">easier than ever</span></h1>
-          <p>Easy Google UCP makes setup simple. Get AI-powered shopping up and running in your store in minutes without errors.</p>
+          <div class="badge">✅ Active</div>
+          <h1>Your store is connected to <span class="highlight">Google AI Shopping</span></h1>
+          <p>Google AI agents can now discover and purchase products from your store automatically.</p>
         </div>
 
-        <!-- Features -->
-        <h2 class="features-title">Everything you need</h2>
-        <p class="features-subtitle">Making AI shopping simple to manage</p>
-
+        <!-- Status Cards -->
         <div class="features">
           <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h3>Quick Setup</h3>
-            <p>Install in minutes without complex configurations</p>
+            <div class="feature-icon">✅</div>
+            <h3>UCP Active</h3>
+            <p>Your store is discoverable by Google AI agents</p>
           </div>
 
           <div class="feature-card">
-            <div class="feature-icon">🔒</div>
-            <h3>Secure</h3>
-            <p>Enterprise-grade security for your store and customer GDPR compliance</p>
+            <div class="feature-icon">🔗</div>
+            <h3>Connected</h3>
+            <p>Shopify integration is working correctly</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">📊</div>
-            <h3>Analytics</h3>
-            <p>Track conversions in real-time with detailed reports</p>
+            <h3>Ready for Orders</h3>
+            <p>AI agents can create checkout sessions</p>
           </div>
         </div>
 
-        <!-- Pricing -->
-        <h2 class="pricing-title">Simple pricing</h2>
-        <p class="pricing-subtitle">Choose the plan that fits you - no hidden costs</p>
+        <!-- What's Next -->
+        <h2 class="features-title">What happens next?</h2>
+        <p class="features-subtitle">Your store is now part of the AI shopping ecosystem</p>
 
         <div class="pricing">
           <div class="price-card">
-            <div class="plan-name">Starter</div>
-            <div class="plan-price">$0<span>/mo</span></div>
+            <h3>No action needed</h3>
             <ul class="plan-features">
-              <li>1 store</li>
-              <li>100 transactions/mo</li>
-              <li>Email support</li>
+              <li>Google AI will automatically discover your products</li>
+              <li>Orders will appear in your Shopify admin</li>
+              <li>You'll be notified of all transactions</li>
             </ul>
-            <button class="plan-btn secondary">Choose</button>
           </div>
 
           <div class="price-card featured">
-            <div class="plan-name">Pro</div>
-            <div class="plan-price">$49<span>/mo</span></div>
+            <h3>Monitor activity</h3>
             <ul class="plan-features">
-              <li>5 stores</li>
-              <li>10,000 transactions/mo</li>
-              <li>Priority support</li>
-              <li>API access</li>
+              <li>Check your Shopify orders for AI purchases</li>
+              <li>UCP sessions are tracked automatically</li>
+              <li>All data syncs in real-time</li>
             </ul>
-            <button class="plan-btn primary">Choose</button>
-          </div>
-
-          <div class="price-card">
-            <div class="plan-name">Enterprise</div>
-            <div class="plan-price">$149<span>/mo</span></div>
-            <ul class="plan-features">
-              <li>Unlimited usage</li>
-              <li>Full customization</li>
-              <li>24/7 support</li>
-              <li>Dedicated servers</li>
-            </ul>
-            <button class="plan-btn secondary">Choose</button>
           </div>
         </div>
 
