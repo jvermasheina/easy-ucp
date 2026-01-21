@@ -292,9 +292,100 @@ app.get('/', (req, res) => {
           color: #9CA3AF;
           font-size: 14px;
         }
+
+        /* Loading Overlay */
+        .loading-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: #F9FAFB;
+          z-index: 9999;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          opacity: 1;
+          transition: opacity 0.5s ease-out;
+        }
+        .loading-overlay.hidden {
+          opacity: 0;
+          pointer-events: none;
+        }
+        .loading-content {
+          text-align: center;
+          max-width: 500px;
+          padding: 40px;
+        }
+        .loading-logo {
+          width: 64px;
+          height: 64px;
+          background: linear-gradient(135deg, #14B8A6, #0D9488);
+          border-radius: 16px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 24px;
+          animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+        }
+        .loading-title {
+          font-size: 24px;
+          font-weight: 700;
+          margin-bottom: 12px;
+          color: #1F2937;
+        }
+        .loading-step {
+          font-size: 16px;
+          color: #6B7280;
+          margin-bottom: 32px;
+          min-height: 24px;
+        }
+        .progress-bar-container {
+          width: 100%;
+          height: 8px;
+          background: #E5E7EB;
+          border-radius: 4px;
+          overflow: hidden;
+          margin-bottom: 16px;
+        }
+        .progress-bar {
+          height: 100%;
+          background: linear-gradient(90deg, #14B8A6, #10B981);
+          border-radius: 4px;
+          transition: width 0.3s ease-out;
+          width: 0%;
+        }
+        .loading-percentage {
+          font-size: 14px;
+          color: #9CA3AF;
+          font-weight: 600;
+        }
       </style>
     </head>
     <body>
+      <!-- Loading Overlay (shown only on first install) -->
+      ${installed ? `
+      <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-content">
+          <div class="loading-logo">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M6 8h12M6 12h8M6 16h12" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h2 class="loading-title">Setting up your store...</h2>
+          <div class="loading-step" id="loadingStep">Initializing...</div>
+          <div class="progress-bar-container">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+          <div class="loading-percentage" id="loadingPercentage">0%</div>
+        </div>
+      </div>
+      ` : ''}
+
       <div class="container">
         <!-- Header -->
         <div class="header">
@@ -375,6 +466,51 @@ app.get('/', (req, res) => {
           © 2026 Easy UCP. All rights reserved.
         </div>
       </div>
+
+      ${installed ? `
+      <script>
+        // Loading animation on first install
+        (function() {
+          const overlay = document.getElementById('loadingOverlay');
+          const stepText = document.getElementById('loadingStep');
+          const progressBar = document.getElementById('progressBar');
+          const percentage = document.getElementById('loadingPercentage');
+
+          const steps = [
+            { text: 'Connecting to Universal Commerce Protocol...', duration: 1500, progress: 33 },
+            { text: 'Syncing your products with AI agents...', duration: 1500, progress: 66 },
+            { text: 'Activating AI discovery for your store...', duration: 1500, progress: 100 }
+          ];
+
+          let currentStep = 0;
+
+          function runStep() {
+            if (currentStep >= steps.length) {
+              // All done - show success
+              stepText.textContent = '✓ All set! Your store is ready for AI shopping.';
+              setTimeout(() => {
+                overlay.classList.add('hidden');
+                setTimeout(() => overlay.remove(), 500);
+              }, 800);
+              return;
+            }
+
+            const step = steps[currentStep];
+            stepText.textContent = step.text;
+
+            // Animate progress bar
+            progressBar.style.width = step.progress + '%';
+            percentage.textContent = step.progress + '%';
+
+            currentStep++;
+            setTimeout(runStep, step.duration);
+          }
+
+          // Start animation after a brief delay
+          setTimeout(runStep, 500);
+        })();
+      </script>
+      ` : ''}
     </body>
     </html>
   `);
