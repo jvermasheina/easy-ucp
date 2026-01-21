@@ -43,11 +43,11 @@ app.get('/', (req, res) => {
 
   res.send(`
     <!DOCTYPE html>
-    <html>
+    <html lang="en">
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Easy Google UCP</title>
+      <title>Easy Google UCP - Manage AI Shopping Easily</title>
       <style>
         * {
           margin: 0;
@@ -55,217 +55,344 @@ app.get('/', (req, res) => {
           box-sizing: border-box;
         }
         body {
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
           background: #F9FAFB;
-          min-height: 100vh;
+          color: #1F2937;
           line-height: 1.6;
         }
         .container {
-          max-width: 900px;
+          max-width: 1200px;
           margin: 0 auto;
+          padding: 20px;
         }
+
+        /* Header */
         .header {
-          background: rgba(255, 255, 255, 0.95);
-          backdrop-filter: blur(10px);
-          padding: 24px 32px;
-          border-radius: 16px;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
           display: flex;
           justify-content: space-between;
           align-items: center;
-          margin-bottom: 24px;
+          padding: 20px 0;
+          margin-bottom: 60px;
         }
         .logo-container {
           display: flex;
           align-items: center;
-          gap: 16px;
-        }
-        .logo {
-          width: 48px;
-          height: 48px;
-        }
-        h1 {
-          font-size: 28px;
-          font-weight: 700;
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-          margin: 0;
-        }
-        .back-link {
-          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-          color: white;
-          padding: 12px 24px;
-          text-decoration: none;
-          border-radius: 8px;
-          font-weight: 600;
-          box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-          transition: all 0.3s ease;
-          display: inline-block;
-        }
-        .back-link:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
-        }
-        .success-banner {
-          background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-          color: white;
-          padding: 20px 24px;
-          border-radius: 12px;
-          margin-bottom: 24px;
-          box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
-        }
-        .success-banner strong {
-          font-size: 18px;
-          display: block;
-          margin-bottom: 8px;
-        }
-        .success-banner p {
-          opacity: 0.95;
-          margin-top: 8px;
-        }
-        .card {
-          background: rgba(255, 255, 255, 0.95);
-          backdrop-filter: blur(10px);
-          padding: 28px 32px;
-          border-radius: 16px;
-          margin: 20px 0;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card:hover {
-          transform: translateY(-4px);
-          box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        }
-        .card h2 {
-          font-size: 22px;
-          font-weight: 700;
-          margin-bottom: 20px;
-          color: #1f2937;
-        }
-        .card p {
-          color: #4b5563;
-          font-size: 16px;
-          margin: 12px 0;
-        }
-        .card ul {
-          list-style: none;
-          padding: 0;
-        }
-        .card ul li {
-          padding: 12px 0;
-          border-bottom: 1px solid #f3f4f6;
-          color: #374151;
-          font-size: 15px;
-        }
-        .card ul li:last-child {
-          border-bottom: none;
-        }
-        code {
-          background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
-          padding: 4px 10px;
-          border-radius: 6px;
-          font-size: 14px;
-          font-family: 'Monaco', 'Menlo', monospace;
-          color: #6366f1;
-          font-weight: 500;
-        }
-        .status-list li {
-          font-size: 16px;
-          display: flex;
-          align-items: center;
           gap: 12px;
         }
-        .footer {
-          text-align: center;
-          color: rgba(255, 255, 255, 0.9);
-          margin-top: 40px;
-          font-size: 14px;
+        .logo {
+          width: 40px;
+          height: 40px;
+          background: #14B8A6;
+          border-radius: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .logo-text {
+          font-size: 20px;
+          font-weight: 700;
+          color: #1F2937;
+        }
+        .back-btn {
+          background: #14B8A6;
+          color: white;
+          padding: 10px 20px;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: 600;
+          transition: all 0.2s;
+        }
+        .back-btn:hover {
+          background: #0D9488;
+          transform: translateY(-1px);
+        }
+
+        /* Success Banner */
+        .success-banner {
+          background: linear-gradient(135deg, #10B981, #059669);
+          color: white;
+          padding: 16px 24px;
+          border-radius: 12px;
+          margin-bottom: 40px;
           font-weight: 500;
         }
-        .intro {
-          background: rgba(255, 255, 255, 0.95);
-          backdrop-filter: blur(10px);
-          padding: 24px 32px;
-          border-radius: 16px;
-          margin-bottom: 24px;
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+
+        /* Hero Section */
+        .hero {
+          text-align: center;
+          margin-bottom: 80px;
         }
-        .intro strong {
-          font-size: 18px;
-          color: #1f2937;
-          display: block;
+        .hero h1 {
+          font-size: 48px;
+          font-weight: 800;
+          margin-bottom: 20px;
+          line-height: 1.2;
+        }
+        .hero .highlight {
+          color: #14B8A6;
+        }
+        .hero p {
+          font-size: 20px;
+          color: #6B7280;
+          max-width: 600px;
+          margin: 0 auto 30px;
+        }
+        .badge {
+          display: inline-block;
+          background: #E0F2FE;
+          color: #0369A1;
+          padding: 6px 12px;
+          border-radius: 20px;
+          font-size: 14px;
+          font-weight: 600;
+          margin-bottom: 20px;
+        }
+
+        /* Features */
+        .features-title {
+          text-align: center;
+          font-size: 32px;
+          font-weight: 700;
+          margin-bottom: 16px;
+        }
+        .features-subtitle {
+          text-align: center;
+          color: #6B7280;
+          margin-bottom: 50px;
+        }
+        .features {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 30px;
+          margin-bottom: 80px;
+        }
+        .feature-card {
+          background: white;
+          padding: 32px;
+          border-radius: 16px;
+          box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+          transition: all 0.3s;
+        }
+        .feature-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+        .feature-icon {
+          width: 48px;
+          height: 48px;
+          background: #E0F2F1;
+          border-radius: 12px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 24px;
+          margin-bottom: 16px;
+        }
+        .feature-card h3 {
+          font-size: 20px;
+          margin-bottom: 12px;
+        }
+        .feature-card p {
+          color: #6B7280;
+          line-height: 1.6;
+        }
+
+        /* Pricing */
+        .pricing-title {
+          text-align: center;
+          font-size: 32px;
+          font-weight: 700;
+          margin-bottom: 16px;
+        }
+        .pricing-subtitle {
+          text-align: center;
+          color: #6B7280;
+          margin-bottom: 50px;
+        }
+        .pricing {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 30px;
+          margin-bottom: 60px;
+        }
+        .price-card {
+          background: white;
+          padding: 32px;
+          border-radius: 16px;
+          border: 2px solid #E5E7EB;
+          transition: all 0.3s;
+        }
+        .price-card.featured {
+          border-color: #14B8A6;
+          box-shadow: 0 8px 24px rgba(20, 184, 166, 0.2);
+          transform: scale(1.05);
+        }
+        .price-card:hover {
+          border-color: #14B8A6;
+        }
+        .plan-name {
+          font-size: 14px;
+          color: #6B7280;
+          text-transform: uppercase;
+          letter-spacing: 1px;
           margin-bottom: 8px;
         }
-        .intro p {
-          color: #6b7280;
-          font-size: 16px;
+        .plan-price {
+          font-size: 48px;
+          font-weight: 800;
+          margin-bottom: 8px;
+        }
+        .plan-price span {
+          font-size: 20px;
+          color: #6B7280;
+          font-weight: 400;
+        }
+        .plan-features {
+          list-style: none;
+          margin: 24px 0;
+        }
+        .plan-features li {
+          padding: 8px 0;
+          color: #4B5563;
+        }
+        .plan-features li:before {
+          content: "✓ ";
+          color: #14B8A6;
+          font-weight: 700;
+          margin-right: 8px;
+        }
+        .plan-btn {
+          width: 100%;
+          padding: 12px;
+          border-radius: 8px;
+          border: none;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        .plan-btn.primary {
+          background: #14B8A6;
+          color: white;
+        }
+        .plan-btn.primary:hover {
+          background: #0D9488;
+        }
+        .plan-btn.secondary {
+          background: #F3F4F6;
+          color: #1F2937;
+        }
+        .plan-btn.secondary:hover {
+          background: #E5E7EB;
+        }
+
+        /* Footer */
+        .footer {
+          text-align: center;
+          padding: 40px 0;
+          color: #9CA3AF;
+          font-size: 14px;
         }
       </style>
     </head>
     <body>
       <div class="container">
+        <!-- Header -->
         <div class="header">
           <div class="logo-container">
-            <svg class="logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
-                  <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
-                </linearGradient>
-              </defs>
-              <!-- E shape with modern design -->
-              <rect x="20" y="20" width="50" height="12" rx="6" fill="url(#logoGradient)"/>
-              <rect x="20" y="44" width="40" height="12" rx="6" fill="url(#logoGradient)"/>
-              <rect x="20" y="68" width="50" height="12" rx="6" fill="url(#logoGradient)"/>
-              <rect x="20" y="20" width="12" height="60" rx="6" fill="url(#logoGradient)"/>
-            </svg>
-            <div>
-              <h1>Easy Google UCP</h1>
+            <div class="logo">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 8h12M6 12h8M6 16h12" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+              </svg>
             </div>
+            <span class="logo-text">Easy Google UCP</span>
           </div>
-          ${shop ? `<a href="https://${shop}/admin" class="back-link">← Back to Shopify</a>` : ''}
+          ${shop ? `<a href="https://${shop}/admin" class="back-btn">← Back to Shopify</a>` : ''}
         </div>
 
+        <!-- Success Banner -->
         ${installed ? `
           <div class="success-banner">
-            <strong>✅ Installation Successful!</strong>
-            <p>Your shop <code>${shop}</code> is now connected to Easy Google UCP.</p>
+            ✓ Installation successful! Your store <strong>${shop}</strong> is now connected to Google UCP.
           </div>
         ` : ''}
 
-        <div class="intro">
-          <strong>🌐 Universal Commerce Protocol for Shopify</strong>
-          <p>Enable AI-powered shopping. Google AI agents can now discover and purchase products directly from your store.</p>
+        <!-- Hero -->
+        <div class="hero">
+          <div class="badge">✨ New version 2.0 released</div>
+          <h1>Manage Google UCP<br><span class="highlight">easier than ever</span></h1>
+          <p>Easy Google UCP makes setup simple. Get AI-powered shopping up and running in your store in minutes without errors.</p>
         </div>
 
-      <div class="card">
-        <h2>UCP Endpoints</h2>
-        <ul>
-          <li><strong>Business Profile:</strong> <code>/.well-known/ucp</code></li>
-          <li><strong>Create Checkout:</strong> <code>POST /api/ucp/v1/checkout-sessions</code></li>
-          <li><strong>Update Checkout:</strong> <code>PUT /api/ucp/v1/checkout-sessions/{id}</code></li>
-          <li><strong>Complete Checkout:</strong> <code>POST /api/ucp/v1/checkout-sessions/{id}/complete</code></li>
-        </ul>
-      </div>
+        <!-- Features -->
+        <h2 class="features-title">Everything you need</h2>
+        <p class="features-subtitle">Making AI shopping simple to manage</p>
 
-      <div class="card">
-        <h2>Status</h2>
-        <ul class="status-list">
-          <li>✅ UCP Core Endpoints</li>
-          <li>✅ Shopify OAuth</li>
-          <li>✅ Supabase Integration</li>
-          <li>⏳ Shopify Order Creation (Coming Soon)</li>
-          <li>⏳ Billing (Coming Soon)</li>
-        </ul>
-      </div>
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3>Quick Setup</h3>
+            <p>Install in minutes without complex configurations</p>
+          </div>
 
-      ${shop ? `
-        <p style="margin-top: 40px; color: #666; font-size: 0.9em;">
-          Shop: <code>${shop}</code>
-        </p>
-      ` : ''}
+          <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3>Secure</h3>
+            <p>Enterprise-grade security for your store and customer GDPR compliance</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📊</div>
+            <h3>Analytics</h3>
+            <p>Track conversions in real-time with detailed reports</p>
+          </div>
+        </div>
+
+        <!-- Pricing -->
+        <h2 class="pricing-title">Simple pricing</h2>
+        <p class="pricing-subtitle">Choose the plan that fits you - no hidden costs</p>
+
+        <div class="pricing">
+          <div class="price-card">
+            <div class="plan-name">Starter</div>
+            <div class="plan-price">$0<span>/mo</span></div>
+            <ul class="plan-features">
+              <li>1 store</li>
+              <li>100 transactions/mo</li>
+              <li>Email support</li>
+            </ul>
+            <button class="plan-btn secondary">Choose</button>
+          </div>
+
+          <div class="price-card featured">
+            <div class="plan-name">Pro</div>
+            <div class="plan-price">$49<span>/mo</span></div>
+            <ul class="plan-features">
+              <li>5 stores</li>
+              <li>10,000 transactions/mo</li>
+              <li>Priority support</li>
+              <li>API access</li>
+            </ul>
+            <button class="plan-btn primary">Choose</button>
+          </div>
+
+          <div class="price-card">
+            <div class="plan-name">Enterprise</div>
+            <div class="plan-price">$149<span>/mo</span></div>
+            <ul class="plan-features">
+              <li>Unlimited usage</li>
+              <li>Full customization</li>
+              <li>24/7 support</li>
+              <li>Dedicated servers</li>
+            </ul>
+            <button class="plan-btn secondary">Choose</button>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+          © 2026 Easy Google UCP. All rights reserved.
+        </div>
+      </div>
     </body>
     </html>
   `);
