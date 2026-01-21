@@ -1,0 +1,48 @@
+{
+  "name": "easy-google-ucp",
+  "version": "1.0.0",
+  "description": "Easy Google UCP - Enable UCP for Shopify stores in one click",
+  "type": "module",
+  "scripts": {
+    "dev": "shopify app dev",
+    "build": "shopify app build",
+    "deploy": "shopify app deploy",
+    "config:link": "shopify app config link",
+    "config:push": "shopify app config push",
+    "generate": "shopify app generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.9.1",
+    "@remix-run/node": "^2.5.1",
+    "@remix-run/react": "^2.5.1",
+    "@remix-run/serve": "^2.5.1",
+    "@shopify/app-bridge-react": "^4.1.2",
+    "@shopify/polaris": "^12.0.0",
+    "@shopify/shopify-api": "^9.0.0",
+    "@shopify/shopify-app-remix": "^2.0.0",
+    "@supabase/supabase-js": "^2.39.0",
+    "express-rate-limit": "^7.1.5",
+    "isbot": "^4.4.0",
+    "rate-limit-redis": "^4.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "redis": "^4.6.12",
+    "zod": "^3.22.4",
+    "nanoid": "^5.0.4"
+  },
+  "devDependencies": {
+    "@remix-run/eslint-config": "^2.14.0",
+    "@shopify/api-codegen-preset": "^1.1.1",
+    "@types/react": "^18.3.14",
+    "@types/react-dom": "^18.3.2",
+    "eslint": "^8.57.1",
+    "prettier": "^3.4.2",
+    "prisma": "^5.20.0",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "vite-tsconfig-paths": "^5.1.4"
+  },
+  "engines": {
+    "node": ">=18.20.0 <21.0.0 || >=22.0.0"
+  }
+}

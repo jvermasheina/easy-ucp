@@ -1,0 +1,35 @@
+# Shopify App Configuration
+name = "easy-google-ucp"
+client_id = "" # Add your Shopify API key here
+handle = "easy-google-ucp"
+
+application_url = "https://easy-ucp.railway.app"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "" # Add your dev store URL
+
+[access_scopes]
+scopes = "read_products,write_orders,read_customers"
+
+[auth]
+redirect_urls = [
+  "https://easy-ucp.railway.app/auth/callback",
+  "https://easy-ucp.railway.app/auth/shopify/callback",
+  "https://easy-ucp.railway.app/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-10"
+
+[[webhooks.subscriptions]]
+topics = [ "app/uninstalled" ]
+uri = "/webhooks"
+
+[[webhooks.subscriptions]]
+topics = [ "app_subscriptions/update" ]
+uri = "/webhooks"
+
+[pos]
+embedded = false
