@@ -8,7 +8,9 @@ const router = express.Router();
  * Google discovery endpoint
  */
 router.get('/.well-known/ucp', async (req, res) => {
-  const baseUrl = `${req.protocol}://${req.headers.host}`;
+  // Use HTTPS in production (Railway uses reverse proxy)
+  const protocol = req.headers['x-forwarded-proto'] || req.protocol;
+  const baseUrl = `${protocol}://${req.headers.host}`;
 
   res.json({
     "@context": "https://schema.org",
