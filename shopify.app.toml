@@ -1,7 +1,7 @@
 # Shopify App Configuration
 client_id = "413c15a706dc04d18f5c516152086bf9"
 name = "Easy Google UCP"
-application_url = "https://easy-ucp.railway.app"
+application_url = "https://easy-ucp-production.up.railway.app"
 embedded = true
 
 [build]
@@ -16,6 +16,6 @@ scopes = "read_products,write_orders,read_customers"
 
 [auth]
 redirect_urls = [
-  "https://easy-ucp.railway.app/auth/shopify/callback",
+  "https://easy-ucp-production.up.railway.app/auth/shopify/callback",
   "http://localhost:3000/auth/shopify/callback"
 ]
