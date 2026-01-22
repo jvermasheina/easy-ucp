@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component Showcase - All Design Elements</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#14B8A6',
+            'primary-dark': '#0D9488',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fonts -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1f2937;
+    }
+  </style>
+
+  <!-- Component Styles -->
+  <link rel="stylesheet" href="/marketing-components.css">
+
+  <style>
+    /* Additional showcase styles */
+    .component-demo {
+      @apply border border-gray-200 rounded-xl p-8 bg-white/50;
+    }
+
+    .section-divider {
+      @apply border-t border-gray-200 my-16;
+    }
+
+    /* Gradient blobs animation */
+    @keyframes blob-float {
+      0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+      33% { transform: translate(30px, -50px) scale(1.1) rotate(120deg); }
+      66% { transform: translate(-20px, 20px) scale(0.9) rotate(240deg); }
+    }
+
+    .gradient-blob {
+      @apply absolute w-96 h-96 rounded-full opacity-20;
+      background: linear-gradient(135deg, #14B8A6, #0D9488);
+      filter: blur(60px);
+      animation: blob-float 20s ease-in-out infinite;
+    }
+
+    .gradient-blob:nth-child(2) {
+      @apply w-80 h-80;
+      animation-delay: 5s;
+      animation-duration: 15s;
+    }
+
+    .gradient-blob:nth-child(3) {
+      @apply w-72 h-72;
+      animation-delay: 10s;
+      animation-duration: 25s;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-gray-50 to-white">
+
+  <!-- Hero -->
+  <div class="relative overflow-hidden py-20 sm:py-28">
+    <!-- Animated gradient blobs -->
+    <div class="gradient-blob" style="top: -100px; left: -100px;"></div>
+    <div class="gradient-blob" style="top: 200px; right: -100px;"></div>
+    <div class="gradient-blob" style="bottom: -100px; left: 50%;"></div>
+
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+      <h1 class="text-5xl sm:text-6xl font-bold mb-6">
+        <span class="gradient-text">Component Showcase</span>
+      </h1>
+      <p class="text-xl text-gray-600 mb-8">Testing all sophisticated design elements and components</p>
+      <button class="btn-shine">
+        Explore Components
+      </button>
+      <p class="text-sm text-gray-500 mt-4">Glassmorphism, gradients, animations & more</p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+    
+      
+
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">Glassmorphism Cards</h2>
+        <p class="text-gray-600 mb-8">Frosted glass effect with backdrop blur</p>
+
+        
+      <div class="grid md:grid-cols-3 gap-6 component-demo">
+        
+          <div class="glass-card">
+            <h3 class="text-xl font-semibold mb-3 text-white">Glass Card 1</h3>
+            <p class="text-white/80">Beautiful frosted glass effect with backdrop blur and subtle border.</p>
+          </div>
+        
+          <div class="glass-card">
+            <h3 class="text-xl font-semibold mb-3 text-white">Glass Card 2</h3>
+            <p class="text-white/80">Hover for interaction - transforms and changes opacity.</p>
+          </div>
+        
+          <div class="glass-card">
+            <h3 class="text-xl font-semibold mb-3 text-white">Glass Card 3</h3>
+            <p class="text-white/80">Perfect for overlays, modals, and floating elements.</p>
+          </div>
+        
+      </div>
+    
+      </div>
+    
+      <div class="section-divider"></div>
+
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">Animated Statistics</h2>
+        <p class="text-gray-600 mb-8">Eye-catching stat cards with gradient backgrounds</p>
+
+        
+      <div class="grid md:grid-cols-4 gap-6">
+        
+          <div class="stat-card">
+            <div class="stat-number">99%</div>
+            <div class="stat-label">Customer Satisfaction</div>
+          </div>
+        
+          <div class="stat-card">
+            <div class="stat-number">2 weeks</div>
+            <div class="stat-label">Implementation Time</div>
+          </div>
+        
+          <div class="stat-card">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Stores Using UCP</div>
+          </div>
+        
+          <div class="stat-card">
+            <div class="stat-number">$199</div>
+            <div class="stat-label">Starting Price</div>
+          </div>
+        
+      </div>
+    
+      </div>
+    
+      <div class="section-divider"></div>
+
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">CSS Progress Circles</h2>
+        <p class="text-gray-600 mb-8">Pure CSS circular progress indicators</p>
+
+        
+      <div class="grid md:grid-cols-4 gap-8 justify-items-center component-demo">
+        
+          <div class="text-center">
+            <div class="progress-circle mx-auto mb-4" style="--progress: 75%">
+              <div class="progress-value">75%</div>
+            </div>
+            <p class="text-sm text-gray-600 font-medium">Completion Rate</p>
+          </div>
+        
+          <div class="text-center">
+            <div class="progress-circle mx-auto mb-4" style="--progress: 90%">
+              <div class="progress-value">90%</div>
+            </div>
+            <p class="text-sm text-gray-600 font-medium">Success Rate</p>
+          </div>
+        
+          <div class="text-center">
+            <div class="progress-circle mx-auto mb-4" style="--progress: 60%">
+              <div class="progress-value">60%</div>
+            </div>
+            <p class="text-sm text-gray-600 font-medium">Growth</p>
+          </div>
+        
+          <div class="text-center">
+            <div class="progress-circle mx-auto mb-4" style="--progress: 85%">
+              <div class="progress-value">85%</div>
+            </div>
+            <p class="text-sm text-gray-600 font-medium">Performance</p>
+          </div>
+        
+      </div>
+    
+      </div>
+    
+      <div class="section-divider"></div>
+
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">Button Variations</h2>
+        <p class="text-gray-600 mb-8">Interactive buttons with sophisticated effects</p>
+
+        
+      <div class="flex flex-wrap gap-4 component-demo">
+        <button class="btn-shine">Shine Effect</button><button class="bg-gradient-to-r from-primary to-primary-dark text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition">Gradient Primary</button><button class="glass-card inline-block px-8 py-3 text-white font-semibold">Glass Button</button><button class="relative px-8 py-3 rounded-lg font-semibold border-2 border-primary text-primary hover:bg-primary hover:text-white transition">Animated Border</button>
+      </div>
+    
+      </div>
+    
+      <div class="section-divider"></div>
+
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">Floating Feature Cards</h2>
+        <p class="text-gray-600 mb-8">Cards that lift on hover with smooth shadows</p>
+
+        
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+          <div class="floating-card">
+            <div class="text-4xl mb-4">⚡</div>
+            <h3 class="text-lg font-semibold mb-2">Lightning Fast</h3>
+            <p class="text-gray-600">Blazing fast performance with optimized code</p>
+          </div>
+        
+          <div class="floating-card">
+            <div class="text-4xl mb-4">🎨</div>
+            <h3 class="text-lg font-semibold mb-2">Beautiful Design</h3>
+            <p class="text-gray-600">Sophisticated components with attention to detail</p>
+          </div>
+        
+          <div class="floating-card">
+            <div class="text-4xl mb-4">🔒</div>
+            <h3 class="text-lg font-semibold mb-2">Secure</h3>
+            <p class="text-gray-600">Enterprise-grade security built-in</p>
+          </div>
+        
+          <div class="floating-card">
+            <div class="text-4xl mb-4">📱</div>
+            <h3 class="text-lg font-semibold mb-2">Responsive</h3>
+            <p class="text-gray-600">Perfect on all devices and screen sizes</p>
+          </div>
+        
+          <div class="floating-card">
+            <div class="text-4xl mb-4">🚀</div>
+            <h3 class="text-lg font-semibold mb-2">Scalable</h3>
+            <p class="text-gray-600">Grows with your business needs</p>
+          </div>
+        
+          <div class="floating-card">
+            <div class="text-4xl mb-4">💎</div>
+            <h3 class="text-lg font-semibold mb-2">Premium</h3>
+            <p class="text-gray-600">High-quality components and interactions</p>
+          </div>
+        
+      </div>
+    
+      </div>
+    
+      <div class="section-divider"></div>
+
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">Gradient Elements</h2>
+        <p class="text-gray-600 mb-8">Text and backgrounds with beautiful gradients</p>
+
+        
+      <div class="space-y-4 component-demo">
+        
+          <div class="text-4xl font-bold gradient-text">Teal to Dark</div>
+        
+          <div class="text-4xl font-bold gradient-text">Smooth Transition</div>
+        
+          <div class="text-4xl font-bold gradient-text">Vibrant Colors</div>
+        
+      </div>
+    
+      </div>
+    
+      <div class="section-divider"></div>
+
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">Icon Badges</h2>
+        <p class="text-gray-600 mb-8">Circular icon containers with gradients</p>
+
+        
+      <div class="flex gap-4 component-demo">
+        
+          <div class="icon-gradient text-2xl">✓</div>
+        
+          <div class="icon-gradient text-2xl">★</div>
+        
+          <div class="icon-gradient text-2xl">♥</div>
+        
+          <div class="icon-gradient text-2xl">➜</div>
+        
+      </div>
+    
+      </div>
+    
+      <div class="section-divider"></div>
+
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">Timeline Component</h2>
+        <p class="text-gray-600 mb-8">Vertical timeline with animated connectors</p>
+
+        
+      <div class="max-w-2xl mx-auto space-y-8">
+        
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-primary-dark text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+              1
+            </div>
+            <div class="flex-1 border-l-2 border-gray-200 pl-6 pb-8">
+              <h3 class="text-xl font-semibold mb-2">Sign Up</h3>
+              <p class="text-gray-600">Create your account in under 2 minutes</p>
+            </div>
+          </div>
+        
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-primary-dark text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+              2
+            </div>
+            <div class="flex-1 border-l-2 border-gray-200 pl-6 pb-8">
+              <h3 class="text-xl font-semibold mb-2">Configure</h3>
+              <p class="text-gray-600">Set up your preferences and integrations</p>
+            </div>
+          </div>
+        
+          <div class="flex gap-6">
+            <div class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-primary to-primary-dark text-white rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
+              3
+            </div>
+            <div class="flex-1 ">
+              <h3 class="text-xl font-semibold mb-2">Launch</h3>
+              <p class="text-gray-600">Go live and start seeing results</p>
+            </div>
+          </div>
+        
+      </div>
+    
+      </div>
+    
+      <div class="section-divider"></div>
+
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">Pricing Cards</h2>
+        <p class="text-gray-600 mb-8">Sophisticated pricing display with highlights</p>
+
+        
+      <div class="grid md:grid-cols-3 gap-6">
+        
+          <div class="floating-card ">
+            
+            <h3 class="text-xl font-bold mb-2">Starter</h3>
+            <div class="mb-4">
+              <span class="text-4xl font-bold gradient-text">$199</span>
+              <span class="text-gray-600">/lifetime</span>
+            </div>
+            <ul class="space-y-3 mb-6">
+              
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">100-1,000 products</span>
+                </li>
+              
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">Basic UCP integration</span>
+                </li>
+              
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">Email support</span>
+                </li>
+              
+            </ul>
+            <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-semibold transition">
+              Get Started
+            </button>
+          </div>
+        
+          <div class="floating-card ring-2 ring-primary scale-105">
+            <div class="bg-primary text-white text-xs font-semibold px-3 py-1 rounded-full inline-block mb-4">MOST POPULAR</div>
+            <h3 class="text-xl font-bold mb-2">Pro</h3>
+            <div class="mb-4">
+              <span class="text-4xl font-bold gradient-text">$499</span>
+              <span class="text-gray-600">/lifetime</span>
+            </div>
+            <ul class="space-y-3 mb-6">
+              
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">1,000-5,000 products</span>
+                </li>
+              
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">Advanced UCP features</span>
+                </li>
+              
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">Priority support</span>
+                </li>
+              
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">Analytics dashboard</span>
+                </li>
+              
+            </ul>
+            <button class="btn-shine w-full">
+              Get Started
+            </button>
+          </div>
+        
+          <div class="floating-card ">
+            
+            <h3 class="text-xl font-bold mb-2">Enterprise</h3>
+            <div class="mb-4">
+              <span class="text-4xl font-bold gradient-text">$999</span>
+              <span class="text-gray-600">/lifetime</span>
+            </div>
+            <ul class="space-y-3 mb-6">
+              
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">Unlimited products</span>
+                </li>
+              
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">White-label option</span>
+                </li>
+              
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">Dedicated support</span>
+                </li>
+              
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span class="text-gray-600">Custom integrations</span>
+                </li>
+              
+            </ul>
+            <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 px-6 py-3 rounded-lg font-semibold transition">
+              Get Started
+            </button>
+          </div>
+        
+      </div>
+    
+      </div>
+    
+      <div class="section-divider"></div>
+
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">Testimonial Cards</h2>
+        <p class="text-gray-600 mb-8">Customer quotes with avatars and ratings</p>
+
+        
+      <div class="grid md:grid-cols-2 gap-6">
+        
+          <div class="glass-card">
+            <div class="flex gap-1 mb-4">
+              ⭐⭐⭐⭐⭐
+            </div>
+            <p class="text-lg text-gray-700 mb-6">"Easy UCP Hub transformed our store's AI visibility in just 2 weeks. Sales are up 40%!"</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center text-white font-bold text-xl">
+                S
+              </div>
+              <div>
+                <div class="font-semibold">Sarah Johnson</div>
+                <div class="text-sm text-gray-600">E-commerce Director, TechStore</div>
+              </div>
+            </div>
+          </div>
+        
+          <div class="glass-card">
+            <div class="flex gap-1 mb-4">
+              ⭐⭐⭐⭐⭐
+            </div>
+            <p class="text-lg text-gray-700 mb-6">"The lifetime pricing was a no-brainer. Best investment we made this year."</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rounded-full flex items-center justify-center text-white font-bold text-xl">
+                M
+              </div>
+              <div>
+                <div class="font-semibold">Mike Chen</div>
+                <div class="text-sm text-gray-600">Founder, GadgetHub</div>
+              </div>
+            </div>
+          </div>
+        
+      </div>
+    
+      </div>
+    
+      <div class="section-divider"></div>
+
+      <div class="mb-20">
+        <h2 class="text-3xl font-bold text-gray-900 mb-3">Gradient Blobs</h2>
+        <p class="text-gray-600 mb-8">Animated background elements</p>
+
+        
+      </div>
+    
+
+  </div>
+
+</body>
+</html>

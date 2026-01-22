@@ -49,12 +49,12 @@ app.use('/auth', shopifyAuth);
 // UCP routes
 app.use('/', ucpRoutes);
 
-// Simple dashboard with "Back to Admin" link
+// Serve landing page for root domain
 app.get('/', (req, res) => {
+  // If accessed with shop parameter, show Shopify success page
   const shop = req.query.shop;
-  const installed = req.query.installed;
-
-  res.send(`
+  if (shop) {
+    return res.send(`
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -527,6 +527,10 @@ app.get('/', (req, res) => {
     </body>
     </html>
   `);
+  }
+
+  // Default: serve landing page
+  res.sendFile(path.join(__dirname, 'public', 'landing.html'));
 });
 
 // 404
