@@ -5,6 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Easy UCP Hub - Your Store, Discoverable by AI</title>
   <meta name="description" content="Get your store AI-ready in 2 weeks. ChatGPT, Claude & Gemini can find and sell your products. No OAuth, no webhooks, no plugins.">
+
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-a3ozIUstaRW5J0m3xd7je.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -544,6 +552,32 @@
     const SUPABASE_URL = 'https://sxoztxicojvfwquhtmpk.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InN4b3p0eGljb2p2ZndxdWh0bXBrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU0NTgwMTEsImV4cCI6MjA4MTAzNDAxMX0.oamVvm-UAnu-I0mV1Ml1uXGZxVX2V7r2b2eDGgkj_7s';
 
+    // Initialize tracking on page load
+    (function initTracking() {
+      // Track landing page (first page visited)
+      if (!sessionStorage.getItem('landing_page')) {
+        sessionStorage.setItem('landing_page', window.location.pathname + window.location.search);
+        sessionStorage.setItem('referrer', document.referrer || 'direct');
+        sessionStorage.setItem('visit_start', Date.now());
+      }
+
+      // Track page views
+      const pageViews = parseInt(sessionStorage.getItem('page_views') || '0') + 1;
+      sessionStorage.setItem('page_views', pageViews);
+
+      // Extract and store UTM parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const utmParams = {};
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(param => {
+        if (urlParams.has(param)) {
+          utmParams[param] = urlParams.get(param);
+        }
+      });
+      if (Object.keys(utmParams).length > 0) {
+        sessionStorage.setItem('utm_params', JSON.stringify(utmParams));
+      }
+    })();
+
     async function handleSubmit(event) {
       event.preventDefault();
       const form = event.target;
@@ -561,6 +595,30 @@
         'medium': 5000,
         'large': 25000
       };
+
+      // Collect tracking data
+      const trackingData = {};
+
+      // UTM parameters
+      const utmParams = sessionStorage.getItem('utm_params');
+      if (utmParams) {
+        const utms = JSON.parse(utmParams);
+        trackingData.utm_source = utms.utm_source || null;
+        trackingData.utm_medium = utms.utm_medium || null;
+        trackingData.utm_campaign = utms.utm_campaign || null;
+        trackingData.utm_content = utms.utm_content || null;
+        trackingData.utm_term = utms.utm_term || null;
+      }
+
+      // Visitor info
+      trackingData.referrer = sessionStorage.getItem('referrer') || null;
+      trackingData.landing_page = sessionStorage.getItem('landing_page') || null;
+      trackingData.user_agent = navigator.userAgent;
+
+      // Behavior metrics
+      trackingData.page_views = parseInt(sessionStorage.getItem('page_views') || '1');
+      const visitStart = parseInt(sessionStorage.getItem('visit_start') || Date.now());
+      trackingData.time_on_site = Math.floor((Date.now() - visitStart) / 1000); // seconds
 
       submitButton.disabled = true;
       submitButton.textContent = 'Joining...';
@@ -580,11 +638,17 @@
             store_url: storeUrl,
             tier,
             is_beta: true,
-            product_count: productCountMap[tier]
+            product_count: productCountMap[tier],
+            ...trackingData
           })
         });
 
         if (response.ok || response.status === 201) {
+          // Track conversion in Plausible
+          if (window.plausible) {
+            plausible('Signup', { props: { tier: tier } });
+          }
+
           // Redirect to thank you page
           window.location.href = '/thank-you.html?tier=' + tier;
         } else if (response.status === 409) {
