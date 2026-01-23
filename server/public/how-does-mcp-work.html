@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>How Does MCP Work? Model Context Protocol Explained</title>
+  <meta name="description" content="Learn how Model Context Protocol (MCP) works under the hood - the open-source standard connecting AI applications to external systems and data sources.">
+  <link rel="canonical" href="/how-does-mcp-work">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="How Does MCP Work? Complete Guide to Model Context Protocol">
+  <meta property="og:description" content="Understand MCP&#039;s architecture, workflow, and how it enables AI agents to connect with external tools and data sources through standardized interfaces.">
+  <meta property="og:type" content="article">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How Does MCP Work? Model Context Protocol Explained">
+  <meta name="twitter:description" content="Complete guide to understanding how MCP connects AI applications to external systems through standardized protocol interfaces.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#14B8A6', // Teal
+            'primary-dark': '#0D9488',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fonts -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1f2937;
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <nav class="border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <span class="text-lg font-semibold text-gray-900">Easy UCP Hub</span>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/resources" class="text-gray-600 hover:text-gray-900">Resources</a>
+          <a href="#features" class="text-gray-600 hover:text-gray-900">Features</a>
+          <a href="#pricing" class="text-gray-600 hover:text-gray-900">Pricing</a>
+          <a href="#faq" class="text-gray-600 hover:text-gray-900">FAQ</a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <a href="#signup" class="bg-primary hover:bg-primary-dark text-white px-5 py-2 rounded-lg text-sm font-medium transition">
+            Join Founders List
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+  <!-- Hero Section -->
+  <div class="bg-gradient-to-b from-gray-50 to-white py-20 sm:py-28">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="mb-4">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800">
+          <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path>
+          </svg>
+          Limited time offer
+        </span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+        How Does MCP Work? Understanding Model Context Protocol
+      </h1>
+
+      <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+        Learn how the open-source standard connects AI applications to external systems and transforms chatbots into capable agents
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+        <a href="#signup" class="bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-lg font-semibold text-lg transition shadow-lg shadow-primary/25 inline-flex items-center">
+          Join Founder&#039;s List
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+    
+  
+  <div class="py-12 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-xl text-gray-700 font-medium mb-8 text-center">
+        <a href="https://www.freecodecamp.org/news/how-does-an-mcp-work-under-the-hood/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">MCP (Model Context Protocol)</a> is <strong>an open-source standard for connecting AI applications to external systems</strong>, enabling AI models to move beyond simple chatbots into fully capable agents that can work with local files, query databases, and interact with real-world data.
+      </div>
+      
+
+      
+      <div class="bg-white rounded-xl p-8 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">What You'll Learn:</h3>
+        <ul class="space-y-3">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">What MCP is and why it was developed</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">How MCP servers expose capabilities to AI applications</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">The standardized protocol interfaces that make MCP work</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">How MCP builds on existing concepts like tool use and function calling</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">The workflow and architecture behind MCP connections</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="mt-6 p-6 bg-red-50 border-l-4 border-red-500 rounded-r-lg">
+        <p class="text-gray-700"><a href="https://www.descope.com/learn/post/mcp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">MCP was developed by Anthropic</a> to provide LLMs and AI agents a <strong>standardized way to connect with external data sources and tools</strong>, reducing the need for custom connections for each new AI model and external system.</p>
+      </div>
+      
+    </div>
+  </div>
+    
+  
+  <div class="py-12 bg-white border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Table of Contents</h2>
+      <nav class="bg-gray-50 rounded-xl p-6">
+        <ol class="space-y-2">
+          
+          <li>
+            <a href="#section-0" class="text-primary hover:text-primary-dark font-medium">
+              1. What is Model Context Protocol?
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-1" class="text-primary hover:text-primary-dark font-medium">
+              2. How MCP Servers Work
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-2" class="text-primary hover:text-primary-dark font-medium">
+              3. The Standardized Protocol Interface
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-3" class="text-primary hover:text-primary-dark font-medium">
+              4. MCP Workflow and Architecture
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-4" class="text-primary hover:text-primary-dark font-medium">
+              5. Building on Existing Concepts
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-5" class="text-primary hover:text-primary-dark font-medium">
+              6. Enabling AI Agents with MCP
+            </a>
+          </li>
+          
+        </ol>
+      </nav>
+    </div>
+  </div>
+    
+  
+  <div id="section-0" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        What is Model Context Protocol?
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4"><a href="https://www.freecodecamp.org/news/how-does-an-mcp-work-under-the-hood/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Model Context Protocol (MCP)</a> is <strong>an open-source standard for connecting AI applications to external systems</strong>. Rather than building custom integrations for each AI model and external tool combination, <a href="https://www.descope.com/learn/post/mcp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">MCP provides a standardized approach</a> that works across different AI applications and data sources.</p><p class="mb-4"><a href="https://www.descope.com/learn/post/mcp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The protocol was developed by Anthropic</a> as an <strong>open source protocol</strong> to solve a fundamental challenge: enabling LLMs and AI agents to access external data sources and tools in a consistent, reliable way. Before MCP, developers had to create custom connections for each new integration, leading to fragmented implementations and maintenance overhead.</p><p class="mb-4"><a href="https://cloud.google.com/discover/what-is-model-context-protocol" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">MCP builds on existing concepts like tool use and function calling but standardizes them</a>. This standardization <strong>reduces the need for custom connections</strong> for each new AI model and external system, making it easier to enable LLMs to use current, real-world data and perform actions beyond simple text generation.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://www.freecodecamp.org/news/how-does-an-mcp-work-under-the-hood/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">MCP is an open-source standard</a> for connecting AI to external systems</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://www.descope.com/learn/post/mcp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Developed by Anthropic</a> to standardize AI-to-tool connections</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://cloud.google.com/discover/what-is-model-context-protocol" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Builds on tool use and function calling concepts</a> but standardizes them</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Eliminates need for custom integrations for each AI model</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-1" class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        How MCP Servers Work
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4"><a href="https://modelcontextprotocol.io/docs/learn/server-concepts" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">MCP servers are programs</a> that <strong>expose specific capabilities to AI applications through standardized protocol interfaces</strong>. Think of them as specialized service providers that make particular functions, data sources, or tools available to AI models in a consistent way.</p><p class="mb-4">Each MCP server acts as a bridge between the AI application and external resources. <a href="https://modelcontextprotocol.io/docs/learn/server-concepts" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The server exposes specific capabilities</a> through <strong>standardized protocol interfaces</strong>, which means any AI application that understands MCP can interact with any MCP server without custom integration code.</p><p class="mb-4">The architecture is similar to how APIs work in traditional software development, but specifically designed for AI agent interactions. <a href="https://www.freecodecamp.org/news/how-does-an-mcp-work-under-the-hood/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">An MCP server might provide access to</a> local files, database queries, external APIs, or any other external system that an AI agent needs to interact with.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://modelcontextprotocol.io/docs/learn/server-concepts" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">MCP servers expose capabilities through standardized interfaces</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Act as bridges between AI applications and external resources</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://www.freecodecamp.org/news/how-does-an-mcp-work-under-the-hood/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Can provide access to files, databases, and APIs</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Enable any MCP-compatible AI to use any MCP server</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+    <div class="space-y-8 mt-8">
+      
+      <div class="border-l-2 border-gray-300 pl-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Standardized Protocol Interfaces
+        </h3>
+        <div class="prose max-w-none text-gray-700 mb-4">
+          <p class="mb-4">The key innovation of MCP is its <strong>standardized protocol interfaces</strong>. <a href="https://modelcontextprotocol.io/docs/learn/server-concepts" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">These interfaces</a> define exactly how AI applications communicate with servers, what requests they can make, and what responses they should expect.</p><p class="mb-4">This standardization means that <a href="https://cloud.google.com/discover/what-is-model-context-protocol" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">MCP builds on existing concepts like tool use and function calling</a>, but provides a <strong>consistent framework</strong> that works across different AI models and platforms. Instead of each AI provider implementing their own version of tool calling, they can all use the MCP standard.</p>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-2" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        The MCP Workflow and Architecture
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4"><a href="https://www.freecodecamp.org/news/how-does-an-mcp-work-under-the-hood/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Understanding how MCP works under the hood</a> requires looking at the complete workflow from AI application to external system and back. The process involves several key steps that happen seamlessly in the background.</p><p class="mb-4">When an AI application needs to access external resources, it communicates with an MCP server through the <strong>standardized protocol</strong>. <a href="https://modelcontextprotocol.io/docs/learn/server-concepts" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The MCP server</a> receives the request, processes it according to its specific capabilities, interacts with the external system, and returns the results in a format the AI can understand.</p><p class="mb-4"><a href="https://www.reddit.com/r/ClaudeAI/comments/1ioxu5r/still_confused_about_how_mcp_works_heres_the/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">One helpful way to think about MCP</a> is like having your LLM have agents similar to workflow automation tools, except <strong>tool calls are not restricted to a single node</strong>. It&#039;s like a form the boss signs and someone else does the work - the AI makes the request, and the MCP server handles the execution.</p><p class="mb-4"><a href="https://www.freecodecamp.org/news/how-does-an-mcp-work-under-the-hood/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">With MCP, AI models are not just chatbots</a> - they become <strong>fully capable agents</strong> that can work with your local files, query your database, send requests to external APIs, and perform real actions in external systems.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">AI applications communicate with MCP servers through standardized protocols</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://modelcontextprotocol.io/docs/learn/server-concepts" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">MCP servers process requests and interact with external systems</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://www.freecodecamp.org/news/how-does-an-mcp-work-under-the-hood/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Transforms AI from chatbots into capable agents</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Enables real-world actions beyond text generation</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-3" class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Building on Existing Concepts
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4"><a href="https://cloud.google.com/discover/what-is-model-context-protocol" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">MCP builds on existing concepts like tool use and function calling but standardizes them</a>. This approach makes it easier for developers already familiar with AI tool calling to understand and implement MCP.</p><p class="mb-4">Traditional <strong>function calling</strong> in AI models allows them to invoke specific functions with parameters. <a href="https://cloud.google.com/discover/what-is-model-context-protocol" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">MCP takes this concept further</a> by providing a <strong>standardized framework</strong> that works consistently across different AI models and external systems.</p><p class="mb-4">The standardization means that <a href="https://cloud.google.com/discover/what-is-model-context-protocol" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">instead of building custom connections for each new AI model and external system</a>, developers can build once to the MCP standard and have it work everywhere. This dramatically <strong>reduces development time and maintenance overhead</strong>.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://cloud.google.com/discover/what-is-model-context-protocol" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">MCP standardizes tool use and function calling</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Builds on familiar concepts developers already understand</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Eliminates need for custom integrations per AI model</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Reduces development time and maintenance costs</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-4" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Enabling AI Agents with Real-World Capabilities
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4"><a href="https://www.descope.com/learn/post/mcp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The ultimate goal of MCP</a> is to provide LLMs and AI agents a <strong>standardized way to connect with external data sources and tools</strong>. This enables AI applications to move beyond simple question-answering into performing real actions.</p><p class="mb-4"><a href="https://www.freecodecamp.org/news/how-does-an-mcp-work-under-the-hood/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">With MCP, AI models can</a> work with your <strong>local files</strong>, query your <strong>database</strong>, send requests to external APIs, and interact with any system that has an MCP server implementation. This transforms them from passive chatbots into active agents that can accomplish tasks.</p><p class="mb-4"><a href="https://cloud.google.com/discover/what-is-model-context-protocol" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">MCP enables LLMs to use current, real-world data, perform actions</a>, and interact with systems in ways that were previously difficult or impossible without extensive custom development. The <strong>standardized protocol</strong> makes these capabilities accessible to any AI application that implements MCP support.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://www.descope.com/learn/post/mcp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">MCP provides standardized connections to external data and tools</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://www.freecodecamp.org/news/how-does-an-mcp-work-under-the-hood/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Enables AI to work with files, databases, and APIs</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://cloud.google.com/discover/what-is-model-context-protocol" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Allows AI to use real-world, current data</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Transforms chatbots into capable agents that perform actions</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  
+  <div class="py-20 bg-gradient-to-br from-gray-50 to-gray-100 border-t-2 border-primary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 text-center">
+        Make Your E-Commerce Store AI-Discoverable with Easy UCP Hub
+      </h2>
+
+      
+      <div class="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
+        Just as <a href="https://www.descope.com/learn/post/mcp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">MCP standardizes how AI agents connect to external systems</a>, <strong>Universal Commerce Protocol (UCP)</strong> brings this same standardization to e-commerce. While MCP enables AI to access data and tools, UCP enables AI agents to discover and transact with your online store.
+      </div>
+      
+
+      <div class="prose prose-lg max-w-none text-gray-700 mb-12">
+        <strong>Easy UCP Hub</strong> makes your e-commerce store <strong>AI-discoverable</strong> so that AI agents can find your products, understand your catalog, and complete purchases - all without you building custom integrations for each AI platform.
+
+Instead of spending <strong>$20,000+ on custom development</strong> and waiting <strong>6 months</strong> to make your store accessible to AI shopping agents, Easy UCP Hub gets you <strong>AI-discoverable in just 2 weeks</strong>. Our platform works with <strong>WooCommerce, Magento, BigCommerce</strong>, and any e-commerce platform, providing the standardized interface that AI agents need.
+
+While competitors will charge <strong>$49-199/month</strong> when they launch their solutions, we&#039;re offering <strong>lifetime access for $199-999</strong> - a one-time investment that future-proofs your store for the age of agentic commerce. Whether you have <strong>100 or 10,000 products</strong>, Easy UCP Hub scales with your business.
+
+The standardization that <a href="https://cloud.google.com/discover/what-is-model-context-protocol" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">MCP brings to AI tool connections</a> is exactly what UCP brings to AI commerce. Just as <a href="https://cloud.google.com/discover/what-is-model-context-protocol" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">MCP reduces the need for custom connections</a>, Easy UCP Hub eliminates the need for custom AI shopping integrations.
+      </div>
+
+      
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">AI-Discoverable in 2 Weeks</h3>
+          <p class="text-gray-600">Get your store accessible to AI shopping agents in 2 weeks instead of 6 months of custom development</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Lifetime Access, One-Time Price</h3>
+          <p class="text-gray-600">Pay $199-999 once for lifetime access vs $49-199/month recurring fees from competitors</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Platform-Agnostic Integration</h3>
+          <p class="text-gray-600">Works with WooCommerce, Magento, BigCommerce, and any e-commerce platform</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Save $20K+ in Development</h3>
+          <p class="text-gray-600">Avoid expensive custom development costs while getting enterprise-grade AI discoverability</p>
+        </div>
+        
+      </div>
+      
+
+      
+      <div class="text-center">
+        <a href="#signup" class="inline-flex items-center bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-lg font-semibold text-lg transition shadow-lg shadow-primary/25">
+          Make Your Store AI-Discoverable Today
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+    
+  
+  
+  
+  
+  
+  <div id="faq" class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-12 text-center">
+        Frequently Asked Questions
+      </h2>
+      <div class="space-y-6">
+        
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">What is UCP and why does my store need it?</h3>
+          <div class="text-gray-600">Universal Commerce Protocol (UCP) is Google&#039;s new standard that makes your products discoverable to AI shopping agents like ChatGPT, Claude, and Gemini. Without UCP integration, AI agents can&#039;t find or recommend your products—meaning you&#039;re invisible to the fastest-growing shopping channel. UCP integration ensures AI shoppers discover your store when they ask for product recommendations.</div>
+        </div>
+        
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Which e-commerce platforms do you support?</h3>
+          <div class="text-gray-600">Easy UCP Hub works with any e-commerce platform—WooCommerce, Magento, BigCommerce, custom builds, and more. We&#039;re platform-agnostic by design. If you sell products online, we can integrate UCP for your store regardless of your platform choice.</div>
+        </div>
+        
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">How long does implementation actually take?</h3>
+          <div class="text-gray-600">Your store becomes AI-discoverable within 2 weeks from signup. This includes our team setting up your UCP endpoint, configuring your product catalog, testing the integration, and going live. Compare this to 6+ months for custom development or indefinite waiting for platform-native UCP support.</div>
+        </div>
+        
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">What if my platform adds native UCP support later?</h3>
+          <div class="text-gray-600">You keep your lifetime Easy UCP Hub access regardless. Even if WooCommerce or Magento eventually adds native UCP, you&#039;ve already captured months or years of AI commerce sales. Plus, our multi-platform approach means you&#039;re never locked in—migrate platforms without losing UCP integration.</div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    
+  
+
+  
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How Does Model Context Protocol (MCP) Work",
+  "description": "A comprehensive guide explaining how MCP enables AI applications to connect with external systems through standardized protocol interfaces"
+}
+  </script>
+
+  <!-- Related Articles Section -->
+  <div class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Related Articles</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+          <a href="/ai-commerce-protocol" class="block group">
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-primary hover:shadow-md transition-all">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-base font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    AI Commerce Protocol: The Universal Language for Agentic Shopping
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="/bigcommerce-ai-shopping-integration" class="block group">
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-primary hover:shadow-md transition-all">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-base font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    BigCommerce AI Shopping Integration: Complete Guide to Universal Commerce Protocol
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="/bigcommerce-universal-commerce-protocol" class="block group">
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-primary hover:shadow-md transition-all">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-base font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    BigCommerce Universal Commerce Protocol: Complete Implementation Guide
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="/conversational-commerce-protocol" class="block group">
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-primary hover:shadow-md transition-all">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-base font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    Conversational Commerce Protocol: The Universal Language for AI Shopping
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+
+        <!-- Column 1: About -->
+        <div>
+          <h3 class="text-white font-bold mb-4">About</h3>
+          <p class="text-sm mb-4">Easy UCP helps ecommerce stores integrate with Universal Commerce Protocol - making them discoverable by AI shopping agents like ChatGPT, Gemini, and Claude.</p>
+          <a href="mailto:hello@easyucp.com" class="text-teal-400 hover:text-teal-300 text-sm">hello@easyucp.com</a>
+        </div>
+
+        <!-- Column 2: Learn About UCP -->
+        <div>
+          <h3 class="text-white font-bold mb-4">Learn About UCP</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/understanding-ucp-protocol" class="hover:text-teal-400">What is UCP?</a></li>
+            <li><a href="/how-does-mcp-work" class="hover:text-teal-400">How UCP Works</a></li>
+            <li><a href="/ucp-for-beginners" class="hover:text-teal-400">UCP for Beginners</a></li>
+            <li><a href="/ai-shopping-agents-explained" class="hover:text-teal-400">AI Shopping Explained</a></li>
+            <li><a href="/agentic-commerce-explained" class="hover:text-teal-400">Agentic Commerce</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Platform Guides -->
+        <div>
+          <h3 class="text-white font-bold mb-4">Platform Guides</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/ucp-for-woocommerce" class="hover:text-teal-400">UCP for WooCommerce</a></li>
+            <li><a href="/ucp-for-shopify" class="hover:text-teal-400">UCP for Shopify</a></li>
+            <li><a href="/ucp-for-magento" class="hover:text-teal-400">UCP for Magento</a></li>
+            <li><a href="/resources" class="hover:text-teal-400 font-medium">All Guides →</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Getting Started -->
+        <div>
+          <h3 class="text-white font-bold mb-4">Getting Started</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/ucp-quick-start-guide" class="hover:text-teal-400">Quick Start Guide</a></li>
+            <li><a href="/ucp-integration-checklist" class="hover:text-teal-400">Integration Checklist</a></li>
+            <li><a href="/ucp-implementation-steps" class="hover:text-teal-400">Implementation Steps</a></li>
+            <li><a href="/#signup" class="hover:text-teal-400 font-medium text-teal-400">Join Founder's List →</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <h3 class="text-white font-bold mb-4">Resources</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/resources" class="hover:text-teal-400">All Articles</a></li>
+            <li><a href="/privacy" class="hover:text-teal-400">Privacy Policy</a></li>
+            <li><a href="/terms" class="hover:text-teal-400">Terms of Service</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+        <p>&copy; 2026 Easy UCP. Making ecommerce stores AI-discoverable.</p>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>

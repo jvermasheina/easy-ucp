@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>UCP Integration Checklist: Complete Guide for E-commerce</title>
+  <meta name="description" content="Complete UCP integration checklist for production-ready implementation. Learn discovery, checkout, and authentication steps with practical examples.">
+  <link rel="canonical" href="/ucp-integration-checklist">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="UCP Integration Checklist: Production-Ready Implementation Guide">
+  <meta property="og:description" content="Step-by-step checklist for implementing Google&#039;s Universal Commerce Protocol. From discovery to checkout, get your store AI-ready.">
+  <meta property="og:type" content="article">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Complete UCP Integration Checklist for E-commerce">
+  <meta name="twitter:description" content="Production-ready UCP implementation guide with practical steps for discovery, checkout, and authentication.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#14B8A6', // Teal
+            'primary-dark': '#0D9488',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fonts -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1f2937;
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <nav class="border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <span class="text-lg font-semibold text-gray-900">Easy UCP Hub</span>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/resources" class="text-gray-600 hover:text-gray-900">Resources</a>
+          <a href="#features" class="text-gray-600 hover:text-gray-900">Features</a>
+          <a href="#pricing" class="text-gray-600 hover:text-gray-900">Pricing</a>
+          <a href="#faq" class="text-gray-600 hover:text-gray-900">FAQ</a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <a href="#signup" class="bg-primary hover:bg-primary-dark text-white px-5 py-2 rounded-lg text-sm font-medium transition">
+            Join Founders List
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+  <!-- Hero Section -->
+  <div class="bg-gradient-to-b from-gray-50 to-white py-20 sm:py-28">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="mb-4">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800">
+          <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path>
+          </svg>
+          Limited time offer
+        </span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+        UCP Integration Checklist: Your Complete Implementation Guide
+      </h1>
+
+      <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+        Step-by-step checklist for production-ready Universal Commerce Protocol integration across any e-commerce platform
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+        <a href="#signup" class="bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-lg font-semibold text-lg transition shadow-lg shadow-primary/25 inline-flex items-center">
+          Join Founder&#039;s List
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+    
+  
+  <div class="py-12 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-xl text-gray-700 font-medium mb-8 text-center">
+        <a href="https://developers.google.com/merchant/ucp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Google&#039;s Universal Commerce Protocol (UCP)</a> is a <a href="https://developers.google.com/merchant/ucp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">new open standard that unifies digital commerce</a>, designed to support <a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">upcoming agentic capabilities, such as multi-item carts and account linking</a>. Implementing UCP correctly requires careful attention to discovery, checkout, and authentication components.
+      </div>
+      
+
+      
+      <div class="bg-white rounded-xl p-8 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">What You'll Learn:</h3>
+        <ul class="space-y-3">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Pre-integration requirements and platform readiness assessment</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Discovery endpoint implementation with search optimization</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Checkout integration options: merchant-hosted vs delegated API</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Authentication and security configuration</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Production deployment and scaling considerations</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Platform-specific checklists for Shopify, WooCommerce, and other systems</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="mt-6 p-6 bg-red-50 border-l-4 border-red-500 rounded-r-lg">
+        <p class="text-gray-700"><a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP is designed to be modular and extensible to support rich commerce experiences</a>, and <a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">offers different integration paths (Native and Embedded) to suit your brand and technical stack</a>. A comprehensive checklist ensures your implementation is <a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">ready for agentic experiences</a> and production-scale traffic.</p>
+      </div>
+      
+    </div>
+  </div>
+    
+  
+  <div class="py-12 bg-white border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Table of Contents</h2>
+      <nav class="bg-gray-50 rounded-xl p-6">
+        <ol class="space-y-2">
+          
+          <li>
+            <a href="#section-0" class="text-primary hover:text-primary-dark font-medium">
+              1. Pre-Integration Assessment
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-1" class="text-primary hover:text-primary-dark font-medium">
+              2. Discovery Endpoint Checklist
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-2" class="text-primary hover:text-primary-dark font-medium">
+              3. Checkout Integration Options
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-3" class="text-primary hover:text-primary-dark font-medium">
+              4. Authentication and Security
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-4" class="text-primary hover:text-primary-dark font-medium">
+              5. Platform-Specific Considerations
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-5" class="text-primary hover:text-primary-dark font-medium">
+              6. Production Deployment Steps
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-6" class="text-primary hover:text-primary-dark font-medium">
+              7. Scaling and Performance Optimization
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-7" class="text-primary hover:text-primary-dark font-medium">
+              8. Testing and Validation
+            </a>
+          </li>
+          
+        </ol>
+      </nav>
+    </div>
+  </div>
+    
+  
+  <div id="section-0" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Pre-Integration Assessment
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4">Before beginning your <a href="https://developers.google.com/merchant/ucp/guides" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP integration</a>, assess your platform&#039;s readiness and choose the appropriate integration path. <a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP offers different integration paths (Native and Embedded) to suit your brand and technical stack</a>, so understanding your requirements is critical.</p><p class="mb-4"><strong>Platform Readiness Checklist:</strong></p><p class="mb-4">• Catalog size and complexity assessment
+• Current search infrastructure evaluation
+• Checkout flow documentation
+• API rate limiting capabilities
+• Authentication system review
+• SSL/TLS certificate validation</p><p class="mb-4"><a href="https://developers.google.com/merchant/ucp/guides" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The guide provides detailed instructions for developers integrating with the Universal Commerce Protocol</a>, starting with understanding your platform&#039;s technical constraints. <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">For stores using native WP queries, significant catalogs can become slow</a>, making pre-integration assessment essential for performance planning.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Choose between Native and Embedded integration paths</a> based on your technical stack</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Assess catalog size impact on <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">discovery endpoint performance</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Document existing checkout and authentication flows</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Verify infrastructure can handle <a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">agentic commerce traffic patterns</a></span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+    <div class="space-y-8 mt-8">
+      
+      <div class="border-l-2 border-gray-300 pl-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Choosing Your Integration Path
+        </h3>
+        <div class="prose max-w-none text-gray-700 mb-4">
+          <p class="mb-4"><a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP&#039;s flexibility means different integration paths are available</a> depending on your needs. <strong>Native integration</strong> embeds UCP directly into your platform, while <strong>Embedded integration</strong> uses middleware or proxy layers. Consider your development resources, maintenance capabilities, and customization requirements when selecting your path.</p><p class="mb-4">The <a href="https://developers.google.com/merchant/ucp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">open-source interface standardizes integrations between consumer surfaces and ecosystem players</a>, meaning your choice of integration path won&#039;t lock you into proprietary systems.</p>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-1" class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Discovery Endpoint Checklist
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4">The <strong>discovery endpoint</strong> is where <a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP&#039;s modular and extensible design</a> enables AI agents to search your catalog. <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">For stores using native WP queries, significant catalogs can become slow; integrating an indexed search solution or leveraging ElasticSearch can provide predictable latency and more powerful relevance tuning</a>.</p><p class="mb-4"><strong>Discovery Implementation Steps:</strong></p><p class="mb-4">1. <strong>Search Infrastructure Setup</strong>
+   • Evaluate current search performance
+   • <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Integrate an indexed search solution</a> for large catalogs
+   • <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Abstract search behind a service so the discovery endpoint can switch providers without changing the UCP contract</a></p><p class="mb-4">2. <strong>Response Format Validation</strong>
+   • Implement proper product schema
+   • Include all required product attributes
+   • Test pagination for large result sets
+   • Validate JSON response structure</p><p class="mb-4">3. <strong>Performance Optimization</strong>
+   • Cache frequently accessed products
+   • Implement query result caching
+   • Set up CDN for product images
+   • Monitor response times under load</p><p class="mb-4"><a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">A short checklist to validate discovery readiness</a> should include search performance testing, schema validation, and latency benchmarking.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Integrate indexed search solutions</a> for catalogs with significant product counts</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Abstract search behind a service</a> for provider flexibility</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Validate discovery endpoint responses match UCP schema requirements</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Optimize for <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">predictable latency</a> under agentic query patterns</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+    <div class="space-y-8 mt-8">
+      
+      <div class="border-l-2 border-gray-300 pl-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Search Performance Validation
+        </h3>
+        <div class="prose max-w-none text-gray-700 mb-4">
+          <p class="mb-4"><a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">For stores using native WP queries, significant catalogs can become slow</a>, making search optimization critical. Test your discovery endpoint with:</p><p class="mb-4">• 100+ concurrent search queries
+• Complex filter combinations
+• Pagination through large result sets
+• Fuzzy matching and typo tolerance</p><p class="mb-4">Measure response times and identify bottlenecks before production deployment. <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Integrating an indexed search solution or leveraging ElasticSearch can provide predictable latency</a> that meets agentic commerce requirements.</p>
+        </div>
+        
+        <div class="bg-gray-900 rounded-lg p-6 overflow-x-auto">
+          <pre class="text-sm text-gray-100"><code>// Example discovery endpoint response structure
+{
+  &quot;products&quot;: [
+    {
+      &quot;id&quot;: &quot;prod_123&quot;,
+      &quot;name&quot;: &quot;Product Name&quot;,
+      &quot;price&quot;: {
+        &quot;value&quot;: &quot;29.99&quot;,
+        &quot;currency&quot;: &quot;USD&quot;
+      },
+      &quot;availability&quot;: &quot;in_stock&quot;,
+      &quot;images&quot;: [&quot;https://cdn.example.com/image.jpg&quot;]
+    }
+  ],
+  &quot;pagination&quot;: {
+    &quot;total&quot;: 1500,
+    &quot;page&quot;: 1,
+    &quot;per_page&quot;: 20
+  }
+}</code></pre>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-2" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Checkout Integration Options
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4"><a href="https://wearepresta.com/implement-universal-commerce-protocol-on-shopify/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP&#039;s checkout integration</a> provides flexibility in how transactions are completed. <a href="https://wearepresta.com/implement-universal-commerce-protocol-on-shopify/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Options include generating a merchant-hosted checkout URL that the agent redirects to, or providing a delegated checkout API that completes the transaction via server-to-server calls</a>.</p><p class="mb-4"><strong>Merchant-Hosted Checkout Checklist:</strong></p><p class="mb-4">• Generate secure, time-limited checkout URLs
+• Pre-populate cart with agent-selected items
+• Maintain session state across redirects
+• Handle return URLs for completion/cancellation
+• Implement fraud detection on checkout pages</p><p class="mb-4"><strong>Delegated Checkout API Checklist:</strong></p><p class="mb-4">• Implement server-to-server authentication
+• Validate payment method tokens
+• Process transactions without user redirect
+• Return detailed transaction status
+• Handle partial fulfillment scenarios</p><p class="mb-4"><a href="https://wearepresta.com/shopify-ucp-integration-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The practical checklist for Shopify UCP integration</a> emphasizes <a href="https://wearepresta.com/shopify-ucp-integration-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">production-ready deployment steps</a>, including checkout flow testing and error handling.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://wearepresta.com/implement-universal-commerce-protocol-on-shopify/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Choose between merchant-hosted checkout URLs or delegated checkout API</a> based on control requirements</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Implement secure authentication for <a href="https://wearepresta.com/implement-universal-commerce-protocol-on-shopify/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">server-to-server calls</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Test checkout flows with <a href="https://wearepresta.com/shopify-ucp-integration-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">edge cases and error scenarios</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Validate transaction completion and status reporting</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+    <div class="space-y-8 mt-8">
+      
+      <div class="border-l-2 border-gray-300 pl-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Merchant-Hosted Checkout Implementation
+        </h3>
+        <div class="prose max-w-none text-gray-700 mb-4">
+          <p class="mb-4"><a href="https://wearepresta.com/implement-universal-commerce-protocol-on-shopify/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Generating a merchant-hosted checkout URL that the agent redirects to</a> gives you full control over the checkout experience while maintaining brand consistency. This approach works well when you need:</p><p class="mb-4">• Custom checkout flows with upsells
+• Existing payment gateway integrations
+• Complex shipping calculations
+• Loyalty program integration</p><p class="mb-4">Ensure checkout URLs are <strong>time-limited</strong> and <strong>single-use</strong> to prevent replay attacks. Include cart state in encrypted URL parameters or secure session tokens.</p>
+        </div>
+        
+        <div class="bg-gray-900 rounded-lg p-6 overflow-x-auto">
+          <pre class="text-sm text-gray-100"><code>// Example merchant-hosted checkout URL generation
+{
+  &quot;checkout_url&quot;: &quot;https://store.example.com/checkout/ucp_session_abc123&quot;,
+  &quot;expires_at&quot;: &quot;2024-01-15T10:30:00Z&quot;,
+  &quot;cart_items&quot;: [
+    {
+      &quot;product_id&quot;: &quot;prod_123&quot;,
+      &quot;quantity&quot;: 2,
+      &quot;price&quot;: &quot;29.99&quot;
+    }
+  ]
+}</code></pre>
+        </div>
+        
+      </div>
+      
+      <div class="border-l-2 border-gray-300 pl-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Delegated Checkout API Implementation
+        </h3>
+        <div class="prose max-w-none text-gray-700 mb-4">
+          <p class="mb-4"><a href="https://wearepresta.com/implement-universal-commerce-protocol-on-shopify/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Providing a delegated checkout API that completes the transaction via server-to-server calls</a> enables seamless agentic transactions without user redirects. This approach requires:</p><p class="mb-4">• Robust authentication and authorization
+• Payment method tokenization
+• Idempotency key handling
+• Detailed error responses
+• Transaction status webhooks</p><p class="mb-4">The delegated API approach is ideal for <a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">supporting upcoming agentic capabilities, such as multi-item carts and account linking</a>.</p>
+        </div>
+        
+        <div class="bg-gray-900 rounded-lg p-6 overflow-x-auto">
+          <pre class="text-sm text-gray-100"><code>// Example delegated checkout API request
+POST /ucp/checkout
+{
+  &quot;cart_items&quot;: [
+    {&quot;product_id&quot;: &quot;prod_123&quot;, &quot;quantity&quot;: 2}
+  ],
+  &quot;payment_method&quot;: {
+    &quot;type&quot;: &quot;token&quot;,
+    &quot;token&quot;: &quot;pm_abc123&quot;
+  },
+  &quot;shipping_address&quot;: {
+    &quot;line1&quot;: &quot;123 Main St&quot;,
+    &quot;city&quot;: &quot;San Francisco&quot;,
+    &quot;state&quot;: &quot;CA&quot;,
+    &quot;postal_code&quot;: &quot;94102&quot;
+  },
+  &quot;idempotency_key&quot;: &quot;unique_transaction_id&quot;
+}</code></pre>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-3" class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Authentication and Security
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4"><a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP&#039;s design supports account linking for loyalty programs</a> and personalized experiences, requiring robust authentication implementation. Security considerations span API authentication, user authorization, and data protection.</p><p class="mb-4"><strong>Authentication Checklist:</strong></p><p class="mb-4">• Implement OAuth 2.0 or API key authentication
+• Use HTTPS for all UCP endpoints
+• Validate JWT tokens on every request
+• Implement rate limiting per client
+• Log authentication attempts and failures
+• Set up API key rotation policies</p><p class="mb-4"><strong>Authorization Checklist:</strong></p><p class="mb-4">• Define scope-based permissions
+• Implement customer account linking
+• Validate user consent for data access
+• Handle account delegation securely
+• Test permission boundaries</p><p class="mb-4"><strong>Data Protection:</strong></p><p class="mb-4">• Encrypt sensitive data at rest
+• Use TLS 1.3 for data in transit
+• Implement PCI DSS compliance for payments
+• Sanitize all user inputs
+• Set up security monitoring and alerts</p><p class="mb-4"><a href="https://developers.google.com/merchant/ucp/guides" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The detailed instructions for developers</a> emphasize security best practices throughout the integration process.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Implement <a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">account linking capabilities</a> for loyalty program integration</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Use industry-standard authentication protocols (OAuth 2.0, JWT)</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Apply rate limiting to prevent abuse</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Maintain PCI DSS compliance for payment processing</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-4" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Platform-Specific Considerations
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4"><a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Different integration paths suit different technical stacks</a>, and platform-specific considerations ensure optimal implementation. <a href="https://wearepresta.com/shopify-ucp-integration-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The practical checklist for Shopify UCP integration</a> and <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">the ultimate WooCommerce UCP checklist</a> provide platform-specific guidance.</p><p class="mb-4"><strong>Shopify-Specific Checklist:</strong></p><p class="mb-4">• Leverage Shopify&#039;s GraphQL Admin API
+• Use Storefront API for product discovery
+• Implement checkout permalinks correctly
+• Handle Shopify&#039;s rate limits (2 requests/second)
+• Test with Shopify&#039;s webhook system
+• Validate against Shopify&#039;s app requirements</p><p class="mb-4"><strong>WooCommerce-Specific Checklist:</strong></p><p class="mb-4">• <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">For stores using native WP queries, integrate an indexed search solution</a>
+• Use WooCommerce REST API v3
+• Implement proper WordPress authentication
+• Optimize database queries for large catalogs
+• Test with popular WooCommerce extensions
+• Handle variable products correctly</p><p class="mb-4"><strong>BigCommerce/Magento Considerations:</strong></p><p class="mb-4">• Leverage platform-native APIs
+• Implement proper caching strategies
+• Handle multi-store configurations
+• Test with platform-specific payment gateways</p><p class="mb-4"><a href="https://developers.google.com/merchant/ucp/guides" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The guide provides detailed instructions</a> that can be adapted to any platform&#039;s specific requirements.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://wearepresta.com/shopify-ucp-integration-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Shopify integration requires specific attention to rate limits</a> and API versions</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">WooCommerce stores need indexed search solutions</a> for large catalogs</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Platform-native APIs provide optimal performance</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Test with platform-specific extensions and configurations</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+    <div class="space-y-8 mt-8">
+      
+      <div class="border-l-2 border-gray-300 pl-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          WooCommerce Search Optimization
+        </h3>
+        <div class="prose max-w-none text-gray-700 mb-4">
+          <p class="mb-4"><a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">For stores using native WP queries, significant catalogs can become slow</a>, making search optimization critical for WooCommerce implementations. <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Integrating an indexed search solution or leveraging ElasticSearch can provide predictable latency and more powerful relevance tuning</a>.</p><p class="mb-4"><a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Search integration should be abstracted behind a service so the discovery endpoint can switch providers without changing the UCP contract</a>. This abstraction enables you to upgrade search infrastructure without breaking UCP compatibility.</p>
+        </div>
+        
+        <div class="bg-gray-900 rounded-lg p-6 overflow-x-auto">
+          <pre class="text-sm text-gray-100"><code>// WooCommerce search service abstraction
+class UCPSearchService {
+  private $provider; // ElasticSearch, Algolia, etc.
+  
+  public function search($query, $filters) {
+    // Abstract search logic
+    return $this-&gt;provider-&gt;search($query, $filters);
+  }
+  
+  public function switchProvider($newProvider) {
+    // Change search backend without breaking UCP
+    $this-&gt;provider = $newProvider;
+  }
+}</code></pre>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-5" class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Production Deployment Steps
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4"><a href="https://wearepresta.com/shopify-ucp-integration-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The practical checklist to make your Shopify UCP integration production-ready</a> includes <a href="https://wearepresta.com/shopify-ucp-integration-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">deployment steps, edge tactics, scaling and troubleshooting</a> considerations that apply across platforms.</p><p class="mb-4"><strong>Pre-Deployment Checklist:</strong></p><p class="mb-4">• Complete end-to-end testing in staging
+• Load test all UCP endpoints
+• Validate SSL certificates and HTTPS
+• Set up monitoring and alerting
+• Document API endpoints and authentication
+• Create rollback procedures
+• Train support team on UCP-related issues</p><p class="mb-4"><strong>Deployment Process:</strong></p><p class="mb-4">1. Deploy to staging environment
+2. Run automated test suite
+3. Perform manual smoke tests
+4. Monitor error rates and latency
+5. Deploy to production with canary release
+6. Monitor production metrics closely
+7. Gradually increase traffic allocation</p><p class="mb-4"><strong>Post-Deployment Validation:</strong></p><p class="mb-4">• Verify discovery endpoint responses
+• Test checkout flow completion
+• Validate authentication mechanisms
+• Check error logging and monitoring
+• Review performance metrics
+• Test rollback procedures</p><p class="mb-4"><a href="https://developers.google.com/merchant/ucp/guides" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The guide&#039;s detailed instructions</a> emphasize thorough testing before production deployment.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Complete <a href="https://wearepresta.com/shopify-ucp-integration-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">production-ready deployment steps</a> including staging validation</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Implement <a href="https://wearepresta.com/shopify-ucp-integration-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">edge tactics for scaling</a> and performance</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Set up comprehensive monitoring before production launch</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Create and test rollback procedures</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-6" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Scaling and Performance Optimization
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4"><a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP&#039;s modular and extensible design</a> enables scaling as agentic commerce traffic grows. <a href="https://wearepresta.com/shopify-ucp-integration-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Scaling and troubleshooting</a> considerations ensure your integration handles increased load.</p><p class="mb-4"><strong>Scaling Checklist:</strong></p><p class="mb-4">• Implement horizontal scaling for API servers
+• Use CDN for static assets and product images
+• Cache discovery endpoint responses
+• Implement database read replicas
+• Set up auto-scaling based on traffic
+• Monitor and optimize database queries
+• Use message queues for async processing</p><p class="mb-4"><strong>Performance Optimization:</strong></p><p class="mb-4">• <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Integrate indexed search solutions</a> for fast discovery
+• Implement response compression (gzip/brotli)
+• Optimize JSON payload sizes
+• Use connection pooling for databases
+• Implement circuit breakers for dependencies
+• Cache authentication tokens appropriately</p><p class="mb-4"><strong>Monitoring Metrics:</strong></p><p class="mb-4">• Discovery endpoint response times
+• Checkout completion rates
+• API error rates by endpoint
+• Authentication success/failure rates
+• Database query performance
+• Cache hit/miss ratios</p><p class="mb-4"><a href="https://wearepresta.com/shopify-ucp-integration-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The practical checklist</a> emphasizes <a href="https://wearepresta.com/shopify-ucp-integration-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">troubleshooting</a> common scaling issues before they impact production.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Implement <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">indexed search for predictable latency</a> at scale</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Use CDN and caching strategies for performance</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Monitor key metrics to identify bottlenecks</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Plan for <a href="https://wearepresta.com/shopify-ucp-integration-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">scaling challenges</a> before they occur</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-7" class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Testing and Validation
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4">Comprehensive testing ensures your <a href="https://developers.google.com/merchant/ucp/guides" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP integration</a> is ready for <a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">agentic commerce experiences</a>. <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">A short checklist to validate discovery readiness</a> should be expanded to cover all UCP components.</p><p class="mb-4"><strong>Discovery Endpoint Testing:</strong></p><p class="mb-4">• Search query variations (exact, fuzzy, partial)
+• Filter combinations and edge cases
+• Pagination through large result sets
+• Response time under load
+• Error handling for invalid queries
+• Schema validation for all responses</p><p class="mb-4"><strong>Checkout Flow Testing:</strong></p><p class="mb-4">• Successful transaction completion
+• Payment failure scenarios
+• Inventory depletion during checkout
+• Shipping calculation accuracy
+• Tax calculation validation
+• Discount code application
+• Multi-item cart handling</p><p class="mb-4"><strong>Authentication Testing:</strong></p><p class="mb-4">• Valid token acceptance
+• Expired token rejection
+• Invalid token handling
+• Rate limit enforcement
+• Account linking flows
+• Permission boundary validation</p><p class="mb-4"><strong>Integration Testing:</strong></p><p class="mb-4">• End-to-end user journeys
+• Cross-platform compatibility
+• Mobile vs desktop experiences
+• Network failure recovery
+• Concurrent request handling</p><p class="mb-4"><a href="https://developers.google.com/merchant/ucp/guides" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The detailed instructions</a> recommend thorough testing across all integration points before considering your implementation production-ready.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Validate <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">discovery endpoint readiness</a> with comprehensive search testing</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Test checkout flows including edge cases and failures</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Verify authentication and authorization boundaries</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Perform end-to-end integration testing before production</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+    <div class="space-y-8 mt-8">
+      
+      <div class="border-l-2 border-gray-300 pl-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Automated Testing Strategy
+        </h3>
+        <div class="prose max-w-none text-gray-700 mb-4">
+          <p class="mb-4">Build automated test suites that validate <a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP&#039;s modular components</a> independently and together. Automated testing enables continuous validation as you add <a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">extensible capabilities</a> to your integration.</p><p class="mb-4">Include tests for <a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">upcoming agentic capabilities, such as multi-item carts and account linking</a>, even if not fully implemented yet. This ensures your integration can evolve with <a href="https://developers.google.com/merchant/ucp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP&#039;s roadmap</a>.</p>
+        </div>
+        
+        <div class="bg-gray-900 rounded-lg p-6 overflow-x-auto">
+          <pre class="text-sm text-gray-100"><code>// Example automated test structure
+describe(&#039;UCP Discovery Endpoint&#039;, () =&gt; {
+  test(&#039;returns valid product schema&#039;, async () =&gt; {
+    const response = await fetch(&#039;/ucp/discovery?q=shoes&#039;);
+    const data = await response.json();
+    expect(data.products).toBeDefined();
+    expect(data.products[0]).toHaveProperty(&#039;id&#039;);
+    expect(data.products[0]).toHaveProperty(&#039;name&#039;);
+    expect(data.products[0]).toHaveProperty(&#039;price&#039;);
+  });
+  
+  test(&#039;handles pagination correctly&#039;, async () =&gt; {
+    const response = await fetch(&#039;/ucp/discovery?q=shoes&amp;page=2&#039;);
+    const data = await response.json();
+    expect(data.pagination.page).toBe(2);
+  });
+});</code></pre>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  
+  <div class="py-20 bg-gradient-to-br from-gray-50 to-gray-100 border-t-2 border-primary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 text-center">
+        Skip Months of Custom Development with Easy UCP Hub
+      </h2>
+
+      
+      <div class="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
+        While <a href="https://developers.google.com/merchant/ucp/guides" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">the guide provides detailed instructions for developers integrating with UCP</a>, implementing this comprehensive checklist from scratch typically requires 6+ months of development time and $20,000+ in engineering costs. For e-commerce stores with 100-10,000 products, there&#039;s a faster path to becoming AI-discoverable.
+      </div>
+      
+
+      <div class="prose prose-lg max-w-none text-gray-700 mb-12">
+        <strong>Easy UCP Hub</strong> delivers production-ready <a href="https://developers.google.com/merchant/ucp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP integration</a> in 2 weeks instead of 6 months, with lifetime access starting at just $199-$999 (compared to $49-$199/month when competitors launch their solutions).
+
+<strong>What Easy UCP Hub Handles for You:</strong>
+
+• <strong>Discovery Endpoint</strong>: Pre-optimized <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">indexed search integration</a> that <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">provides predictable latency</a> out of the box
+• <strong>Checkout Integration</strong>: Both <a href="https://wearepresta.com/implement-universal-commerce-protocol-on-shopify/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">merchant-hosted checkout URLs and delegated checkout API</a> options included
+• <strong>Authentication</strong>: Secure OAuth 2.0 implementation with <a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">account linking capabilities</a>
+• <strong>Platform Support</strong>: Works with WooCommerce, Shopify, Magento, BigCommerce, and any e-commerce platform
+• <strong>Production-Ready</strong>: All <a href="https://wearepresta.com/shopify-ucp-integration-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">deployment steps, edge tactics, scaling and troubleshooting</a> handled
+
+Instead of working through <a href="https://wearepresta.com/shopify-ucp-integration-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">the practical checklist</a> manually, Easy UCP Hub provides a turnkey solution that implements <a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP&#039;s modular and extensible design</a> while supporting <a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">different integration paths to suit your brand and technical stack</a>.
+
+<strong>Why Choose Easy UCP Hub:</strong>
+
+✓ <strong>Lifetime Access</strong>: Pay once ($199-$999) vs ongoing monthly fees ($49-$199/mo)
+✓ <strong>Platform-Agnostic</strong>: Works with any e-commerce system, not locked to one platform
+✓ <strong>AI-Ready in 2 Weeks</strong>: Skip 6 months of custom development
+✓ <strong>Future-Proof</strong>: Automatically supports <a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">upcoming agentic capabilities, such as multi-item carts and account linking</a>
+✓ <strong>Production-Tested</strong>: All checklist items validated and optimized
+
+Your store can be <a href="https://developers.google.com/merchant/ucp/faq" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">ready for agentic experiences</a> and discoverable by AI shopping assistants in weeks, not months, without hiring a development team to implement this comprehensive checklist.
+      </div>
+
+      
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">2-Week Implementation vs 6-Month Custom Dev</h3>
+          <p class="text-gray-600">Get production-ready UCP integration in 2 weeks instead of spending 6+ months and $20K+ building it yourself</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Lifetime Access, Not Monthly Fees</h3>
+          <p class="text-gray-600">Pay $199-$999 once for lifetime access, compared to $49-$199/month when competitors launch their solutions</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Platform-Agnostic Solution</h3>
+          <p class="text-gray-600">Works with WooCommerce, Shopify, Magento, BigCommerce, and any e-commerce platform—not locked to a single system</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">All Checklist Items Included</h3>
+          <p class="text-gray-600">Discovery optimization, checkout integration, authentication, scaling, and troubleshooting all handled for you</p>
+        </div>
+        
+      </div>
+      
+
+      
+      <div class="text-center">
+        <a href="#signup" class="inline-flex items-center bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-lg font-semibold text-lg transition shadow-lg shadow-primary/25">
+          Get AI-discoverable in 2 weeks with Easy UCP Hub—lifetime access from $199
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+    
+  
+  
+  
+  
+  
+  <div id="faq" class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-12 text-center">
+        Frequently Asked Questions
+      </h2>
+      <div class="space-y-6">
+        
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">What is UCP and why does my store need it?</h3>
+          <div class="text-gray-600">Universal Commerce Protocol (UCP) is Google&#039;s new standard that makes your products discoverable to AI shopping agents like ChatGPT, Claude, and Gemini. Without UCP integration, AI agents can&#039;t find or recommend your products—meaning you&#039;re invisible to the fastest-growing shopping channel. UCP integration ensures AI shoppers discover your store when they ask for product recommendations.</div>
+        </div>
+        
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Which e-commerce platforms do you support?</h3>
+          <div class="text-gray-600">Easy UCP Hub works with any e-commerce platform—WooCommerce, Magento, BigCommerce, custom builds, and more. We&#039;re platform-agnostic by design. If you sell products online, we can integrate UCP for your store regardless of your platform choice.</div>
+        </div>
+        
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">How long does implementation actually take?</h3>
+          <div class="text-gray-600">Your store becomes AI-discoverable within 2 weeks from signup. This includes our team setting up your UCP endpoint, configuring your product catalog, testing the integration, and going live. Compare this to 6+ months for custom development or indefinite waiting for platform-native UCP support.</div>
+        </div>
+        
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">What if my platform adds native UCP support later?</h3>
+          <div class="text-gray-600">You keep your lifetime Easy UCP Hub access regardless. Even if WooCommerce or Magento eventually adds native UCP, you&#039;ve already captured months or years of AI commerce sales. Plus, our multi-platform approach means you&#039;re never locked in—migrate platforms without losing UCP integration.</div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    
+  
+
+  
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "UCP Integration Checklist: Complete Implementation Guide",
+  "description": "Comprehensive checklist for implementing Google's Universal Commerce Protocol in production environments"
+}
+  </script>
+
+  <!-- Related Articles Section -->
+  <div class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Related Articles</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+          <a href="/claude-shopping-integration" class="block group">
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-primary hover:shadow-md transition-all">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-base font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    Claude Shopping Integration: Your Complete UCP Implementation Guide
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="/custom-ecommerce-ucp-integration" class="block group">
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-primary hover:shadow-md transition-all">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-base font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    Custom E-commerce UCP Integration: Complete Implementation Guide
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="/integrate-ucp-with-magento" class="block group">
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-primary hover:shadow-md transition-all">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-base font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    How to Integrate UCP with Magento: Complete Implementation Guide
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="/integrate-ucp-with-shopify" class="block group">
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-primary hover:shadow-md transition-all">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-base font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    How to Integrate UCP with Shopify: Complete Implementation Guide
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+
+        <!-- Column 1: About -->
+        <div>
+          <h3 class="text-white font-bold mb-4">About</h3>
+          <p class="text-sm mb-4">Easy UCP helps ecommerce stores integrate with Universal Commerce Protocol - making them discoverable by AI shopping agents like ChatGPT, Gemini, and Claude.</p>
+          <a href="mailto:hello@easyucp.com" class="text-teal-400 hover:text-teal-300 text-sm">hello@easyucp.com</a>
+        </div>
+
+        <!-- Column 2: Learn About UCP -->
+        <div>
+          <h3 class="text-white font-bold mb-4">Learn About UCP</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/understanding-ucp-protocol" class="hover:text-teal-400">What is UCP?</a></li>
+            <li><a href="/how-does-mcp-work" class="hover:text-teal-400">How UCP Works</a></li>
+            <li><a href="/ucp-for-beginners" class="hover:text-teal-400">UCP for Beginners</a></li>
+            <li><a href="/ai-shopping-agents-explained" class="hover:text-teal-400">AI Shopping Explained</a></li>
+            <li><a href="/agentic-commerce-explained" class="hover:text-teal-400">Agentic Commerce</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Platform Guides -->
+        <div>
+          <h3 class="text-white font-bold mb-4">Platform Guides</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/ucp-for-woocommerce" class="hover:text-teal-400">UCP for WooCommerce</a></li>
+            <li><a href="/ucp-for-shopify" class="hover:text-teal-400">UCP for Shopify</a></li>
+            <li><a href="/ucp-for-magento" class="hover:text-teal-400">UCP for Magento</a></li>
+            <li><a href="/resources" class="hover:text-teal-400 font-medium">All Guides →</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Getting Started -->
+        <div>
+          <h3 class="text-white font-bold mb-4">Getting Started</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/ucp-quick-start-guide" class="hover:text-teal-400">Quick Start Guide</a></li>
+            <li><a href="/ucp-integration-checklist" class="hover:text-teal-400">Integration Checklist</a></li>
+            <li><a href="/ucp-implementation-steps" class="hover:text-teal-400">Implementation Steps</a></li>
+            <li><a href="/#signup" class="hover:text-teal-400 font-medium text-teal-400">Join Founder's List →</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <h3 class="text-white font-bold mb-4">Resources</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/resources" class="hover:text-teal-400">All Articles</a></li>
+            <li><a href="/privacy" class="hover:text-teal-400">Privacy Policy</a></li>
+            <li><a href="/terms" class="hover:text-teal-400">Terms of Service</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+        <p>&copy; 2026 Easy UCP. Making ecommerce stores AI-discoverable.</p>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>

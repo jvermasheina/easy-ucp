@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>How to Make Your Store AI Discoverable in 2025 | UCP Guide</title>
+  <meta name="description" content="Learn how to make your e-commerce store discoverable by AI shopping agents using Universal Commerce Protocol (UCP). Complete implementation guide with examples.">
+  <link rel="canonical" href="/how-to-make-store-ai-discoverable">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="How to Make Your E-Commerce Store AI Discoverable">
+  <meta property="og:description" content="Complete guide to implementing UCP and making your online store discoverable by AI shopping agents in 2025.">
+  <meta property="og:type" content="article">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Make Your Store AI Discoverable with UCP">
+  <meta name="twitter:description" content="Step-by-step guide to implementing Universal Commerce Protocol for AI agent discovery.">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#14B8A6', // Teal
+            'primary-dark': '#0D9488',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fonts -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1f2937;
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <nav class="border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <span class="text-lg font-semibold text-gray-900">Easy UCP Hub</span>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/resources" class="text-gray-600 hover:text-gray-900">Resources</a>
+          <a href="#features" class="text-gray-600 hover:text-gray-900">Features</a>
+          <a href="#pricing" class="text-gray-600 hover:text-gray-900">Pricing</a>
+          <a href="#faq" class="text-gray-600 hover:text-gray-900">FAQ</a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <a href="#signup" class="bg-primary hover:bg-primary-dark text-white px-5 py-2 rounded-lg text-sm font-medium transition">
+            Join Founders List
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+  <!-- Hero Section -->
+  <div class="bg-gradient-to-b from-gray-50 to-white py-20 sm:py-28">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="mb-4">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800">
+          <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path>
+          </svg>
+          Limited time offer
+        </span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+        How to Make Your Store AI Discoverable in 2025
+      </h1>
+
+      <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+        Implement Universal Commerce Protocol to connect with AI shopping agents and future-proof your e-commerce business
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+        <a href="#signup" class="bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-lg font-semibold text-lg transition shadow-lg shadow-primary/25 inline-flex items-center">
+          Join Founder&#039;s List
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+    
+  
+  <div class="py-12 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-xl text-gray-700 font-medium mb-8 text-center">
+        AI shopping agents are transforming e-commerce, but they can only help customers find products from stores they can discover. Without the right protocol, your store remains invisible to this growing channel.
+      </div>
+      
+
+      
+      <div class="bg-white rounded-xl p-8 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">What You'll Learn:</h3>
+        <ul class="space-y-3">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">What makes a store AI-discoverable and why it matters</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">How Universal Commerce Protocol (UCP) enables AI agent discovery</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Step-by-step implementation of discovery endpoints</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Search optimization for AI-powered queries</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Timeline and resources needed for implementation</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="mt-6 p-6 bg-red-50 border-l-4 border-red-500 rounded-r-lg">
+        <p class="text-gray-700"><a href="https://webkul.com/blog/universal-commerce-protocol-ucp/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP makes stores AI-friendly</a> by allowing <a href="https://webkul.com/blog/universal-commerce-protocol-ucp/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">AI agents to assist users in their shopping with fewer mistakes</a>, creating a standardized way for artificial intelligence to discover, search, and transact with your products.</p>
+      </div>
+      
+    </div>
+  </div>
+    
+  
+  <div class="py-12 bg-white border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Table of Contents</h2>
+      <nav class="bg-gray-50 rounded-xl p-6">
+        <ol class="space-y-2">
+          
+          <li>
+            <a href="#section-0" class="text-primary hover:text-primary-dark font-medium">
+              1. Understanding AI Discoverability
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-1" class="text-primary hover:text-primary-dark font-medium">
+              2. What is Universal Commerce Protocol (UCP)
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-2" class="text-primary hover:text-primary-dark font-medium">
+              3. Implementing Discovery Endpoints
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-3" class="text-primary hover:text-primary-dark font-medium">
+              4. Optimizing Search for AI Agents
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-4" class="text-primary hover:text-primary-dark font-medium">
+              5. Validating Your Implementation
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-5" class="text-primary hover:text-primary-dark font-medium">
+              6. Fast-Track Your AI Discoverability
+            </a>
+          </li>
+          
+        </ol>
+      </nav>
+    </div>
+  </div>
+    
+  
+  <div id="section-0" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Understanding AI Discoverability
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4">AI discoverability means making your e-commerce store accessible to <strong>AI shopping agents</strong> that help customers find and purchase products. Just as <a href="https://www.bluehost.com/blog/how-to-use-ai-create-online-store-ecommerce/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">choosing the right domain name shapes your brand identity and makes your store easier to find</a> for human customers, implementing the right protocols makes your store discoverable by AI agents.</p><p class="mb-4">Traditional e-commerce relies on customers typing <a href="https://www.bluehost.com/blog/how-to-use-ai-create-online-store-ecommerce/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">your store&#039;s online address into their browser</a>. AI discoverability extends this concept by providing <strong>machine-readable endpoints</strong> that AI agents can query to find products across multiple stores simultaneously.</p><p class="mb-4">The challenge for most stores is that <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">significant catalogs can become slow when using native queries</a>, making them unsuitable for AI agent interactions that require fast, predictable responses. This is where standardized protocols become essential.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://webkul.com/blog/universal-commerce-protocol-ucp/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">AI agents need standardized protocols to discover and interact with stores</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Large product catalogs require optimized search solutions for AI compatibility</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">AI discoverability is separate from traditional SEO and requires different technical implementation</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-1" class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        What is Universal Commerce Protocol (UCP)
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4"><strong>Universal Commerce Protocol (UCP)</strong> is the emerging standard for making e-commerce stores AI-discoverable. <a href="https://webkul.com/blog/universal-commerce-protocol-ucp/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP is flexible for many use cases</a> and provides a unified way for AI agents to interact with different e-commerce platforms.</p><p class="mb-4">The protocol offers several key advantages. First, it enables a <a href="https://webkul.com/blog/universal-commerce-protocol-ucp/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">shorter customization period – you write it once, use it everywhere</a>, meaning you don&#039;t need separate implementations for different AI agents. Second, it provides <a href="https://webkul.com/blog/universal-commerce-protocol-ucp/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">simplified onboarding of merchants – stores are onboarded quicker because they use a single standard</a>.</p><p class="mb-4">Most importantly, <a href="https://webkul.com/blog/universal-commerce-protocol-ucp/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP creates an AI-friendly business where agents are capable of assisting users in their shopping with fewer mistakes</a>. The protocol&#039;s <a href="https://webkul.com/blog/universal-commerce-protocol-ucp/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">extensible design means you can add new features (such as loyalty or discounts) as extensions</a> without breaking existing AI agent integrations.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://webkul.com/blog/universal-commerce-protocol-ucp/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP provides a single standard that works across multiple AI agents</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://webkul.com/blog/universal-commerce-protocol-ucp/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The protocol reduces implementation time through write-once, use-everywhere approach</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://webkul.com/blog/universal-commerce-protocol-ucp/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Extensible architecture allows adding features without breaking compatibility</a></span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+    <div class="space-y-8 mt-8">
+      
+      <div class="border-l-2 border-gray-300 pl-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Core UCP Components
+        </h3>
+        <div class="prose max-w-none text-gray-700 mb-4">
+          <p class="mb-4">UCP consists of three primary components that AI agents use to interact with your store:</p><p class="mb-4"><strong>Discovery Endpoint</strong>: Allows AI agents to find your store and understand what products you offer. This is the foundation of AI discoverability.</p><p class="mb-4"><strong>Search Interface</strong>: Enables AI agents to query your product catalog using natural language or structured queries. <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">For stores using native WP queries, significant catalogs can become slow</a>, which is why <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">integrating an indexed search solution or leveraging ElasticSearch can provide predictable latency and more powerful relevance tuning</a>.</p><p class="mb-4"><strong>Transaction Layer</strong>: Handles checkout and order processing through standardized API calls that AI agents can execute on behalf of customers.</p>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-2" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Implementing Discovery Endpoints
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4">The <strong>discovery endpoint</strong> is your store&#039;s front door for AI agents. <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Search integration should be abstracted behind a service so the discovery endpoint can switch providers without changing the UCP contract</a>, ensuring flexibility as your needs evolve.</p><p class="mb-4">Implementation requires exposing a standardized API that returns your store&#039;s metadata, product categories, and search capabilities. The endpoint must respond quickly and reliably, as AI agents will query multiple stores simultaneously when helping customers.</p><p class="mb-4">For optimal performance, especially with larger catalogs, <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">integrating an indexed search solution or leveraging ElasticSearch can provide predictable latency</a> that meets AI agent requirements. This is critical because <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">stores using native WP queries with significant catalogs can become slow</a>.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Discovery endpoints must be abstracted behind a service layer for flexibility</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Indexed search solutions provide the predictable latency AI agents require</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Fast, reliable responses are essential for AI agent compatibility</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+    <div class="space-y-8 mt-8">
+      
+      <div class="border-l-2 border-gray-300 pl-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Technical Requirements
+        </h3>
+        <div class="prose max-w-none text-gray-700 mb-4">
+          <p class="mb-4">Your discovery endpoint needs to support:</p><p class="mb-4"><strong>Fast Response Times</strong>: AI agents expect sub-second responses. <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Integrating an indexed search solution</a> ensures you meet these performance requirements even with thousands of products.</p><p class="mb-4"><strong>Standardized Schema</strong>: Return data in the UCP-specified format so AI agents can parse your catalog without custom code.</p><p class="mb-4"><strong>Scalability</strong>: Handle multiple concurrent requests from different AI agents without degradation.</p><p class="mb-4"><strong>Reliability</strong>: Maintain high uptime as AI agents will deprioritize or skip stores with frequent downtime.</p>
+        </div>
+        
+        <div class="bg-gray-900 rounded-lg p-6 overflow-x-auto">
+          <pre class="text-sm text-gray-100"><code>// Example UCP Discovery Response Structure
+{
+  &quot;store&quot;: {
+    &quot;name&quot;: &quot;Your Store Name&quot;,
+    &quot;url&quot;: &quot;https://yourstore.com&quot;,
+    &quot;capabilities&quot;: [&quot;search&quot;, &quot;checkout&quot;, &quot;inventory&quot;]
+  },
+  &quot;search_endpoint&quot;: &quot;/ucp/search&quot;,
+  &quot;categories&quot;: [...],
+  &quot;supported_features&quot;: [&quot;real-time-inventory&quot;, &quot;multi-currency&quot;]
+}</code></pre>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-3" class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Optimizing Search for AI Agents
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4">AI agents query stores differently than human customers. While humans browse and filter, AI agents use <strong>natural language queries</strong> and expect semantically relevant results. <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">For stores using native WP queries, significant catalogs can become slow</a>, making optimization essential.</p><p class="mb-4">The solution is <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">integrating an indexed search solution or leveraging ElasticSearch</a> which can <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">provide predictable latency and more powerful relevance tuning</a>. This ensures AI agents receive fast, accurate results even when searching across thousands of products.</p><p class="mb-4">Critically, <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">search integration should be abstracted behind a service</a> so you can <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">switch providers without changing the UCP contract</a>. This architectural decision protects your AI discoverability investment as search technology evolves.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Indexed search solutions prevent performance degradation with large catalogs</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">ElasticSearch provides predictable latency and advanced relevance tuning</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Service abstraction allows changing search providers without breaking UCP compatibility</a></span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+    <div class="space-y-8 mt-8">
+      
+      <div class="border-l-2 border-gray-300 pl-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Search Performance Benchmarks
+        </h3>
+        <div class="prose max-w-none text-gray-700 mb-4">
+          <p class="mb-4">AI agents expect:</p><p class="mb-4"><strong>Sub-100ms Query Response</strong>: For simple product lookups</p><p class="mb-4"><strong>Sub-500ms Complex Queries</strong>: For multi-filter searches across large catalogs</p><p class="mb-4"><strong>Semantic Understanding</strong>: Ability to match intent, not just keywords (e.g., &quot;waterproof hiking boots&quot; should match products tagged with &quot;water-resistant trail shoes&quot;)</p><p class="mb-4"><a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Integrating an indexed search solution</a> is often the only way to achieve these benchmarks with catalogs over 1,000 products.</p>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-4" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Validating Your Implementation
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4">Before going live with AI agents, you need to validate your UCP implementation. <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">A short checklist to validate discovery readiness</a> should include:</p><p class="mb-4"><strong>Discovery Endpoint Testing</strong>: Verify your endpoint returns valid UCP-formatted responses and handles concurrent requests without errors.</p><p class="mb-4"><strong>Search Performance</strong>: Confirm that <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">your indexed search solution provides predictable latency</a> under load, especially important since <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">stores using native WP queries with significant catalogs can become slow</a>.</p><p class="mb-4"><strong>Service Abstraction</strong>: Ensure <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">search integration is abstracted behind a service</a> so you can <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">switch providers without changing the UCP contract</a>.</p><p class="mb-4"><strong>Schema Compliance</strong>: Validate all responses match UCP specifications exactly, as AI agents cannot handle custom formats.</p><p class="mb-4"><strong>Error Handling</strong>: Test how your implementation handles edge cases like out-of-stock items, invalid queries, and rate limiting.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Follow a validation checklist before enabling AI agent access</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Test performance under load to ensure predictable response times</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Verify schema compliance and error handling before production deployment</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  
+  <div class="py-20 bg-gradient-to-br from-gray-50 to-gray-100 border-t-2 border-primary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 text-center">
+        Fast-Track Your AI Discoverability with Easy UCP Hub
+      </h2>
+
+      
+      <div class="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
+        Implementing UCP from scratch typically takes 6 months and costs $20,000+ in custom development. For most e-commerce stores, this timeline and investment creates a significant barrier to AI discoverability. That&#039;s why we built Easy UCP Hub.
+      </div>
+      
+
+      <div class="prose prose-lg max-w-none text-gray-700 mb-12">
+        <strong>Easy UCP Hub</strong> makes your store AI-discoverable in <strong>2 weeks instead of 6 months</strong>, without the $20K+ custom development cost. Our platform provides everything you need: <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">indexed search integration</a> for <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">predictable latency</a>, <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">properly abstracted service layers</a>, and full UCP compliance out of the box.
+
+Unlike competitors who will charge $49-$199/month when they launch, Easy UCP Hub offers <strong>lifetime access for $199-$999</strong> – a one-time payment that gives you permanent AI discoverability. We&#039;re <strong>platform-agnostic</strong>, supporting WooCommerce, Magento, BigCommerce, and any e-commerce platform, so you&#039;re never locked into a single technology stack.
+
+Our solution handles the complex parts: <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">ElasticSearch integration for powerful relevance tuning</a>, service abstraction so you can <a href="https://wearepresta.com/the-ultimate-woocommerce-ucp-checklist/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">switch providers without changing the UCP contract</a>, and automatic compliance with UCP specifications. You get all the benefits of <a href="https://webkul.com/blog/universal-commerce-protocol-ucp/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">AI-friendly business where agents can assist users with fewer mistakes</a> without the development headaches.
+      </div>
+
+      
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">2 Weeks vs 6 Months</h3>
+          <p class="text-gray-600">Get AI-discoverable in 2 weeks instead of 6 months of custom development. Start capturing AI agent traffic while competitors are still planning their implementation.</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Lifetime Access $199-$999</h3>
+          <p class="text-gray-600">One-time payment for permanent UCP access. Compare to competitors&#039; $49-$199/month recurring fees – you save thousands over time.</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Platform-Agnostic</h3>
+          <p class="text-gray-600">Works with WooCommerce, Magento, BigCommerce, and any e-commerce platform. Migrate platforms without losing AI discoverability.</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Built-In Search Optimization</h3>
+          <p class="text-gray-600">Includes indexed search integration and ElasticSearch support for the predictable latency and relevance tuning AI agents require.</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Service Abstraction Layer</h3>
+          <p class="text-gray-600">Properly architected service layer lets you switch search providers or add features without breaking UCP compatibility.</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Automatic Compliance</h3>
+          <p class="text-gray-600">Stay compliant with UCP specifications automatically as the protocol evolves. No manual updates required.</p>
+        </div>
+        
+      </div>
+      
+
+      
+      <div class="text-center">
+        <a href="#signup" class="inline-flex items-center bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-lg font-semibold text-lg transition shadow-lg shadow-primary/25">
+          Make your store AI-discoverable in 2 weeks. Get lifetime UCP access starting at $199.
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+    
+  
+  
+  
+  
+  
+  <div id="faq" class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-12 text-center">
+        Frequently Asked Questions
+      </h2>
+      <div class="space-y-6">
+        
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">What is UCP and why does my store need it?</h3>
+          <div class="text-gray-600">Universal Commerce Protocol (UCP) is Google&#039;s new standard that makes your products discoverable to AI shopping agents like ChatGPT, Claude, and Gemini. Without UCP integration, AI agents can&#039;t find or recommend your products—meaning you&#039;re invisible to the fastest-growing shopping channel. UCP integration ensures AI shoppers discover your store when they ask for product recommendations.</div>
+        </div>
+        
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Which e-commerce platforms do you support?</h3>
+          <div class="text-gray-600">Easy UCP Hub works with any e-commerce platform—WooCommerce, Magento, BigCommerce, custom builds, and more. We&#039;re platform-agnostic by design. If you sell products online, we can integrate UCP for your store regardless of your platform choice.</div>
+        </div>
+        
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">How long does implementation actually take?</h3>
+          <div class="text-gray-600">Your store becomes AI-discoverable within 2 weeks from signup. This includes our team setting up your UCP endpoint, configuring your product catalog, testing the integration, and going live. Compare this to 6+ months for custom development or indefinite waiting for platform-native UCP support.</div>
+        </div>
+        
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">What if my platform adds native UCP support later?</h3>
+          <div class="text-gray-600">You keep your lifetime Easy UCP Hub access regardless. Even if WooCommerce or Magento eventually adds native UCP, you&#039;ve already captured months or years of AI commerce sales. Plus, our multi-platform approach means you&#039;re never locked in—migrate platforms without losing UCP integration.</div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    
+  
+
+  
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Make Your Store AI Discoverable",
+  "description": "Complete guide to implementing Universal Commerce Protocol to make your e-commerce store discoverable by AI shopping agents"
+}
+  </script>
+
+  <!-- Related Articles Section -->
+  <div class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Related Articles</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+          <a href="/ai-discovery-for-products" class="block group">
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-primary hover:shadow-md transition-all">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-base font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    AI Product Discovery: How AI Finds and Recommends Products
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="/chatgpt-shopping-integration" class="block group">
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-primary hover:shadow-md transition-all">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-base font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    ChatGPT Shopping Integration: Make Your Store AI-Discoverable
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="/enable-ai-product-discovery-ecommerce" class="block group">
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-primary hover:shadow-md transition-all">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-base font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    Enable AI Product Discovery for Ecommerce: The Complete 2026 Guide
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="/shopify-universal-commerce-protocol" class="block group">
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-primary hover:shadow-md transition-all">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-base font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    Shopify Universal Commerce Protocol: Making Your Store AI-Discoverable
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+
+        <!-- Column 1: About -->
+        <div>
+          <h3 class="text-white font-bold mb-4">About</h3>
+          <p class="text-sm mb-4">Easy UCP helps ecommerce stores integrate with Universal Commerce Protocol - making them discoverable by AI shopping agents like ChatGPT, Gemini, and Claude.</p>
+          <a href="mailto:hello@easyucp.com" class="text-teal-400 hover:text-teal-300 text-sm">hello@easyucp.com</a>
+        </div>
+
+        <!-- Column 2: Learn About UCP -->
+        <div>
+          <h3 class="text-white font-bold mb-4">Learn About UCP</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/understanding-ucp-protocol" class="hover:text-teal-400">What is UCP?</a></li>
+            <li><a href="/how-does-mcp-work" class="hover:text-teal-400">How UCP Works</a></li>
+            <li><a href="/ucp-for-beginners" class="hover:text-teal-400">UCP for Beginners</a></li>
+            <li><a href="/ai-shopping-agents-explained" class="hover:text-teal-400">AI Shopping Explained</a></li>
+            <li><a href="/agentic-commerce-explained" class="hover:text-teal-400">Agentic Commerce</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Platform Guides -->
+        <div>
+          <h3 class="text-white font-bold mb-4">Platform Guides</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/ucp-for-woocommerce" class="hover:text-teal-400">UCP for WooCommerce</a></li>
+            <li><a href="/ucp-for-shopify" class="hover:text-teal-400">UCP for Shopify</a></li>
+            <li><a href="/ucp-for-magento" class="hover:text-teal-400">UCP for Magento</a></li>
+            <li><a href="/resources" class="hover:text-teal-400 font-medium">All Guides →</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Getting Started -->
+        <div>
+          <h3 class="text-white font-bold mb-4">Getting Started</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/ucp-quick-start-guide" class="hover:text-teal-400">Quick Start Guide</a></li>
+            <li><a href="/ucp-integration-checklist" class="hover:text-teal-400">Integration Checklist</a></li>
+            <li><a href="/ucp-implementation-steps" class="hover:text-teal-400">Implementation Steps</a></li>
+            <li><a href="/#signup" class="hover:text-teal-400 font-medium text-teal-400">Join Founder's List →</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <h3 class="text-white font-bold mb-4">Resources</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/resources" class="hover:text-teal-400">All Articles</a></li>
+            <li><a href="/privacy" class="hover:text-teal-400">Privacy Policy</a></li>
+            <li><a href="/terms" class="hover:text-teal-400">Terms of Service</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+        <p>&copy; 2026 Easy UCP. Making ecommerce stores AI-discoverable.</p>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>

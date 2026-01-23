@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>How to Set Up Universal Commerce Protocol (UCP) in 2026</title>
+  <meta name="description" content="Complete guide to setting up Universal Commerce Protocol (UCP) for AI-powered shopping. Learn implementation steps, technical requirements, and integration options.">
+  <link rel="canonical" href="/set-up-universal-commerce-protocol">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Set Up Universal Commerce Protocol: Complete Implementation Guide">
+  <meta property="og:description" content="Step-by-step guide to implementing UCP for agentic commerce. Make your store discoverable to AI shopping agents.">
+  <meta property="og:type" content="article">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Set Up Universal Commerce Protocol (UCP)">
+  <meta name="twitter:description" content="Complete technical guide to UCP implementation for e-commerce stores">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#14B8A6', // Teal
+            'primary-dark': '#0D9488',
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Fonts -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1f2937;
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <nav class="border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+            <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <span class="text-lg font-semibold text-gray-900">Easy UCP Hub</span>
+        </div>
+
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="/resources" class="text-gray-600 hover:text-gray-900">Resources</a>
+          <a href="#features" class="text-gray-600 hover:text-gray-900">Features</a>
+          <a href="#pricing" class="text-gray-600 hover:text-gray-900">Pricing</a>
+          <a href="#faq" class="text-gray-600 hover:text-gray-900">FAQ</a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+          <a href="#signup" class="bg-primary hover:bg-primary-dark text-white px-5 py-2 rounded-lg text-sm font-medium transition">
+            Join Founders List
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  
+  <!-- Hero Section -->
+  <div class="bg-gradient-to-b from-gray-50 to-white py-20 sm:py-28">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="mb-4">
+        <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 text-red-800">
+          <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" clip-rule="evenodd"></path>
+          </svg>
+          Limited time offer
+        </span>
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+        How to Set Up Universal Commerce Protocol (UCP) for AI-Powered Shopping
+      </h1>
+
+      <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+        Complete implementation guide for making your e-commerce store discoverable to AI shopping agents
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+        <a href="#signup" class="bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-lg font-semibold text-lg transition shadow-lg shadow-primary/25 inline-flex items-center">
+          Join Founder&#039;s List
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+    
+  
+  <div class="py-12 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-xl text-gray-700 font-medium mb-8 text-center">
+        <a href="https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Google and Shopify launched the Universal Commerce Protocol (UCP)</a> as <strong>a new open standard for agentic commerce</strong> that enables AI agents to discover, purchase, and support products across the entire shopping journey. <a href="https://medium.com/@tahirbalarabe2/what-is-x-ucp-c1648f69b68a" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP is not a platform or marketplace—it&#039;s an open source protocol</a> that provides <strong>a standardized language and functional primitives</strong> for commerce systems to interoperate.
+      </div>
+      
+
+      
+      <div class="bg-white rounded-xl p-8 shadow-sm">
+        <h3 class="text-lg font-semibold text-gray-900 mb-4">What You'll Learn:</h3>
+        <ul class="space-y-3">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">What Universal Commerce Protocol is and why it matters for e-commerce</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">The technical architecture and core components of UCP</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Step-by-step implementation methods for different platforms</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">How to build RESTful APIs for UCP compliance</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Integration options from custom development to turnkey solutions</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Best practices for making your store AI-discoverable</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <div class="mt-6 p-6 bg-red-50 border-l-4 border-red-500 rounded-r-lg">
+        <p class="text-gray-700"><a href="https://almcorp.com/blog/universal-commerce-protocol-agentic-commerce-guide-2026/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The agentic commerce market is projected to reach $190-385 billion by 2030</a>, and <a href="https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP establishes a common language for agents and systems to operate together across consumer surfaces, businesses and payment providers</a>. Without UCP implementation, your store will be invisible to the next generation of AI-powered shopping experiences.</p>
+      </div>
+      
+    </div>
+  </div>
+    
+  
+  <div class="py-12 bg-white border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Table of Contents</h2>
+      <nav class="bg-gray-50 rounded-xl p-6">
+        <ol class="space-y-2">
+          
+          <li>
+            <a href="#section-0" class="text-primary hover:text-primary-dark font-medium">
+              1. Understanding Universal Commerce Protocol
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-1" class="text-primary hover:text-primary-dark font-medium">
+              2. UCP Architecture and Core Components
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-2" class="text-primary hover:text-primary-dark font-medium">
+              3. Technical Requirements for UCP Implementation
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-3" class="text-primary hover:text-primary-dark font-medium">
+              4. Implementation Methods: Native vs Platform Integration
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-4" class="text-primary hover:text-primary-dark font-medium">
+              5. Step-by-Step Setup Guide
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-5" class="text-primary hover:text-primary-dark font-medium">
+              6. Testing and Validation
+            </a>
+          </li>
+          
+          <li>
+            <a href="#section-6" class="text-primary hover:text-primary-dark font-medium">
+              7. Fast-Track Your UCP Implementation
+            </a>
+          </li>
+          
+        </ol>
+      </nav>
+    </div>
+  </div>
+    
+  
+  <div id="section-0" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Understanding Universal Commerce Protocol
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4"><a href="https://ucp.dev" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Universal Commerce Protocol (UCP)</a> is <strong>an open standard for integrating commerce with agents</strong>, <a href="https://searchengineland.com/google-universal-commerce-protocol-467290" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">co-developed by Google and Shopify</a> to enable AI-powered shopping experiences. <a href="https://www.linkedin.com/posts/mcfazeli_shopify-and-google-just-launched-the-universal-activity-7416143108444196864-j1IQ" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP models the entire shopping journey, not just payments</a>, covering discovery, checkout, and post-purchase support.</p><p class="mb-4"><a href="https://medium.com/@tahirbalarabe2/what-is-x-ucp-c1648f69b68a" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The protocol acts as a universal abstraction layer</a> that enables <strong>independent agents, consumer surfaces, and merchant backends to interoperate</strong> for a complete commerce journey. <a href="https://medium.com/@tahirbalarabe2/what-is-x-ucp-c1648f69b68a" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Its core function is translation</a>—it translates the diverse and proprietary languages of global commerce systems into a single, common dialect that all participants can understand.</p><p class="mb-4"><a href="https://modelcontextprotocol.io/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP is compatible with the Model Context Protocol (MCP)</a>, <a href="https://www.freecodecamp.org/news/how-does-an-mcp-work-under-the-hood/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">an open-source standard for connecting AI applications to external systems</a>. This compatibility ensures that <a href="https://www.freecodecamp.org/news/how-does-an-mcp-work-under-the-hood/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">AI models can work as fully capable agents</a> that interact with your commerce data.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://medium.com/@tahirbalarabe2/what-is-x-ucp-c1648f69b68a" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP is an open standard, not a proprietary platform</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">It covers the entire shopping journey from discovery to post-purchase</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://www.shopify.com/ucp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP provides core capabilities for common commerce functions and extensions for everything else</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://modelcontextprotocol.io/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The protocol is compatible with MCP for AI agent integration</a></span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+    <div class="space-y-8 mt-8">
+      
+      <div class="border-l-2 border-gray-300 pl-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Why UCP Matters for E-commerce
+        </h3>
+        <div class="prose max-w-none text-gray-700 mb-4">
+          <p class="mb-4"><a href="https://www.shopify.com/ucp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Commerce is complex—UCP provides the core capabilities for what&#039;s common and extensions for everything else</a>. <a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">APIs play a crucial role in helping ecommerce platforms and marketplaces share product information with AI tools in real-time</a>. By <a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">exposing structured data via API endpoints</a>, retailers can ensure their product feeds stay updated and consistent across multiple discovery channels.</p><p class="mb-4"><a href="https://www.techjockey.com/blog/universal-commerce-protocol-ucp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The protocol brings several benefits that make digital commerce simple</a>, including standardized communication between AI agents and commerce systems, reduced development complexity, and future-proof compatibility with emerging AI shopping platforms.</p>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-1" class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        UCP Architecture and Core Components
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4"><a href="https://ucp.dev/specification/overview" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The UCP specification</a> defines <strong>three core components</strong> that work together to enable agentic commerce: discovery, checkout, and authentication. Each component serves a specific function in the shopping journey and requires proper implementation for full UCP compliance.</p><p class="mb-4"><strong>Discovery</strong> enables AI agents to find and understand your products. <a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">By exposing structured data such as inventory levels, pricing, or attributes via API endpoints</a>, your store becomes discoverable to AI shopping assistants. This component handles product search, filtering, and detailed product information retrieval.</p><p class="mb-4"><strong>Checkout</strong> manages the transaction process. <a href="https://developers.google.com/merchant/ucp/guides/checkout/native" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The Native integration requires you to build a RESTful API that Google can call to create and manage checkout sessions</a>. This includes cart management, payment processing, and order confirmation.</p><p class="mb-4"><strong>Authentication</strong> ensures secure access and user identity management throughout the shopping journey. <a href="https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP establishes a common language for agents and systems to operate together</a> while maintaining security and privacy standards.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://ucp.dev/specification/overview" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP includes discovery, checkout, and authentication components</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Discovery requires structured product data via API endpoints</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://developers.google.com/merchant/ucp/guides/checkout/native" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Checkout needs RESTful APIs for session management</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://ucp.dev/specification/overview" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">All components must work together for full UCP compliance</a></span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+    <div class="space-y-8 mt-8">
+      
+      <div class="border-l-2 border-gray-300 pl-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Technical Specifications
+        </h3>
+        <div class="prose max-w-none text-gray-700 mb-4">
+          <p class="mb-4"><a href="https://medium.com/@tahirbalarabe2/what-is-x-ucp-c1648f69b68a" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP provides a standardized language and a set of functional primitives</a> that define how commerce data should be structured and exchanged. The protocol uses RESTful API patterns and JSON data formats to ensure broad compatibility with existing e-commerce systems.</p><p class="mb-4"><a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The protocol is designed to ensure consistency across multiple discovery channels</a>, which is key for AI systems to retrieve and match relevant listings. This standardization reduces the complexity of integrating with multiple AI shopping platforms.</p>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-2" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Technical Requirements for UCP Implementation
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4">Setting up UCP requires specific technical capabilities depending on your chosen implementation method. <a href="https://developers.google.com/merchant/ucp/guides/checkout/native" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The Native integration requires you to build a RESTful API</a> that handles product discovery, checkout sessions, and order management.</p><p class="mb-4"><strong>API Development Requirements:</strong>
+- RESTful API endpoints for product catalog exposure
+- JSON response formatting for structured product data
+- Session management for checkout flows
+- Webhook support for order status updates
+- Authentication and authorization mechanisms</p><p class="mb-4"><a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">APIs must expose structured data including inventory levels, pricing, and product attributes</a> in real-time. This ensures AI agents can access current product information and availability.</p><p class="mb-4"><strong>Platform Compatibility:</strong>
+<a href="https://www.ucp-commerce.com/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP can work with WooCommerce, Magento, BigCommerce, and custom ecommerce stores</a>. <a href="https://www.ucp-commerce.com/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The protocol acts as a universal translator</a> that connects different platforms to both <a href="https://www.ucp-commerce.com/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP (Google Gemini) and ACP (OpenAI ChatGPT) protocols</a>.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://developers.google.com/merchant/ucp/guides/checkout/native" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Native implementation requires building RESTful APIs</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">APIs must expose real-time structured product data</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://www.ucp-commerce.com/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP works across multiple e-commerce platforms</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://www.ucp-commerce.com/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The protocol supports both Google and OpenAI agent protocols</a></span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+    <div class="space-y-8 mt-8">
+      
+      <div class="border-l-2 border-gray-300 pl-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Development Resources
+        </h3>
+        <div class="prose max-w-none text-gray-700 mb-4">
+          <p class="mb-4"><a href="https://ucp.dev" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The official UCP documentation portal</a> provides comprehensive technical specifications and implementation guides. <a href="https://ucp.dev/specification/overview" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Developers can access the complete UCP specification</a> including API schemas, authentication flows, and integration patterns.</p><p class="mb-4">For developers familiar with GraphQL, <a href="https://github.com/blurrah/mcp-graphql" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Model Context Protocol servers can enable LLMs to interact with GraphQL APIs</a>, providing an alternative integration path for stores using GraphQL-based architectures.</p>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-3" class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Implementation Methods: Native vs Platform Integration
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4">There are two primary approaches to implementing UCP: <strong>native custom development</strong> or <strong>platform-based integration</strong>. Each method has different time, cost, and technical requirements.</p><p class="mb-4"><strong>Native Custom Development:</strong>
+<a href="https://developers.google.com/merchant/ucp/guides/checkout/native" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Building a native integration requires you to build a RESTful API that Google can call to create and manage checkout sessions</a>. This approach offers maximum flexibility and control but requires significant development resources. <a href="https://www.revize.app/blog/universal-commerce-protocol-ucp-shopify-developer-guide" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Custom development typically takes 6 months and costs $20,000 or more</a> for full implementation.</p><p class="mb-4">The native approach involves:
+- Designing and building RESTful API endpoints
+- Implementing UCP specification requirements
+- Creating authentication and authorization systems
+- Developing webhook handlers for order updates
+- Testing and validating against UCP standards</p><p class="mb-4"><strong>Platform Integration:</strong>
+<a href="https://www.americanbanker.com/payments/news/google-shopify-unveil-new-agentic-protocol-for-retailers" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Shopify offers built-in UCP support through their Agentic Plan</a>, making implementation faster for Shopify merchants. <a href="https://www.revize.app/blog/universal-commerce-protocol-ucp-shopify-developer-guide" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Platform integrations can make your store AI-discoverable in 2 weeks versus 6 months for custom development</a>.</p><p class="mb-4"><a href="https://www.ucp-commerce.com/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Universal translators exist that connect WooCommerce, Magento, and custom ecommerce stores to both UCP and ACP protocols</a>, enabling <strong>write once, sell everywhere</strong> functionality without rebuilding your entire commerce infrastructure.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://developers.google.com/merchant/ucp/guides/checkout/native" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Native implementation requires building custom RESTful APIs</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://www.revize.app/blog/universal-commerce-protocol-ucp-shopify-developer-guide" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Custom development takes 6 months and costs $20K+</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://www.americanbanker.com/payments/news/google-shopify-unveil-new-agentic-protocol-for-retailers" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Shopify offers built-in UCP support</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://www.revize.app/blog/universal-commerce-protocol-ucp-shopify-developer-guide" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Platform integrations reduce implementation time to 2 weeks</a></span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+    <div class="space-y-8 mt-8">
+      
+      <div class="border-l-2 border-gray-300 pl-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Choosing the Right Approach
+        </h3>
+        <div class="prose max-w-none text-gray-700 mb-4">
+          <p class="mb-4">Your implementation method should depend on your technical resources, timeline, and platform. Stores on <a href="https://www.shopify.com/ucp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Shopify can leverage native UCP support</a>, while stores on other platforms need either custom development or a universal translator solution.</p><p class="mb-4">Consider factors like development team availability, budget constraints, time-to-market requirements, and long-term maintenance capabilities when choosing your implementation path.</p>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-4" class="py-16 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Step-by-Step Setup Guide
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4"><strong>Step 1: Assess Your Current Infrastructure</strong></p><p class="mb-4">Begin by evaluating your existing e-commerce platform and API capabilities. <a href="https://www.shopify.com/ucp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Determine whether your platform has native UCP support</a> or if you&#039;ll need custom development. Review your product catalog structure, checkout flow, and authentication systems.</p><p class="mb-4"><strong>Step 2: Design Your API Architecture</strong></p><p class="mb-4"><a href="https://developers.google.com/merchant/ucp/guides/checkout/native" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Plan your RESTful API endpoints for product discovery and checkout management</a>. Map your existing product data to <a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP&#039;s standardized format for structured data including inventory, pricing, and attributes</a>.</p><p class="mb-4"><strong>Step 3: Implement Discovery Endpoints</strong></p><p class="mb-4">Create API endpoints that expose your product catalog to AI agents. <a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Ensure your APIs provide real-time data updates</a> so AI systems can retrieve current product information. Include comprehensive product attributes, images, pricing, and availability data.</p><p class="mb-4"><strong>Step 4: Build Checkout APIs</strong></p><p class="mb-4"><a href="https://developers.google.com/merchant/ucp/guides/checkout/native" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Develop RESTful APIs for creating and managing checkout sessions</a>. Implement session creation, cart management, payment processing, and order confirmation endpoints. Ensure proper error handling and validation.</p><p class="mb-4"><strong>Step 5: Configure Authentication</strong></p><p class="mb-4">Implement secure authentication mechanisms that comply with UCP standards. Set up API keys, OAuth flows, or other authentication methods as specified in <a href="https://ucp.dev/specification/overview" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">the UCP specification</a>.</p><p class="mb-4"><strong>Step 6: Test Integration</strong></p><p class="mb-4">Validate your implementation against <a href="https://ucp.dev/specification/overview" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP specification requirements</a>. Test discovery, checkout, and authentication flows with sample AI agent requests. Verify data consistency and error handling.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Start by assessing your platform&#039;s UCP compatibility</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://developers.google.com/merchant/ucp/guides/checkout/native" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Design RESTful APIs following UCP specifications</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Implement real-time product data endpoints</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://ucp.dev/specification/overview" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Test thoroughly against UCP standards</a></span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+    <div class="space-y-8 mt-8">
+      
+      <div class="border-l-2 border-gray-300 pl-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          API Endpoint Example
+        </h3>
+        <div class="prose max-w-none text-gray-700 mb-4">
+          <p class="mb-4">Here&#039;s a simplified example of a product discovery endpoint structure:</p><p class="mb-4">```json
+{
+  &quot;products&quot;: [
+    {
+      &quot;id&quot;: &quot;prod_123&quot;,
+      &quot;name&quot;: &quot;Product Name&quot;,
+      &quot;description&quot;: &quot;Product description&quot;,
+      &quot;price&quot;: {
+        &quot;amount&quot;: 29.99,
+        &quot;currency&quot;: &quot;USD&quot;
+      },
+      &quot;availability&quot;: &quot;in_stock&quot;,
+      &quot;inventory_count&quot;: 50,
+      &quot;attributes&quot;: {
+        &quot;color&quot;: &quot;blue&quot;,
+        &quot;size&quot;: &quot;medium&quot;
+      },
+      &quot;images&quot;: [
+        &quot;https://example.com/image1.jpg&quot;
+      ]
+    }
+  ]
+}
+```</p><p class="mb-4"><a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">This structured format ensures AI agents can properly parse and understand your product data</a>.</p>
+        </div>
+        
+        <div class="bg-gray-900 rounded-lg p-6 overflow-x-auto">
+          <pre class="text-sm text-gray-100"><code>// Product Discovery API Endpoint
+GET /api/ucp/products
+
+// Response format
+{
+  &quot;products&quot;: [
+    {
+      &quot;id&quot;: &quot;prod_123&quot;,
+      &quot;name&quot;: &quot;Product Name&quot;,
+      &quot;price&quot;: {
+        &quot;amount&quot;: 29.99,
+        &quot;currency&quot;: &quot;USD&quot;
+      },
+      &quot;availability&quot;: &quot;in_stock&quot;,
+      &quot;inventory_count&quot;: 50
+    }
+  ]
+}</code></pre>
+        </div>
+        
+      </div>
+      
+      <div class="border-l-2 border-gray-300 pl-6">
+        <h3 class="text-xl font-semibold text-gray-900 mb-3">
+          Checkout Session Example
+        </h3>
+        <div class="prose max-w-none text-gray-700 mb-4">
+          <p class="mb-4"><a href="https://developers.google.com/merchant/ucp/guides/checkout/native" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The checkout API must handle session creation and management</a>. Here&#039;s a basic structure:</p><p class="mb-4">```json
+POST /api/ucp/checkout/sessions
+{
+  &quot;items&quot;: [
+    {
+      &quot;product_id&quot;: &quot;prod_123&quot;,
+      &quot;quantity&quot;: 2
+    }
+  ],
+  &quot;customer&quot;: {
+    &quot;email&quot;: &quot;customer@example.com&quot;
+  }
+}</p><p class="mb-4">Response:
+{
+  &quot;session_id&quot;: &quot;sess_abc123&quot;,
+  &quot;checkout_url&quot;: &quot;https://store.com/checkout/sess_abc123&quot;,
+  &quot;expires_at&quot;: &quot;2026-01-15T10:30:00Z&quot;
+}
+```</p>
+        </div>
+        
+        <div class="bg-gray-900 rounded-lg p-6 overflow-x-auto">
+          <pre class="text-sm text-gray-100"><code>// Checkout Session Creation
+POST /api/ucp/checkout/sessions
+
+// Request body
+{
+  &quot;items&quot;: [
+    {&quot;product_id&quot;: &quot;prod_123&quot;, &quot;quantity&quot;: 2}
+  ],
+  &quot;customer&quot;: {
+    &quot;email&quot;: &quot;customer@example.com&quot;
+  }
+}
+
+// Response
+{
+  &quot;session_id&quot;: &quot;sess_abc123&quot;,
+  &quot;checkout_url&quot;: &quot;https://store.com/checkout/sess_abc123&quot;
+}</code></pre>
+        </div>
+        
+      </div>
+      
+    </div>
+    
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  <div id="section-5" class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">
+        Testing and Validation
+      </h2>
+
+      
+      <div class="prose prose-lg max-w-none text-gray-700 mb-8">
+        <p class="mb-4">After implementing your UCP integration, thorough testing is essential to ensure compliance and functionality. <a href="https://ucp.dev/specification/overview" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Validate your implementation against the official UCP specification</a> to confirm all required endpoints and data formats are correct.</p><p class="mb-4"><strong>Testing Checklist:</strong>
+- Product discovery API returns properly formatted JSON
+- <a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Real-time inventory and pricing data is accurate</a>
+- Checkout session creation and management works correctly
+- Authentication mechanisms function properly
+- Error handling provides meaningful responses
+- Webhook notifications fire correctly</p><p class="mb-4"><strong>Validation Tools:</strong>
+Use API testing tools like Postman or Insomnia to simulate AI agent requests. <a href="https://ucp.dev/specification/overview" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Test against the UCP specification requirements</a> to ensure your endpoints match expected behavior.</p><p class="mb-4"><strong>Common Issues:</strong>
+- Inconsistent data formatting across endpoints
+- Missing required product attributes
+- Slow API response times affecting AI agent performance
+- Authentication errors blocking agent access
+- Incomplete checkout flow implementation</p><p class="mb-4"><a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Ensuring consistency across multiple discovery channels is key for AI systems to retrieve and match relevant listings</a>. Test your integration with multiple AI platforms to verify broad compatibility.</p>
+      </div>
+      
+
+      
+      <div class="bg-primary/5 border-l-4 border-primary rounded-r-lg p-6 mb-8">
+        <h3 class="font-semibold text-gray-900 mb-3">Key Takeaways:</h3>
+        <ul class="space-y-2">
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://ucp.dev/specification/overview" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Validate against official UCP specifications</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700"><a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Test real-time data accuracy and consistency</a></span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Verify all required endpoints are functional</span>
+          </li>
+          
+          <li class="flex items-start">
+            <svg class="w-5 h-5 text-primary mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+            <span class="text-gray-700">Test with multiple AI platforms for compatibility</span>
+          </li>
+          
+        </ul>
+      </div>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+    </div>
+  </div>
+    
+  
+  <div class="py-20 bg-gradient-to-br from-gray-50 to-gray-100 border-t-2 border-primary">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 text-center">
+        Fast-Track Your UCP Implementation with Easy UCP Hub
+      </h2>
+
+      
+      <div class="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
+        While <a href="https://www.revize.app/blog/universal-commerce-protocol-ucp-shopify-developer-guide" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">custom UCP development typically takes 6 months and costs $20,000 or more</a>, there&#039;s a faster, more affordable path to making your store AI-discoverable. Easy UCP Hub eliminates the complexity of <a href="https://developers.google.com/merchant/ucp/guides/checkout/native" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">building RESTful APIs from scratch</a> and provides turnkey UCP integration for any e-commerce platform.
+      </div>
+      
+
+      <div class="prose prose-lg max-w-none text-gray-700 mb-12">
+        <strong>Easy UCP Hub</strong> is the fastest way to implement <a href="https://ucp.dev" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Universal Commerce Protocol</a> without the technical complexity or high costs of custom development. Our platform-agnostic solution works with <strong>WooCommerce, Magento, BigCommerce, and any custom e-commerce platform</strong>, making your store discoverable to AI shopping agents in just 2 weeks.
+
+<strong>Why Choose Easy UCP Hub:</strong>
+
+<strong>Lifetime Access at Launch Pricing:</strong> Get permanent UCP connectivity for $199-$999 (based on product catalog size), compared to the $49-$199/monthly fees competitors will charge when they launch. This one-time investment saves you thousands over the lifetime of your store.
+
+<strong>Platform-Agnostic Integration:</strong> Unlike <a href="https://www.shopify.com/ucp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Shopify&#039;s platform-specific UCP support</a>, Easy UCP Hub works with any e-commerce platform. <a href="https://www.ucp-commerce.com/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">We act as the universal translator connecting your store to both UCP (Google Gemini) and ACP (OpenAI ChatGPT) protocols</a>—write once, sell everywhere.
+
+<strong>2 Weeks vs 6 Months:</strong> <a href="https://www.revize.app/blog/universal-commerce-protocol-ucp-shopify-developer-guide" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Custom UCP development takes 6 months and costs $20K+</a>. Easy UCP Hub gets you live and AI-discoverable in just 2 weeks with zero custom development required.
+
+<strong>Complete UCP Compliance:</strong> We handle all <a href="https://ucp.dev/specification/overview" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">three core UCP components</a>—discovery, checkout, and authentication—so you don&#039;t have to <a href="https://developers.google.com/merchant/ucp/guides/checkout/native" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">build complex RESTful APIs</a> or worry about specification compliance.
+
+<strong>Future-Proof Your Store:</strong> As <a href="https://almcorp.com/blog/universal-commerce-protocol-agentic-commerce-guide-2026/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">the agentic commerce market grows toward $190-385 billion by 2030</a>, Easy UCP Hub ensures your store remains visible to every new AI shopping platform that emerges. One integration, unlimited AI agent compatibility.
+
+<strong>Real-Time Synchronization:</strong> <a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Our APIs expose structured data including inventory levels, pricing, and attributes in real-time</a>, ensuring AI agents always have current product information for accurate recommendations.
+
+<strong>No Technical Expertise Required:</strong> You don&#039;t need to understand <a href="https://developers.google.com/merchant/ucp/guides/checkout/native" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">RESTful API development</a> or <a href="https://ucp.dev/specification/overview" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP specifications</a>. Our simple setup wizard handles the technical complexity while you focus on running your business.
+      </div>
+
+      
+      <div class="grid md:grid-cols-2 gap-6 mb-12">
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Lifetime Access for One-Time Fee</h3>
+          <p class="text-gray-600">Pay once ($199-$999) for permanent UCP connectivity instead of ongoing monthly fees ($49-$199/mo) that competitors will charge</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Works with Any Platform</h3>
+          <p class="text-gray-600">Platform-agnostic solution for WooCommerce, Magento, BigCommerce, and custom stores—no platform lock-in</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">2-Week Implementation</h3>
+          <p class="text-gray-600">Get AI-discoverable in 2 weeks vs 6 months for custom development, saving $20K+ in development costs</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Multi-Protocol Support</h3>
+          <p class="text-gray-600">Connect to both UCP (Google) and ACP (OpenAI) protocols simultaneously for maximum AI agent reach</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Complete UCP Compliance</h3>
+          <p class="text-gray-600">Full implementation of discovery, checkout, and authentication components without custom API development</p>
+        </div>
+        
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Real-Time Synchronization</h3>
+          <p class="text-gray-600">Automatic product data updates ensure AI agents always have current inventory, pricing, and availability</p>
+        </div>
+        
+      </div>
+      
+
+      
+      <div class="text-center">
+        <a href="#signup" class="inline-flex items-center bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-lg font-semibold text-lg transition shadow-lg shadow-primary/25">
+          Join the AI commerce revolution today. Get lifetime UCP access at launch pricing before monthly subscription models become the industry standard. Make your store discoverable to the next generation of AI shopping agents in just 2 weeks.
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+      
+    </div>
+  </div>
+    
+  
+  
+  
+  
+  
+  <div id="faq" class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-12 text-center">
+        Frequently Asked Questions
+      </h2>
+      <div class="space-y-6">
+        
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">What is UCP and why does my store need it?</h3>
+          <div class="text-gray-600">Universal Commerce Protocol (UCP) is Google&#039;s new standard that makes your products discoverable to AI shopping agents like ChatGPT, Claude, and Gemini. Without UCP integration, AI agents can&#039;t find or recommend your products—meaning you&#039;re invisible to the fastest-growing shopping channel. UCP integration ensures AI shoppers discover your store when they ask for product recommendations.</div>
+        </div>
+        
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Which e-commerce platforms do you support?</h3>
+          <div class="text-gray-600">Easy UCP Hub works with any e-commerce platform—WooCommerce, Magento, BigCommerce, custom builds, and more. We&#039;re platform-agnostic by design. If you sell products online, we can integrate UCP for your store regardless of your platform choice.</div>
+        </div>
+        
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">How long does implementation actually take?</h3>
+          <div class="text-gray-600">Your store becomes AI-discoverable within 2 weeks from signup. This includes our team setting up your UCP endpoint, configuring your product catalog, testing the integration, and going live. Compare this to 6+ months for custom development or indefinite waiting for platform-native UCP support.</div>
+        </div>
+        
+        <div class="border-b border-gray-200 pb-6">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">What if my platform adds native UCP support later?</h3>
+          <div class="text-gray-600">You keep your lifetime Easy UCP Hub access regardless. Even if WooCommerce or Magento eventually adds native UCP, you&#039;ve already captured months or years of AI commerce sales. Plus, our multi-platform approach means you&#039;re never locked in—migrate platforms without losing UCP integration.</div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+    
+  
+
+  
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Set Up Universal Commerce Protocol",
+  "description": "Complete guide to implementing Universal Commerce Protocol for AI-powered commerce",
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Understand UCP Architecture",
+      "text": "Learn the core components of Universal Commerce Protocol"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Choose Integration Method",
+      "text": "Select between native API implementation or platform integration"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Implement Discovery Endpoints",
+      "text": "Set up product discovery APIs for AI agents"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Configure Checkout Flow",
+      "text": "Build RESTful checkout APIs for transaction processing"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Test and Deploy",
+      "text": "Validate UCP implementation and go live"
+    }
+  ]
+}
+  </script>
+
+  <!-- Related Articles Section -->
+  <div class="py-16 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Related Articles</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        
+          <a href="/ai-commerce-protocol" class="block group">
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-primary hover:shadow-md transition-all">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-base font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    AI Commerce Protocol: The Universal Language for Agentic Shopping
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="/bigcommerce-ai-shopping-integration" class="block group">
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-primary hover:shadow-md transition-all">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-base font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    BigCommerce AI Shopping Integration: Complete Guide to Universal Commerce Protocol
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="/bigcommerce-universal-commerce-protocol" class="block group">
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-primary hover:shadow-md transition-all">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-base font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    BigCommerce Universal Commerce Protocol: Complete Implementation Guide
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a href="/conversational-commerce-protocol" class="block group">
+            <div class="bg-white border border-gray-200 rounded-lg p-5 hover:border-primary hover:shadow-md transition-all">
+              <div class="flex items-start">
+                <div class="flex-shrink-0">
+                  <svg class="w-5 h-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="ml-3">
+                  <h3 class="text-base font-semibold text-gray-900 group-hover:text-primary transition-colors">
+                    Conversational Commerce Protocol: The Universal Language for AI Shopping
+                  </h3>
+                </div>
+              </div>
+            </div>
+          </a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+
+        <!-- Column 1: About -->
+        <div>
+          <h3 class="text-white font-bold mb-4">About</h3>
+          <p class="text-sm mb-4">Easy UCP helps ecommerce stores integrate with Universal Commerce Protocol - making them discoverable by AI shopping agents like ChatGPT, Gemini, and Claude.</p>
+          <a href="mailto:hello@easyucp.com" class="text-teal-400 hover:text-teal-300 text-sm">hello@easyucp.com</a>
+        </div>
+
+        <!-- Column 2: Learn About UCP -->
+        <div>
+          <h3 class="text-white font-bold mb-4">Learn About UCP</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/understanding-ucp-protocol" class="hover:text-teal-400">What is UCP?</a></li>
+            <li><a href="/how-does-mcp-work" class="hover:text-teal-400">How UCP Works</a></li>
+            <li><a href="/ucp-for-beginners" class="hover:text-teal-400">UCP for Beginners</a></li>
+            <li><a href="/ai-shopping-agents-explained" class="hover:text-teal-400">AI Shopping Explained</a></li>
+            <li><a href="/agentic-commerce-explained" class="hover:text-teal-400">Agentic Commerce</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Platform Guides -->
+        <div>
+          <h3 class="text-white font-bold mb-4">Platform Guides</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/ucp-for-woocommerce" class="hover:text-teal-400">UCP for WooCommerce</a></li>
+            <li><a href="/ucp-for-shopify" class="hover:text-teal-400">UCP for Shopify</a></li>
+            <li><a href="/ucp-for-magento" class="hover:text-teal-400">UCP for Magento</a></li>
+            <li><a href="/resources" class="hover:text-teal-400 font-medium">All Guides →</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Getting Started -->
+        <div>
+          <h3 class="text-white font-bold mb-4">Getting Started</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/ucp-quick-start-guide" class="hover:text-teal-400">Quick Start Guide</a></li>
+            <li><a href="/ucp-integration-checklist" class="hover:text-teal-400">Integration Checklist</a></li>
+            <li><a href="/ucp-implementation-steps" class="hover:text-teal-400">Implementation Steps</a></li>
+            <li><a href="/#signup" class="hover:text-teal-400 font-medium text-teal-400">Join Founder's List →</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Resources -->
+        <div>
+          <h3 class="text-white font-bold mb-4">Resources</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/resources" class="hover:text-teal-400">All Articles</a></li>
+            <li><a href="/privacy" class="hover:text-teal-400">Privacy Policy</a></li>
+            <li><a href="/terms" class="hover:text-teal-400">Terms of Service</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="mt-12 pt-8 border-t border-gray-800 text-center text-sm">
+        <p>&copy; 2026 Easy UCP. Making ecommerce stores AI-discoverable.</p>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>

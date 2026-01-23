@@ -533,6 +533,25 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'landing.html'));
 });
 
+// Serve HTML pages (blog posts, resources, etc.)
+app.get('/:page', (req, res, next) => {
+  const page = req.params.page;
+
+  // Skip if it's an API route or has extension
+  if (page.includes('.') || page.startsWith('api') || page.startsWith('auth')) {
+    return next();
+  }
+
+  const htmlPath = path.join(__dirname, 'public', `${page}.html`);
+
+  // Check if file exists
+  res.sendFile(htmlPath, (err) => {
+    if (err) {
+      next(); // Pass to 404 handler
+    }
+  });
+});
+
 // 404
 app.use((_req, res) => {
   res.status(404).json({ error: 'Not found' });
