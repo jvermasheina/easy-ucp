@@ -11,6 +11,7 @@ import { fileURLToPath } from 'url';
 import expressLayouts from 'express-ejs-layouts';
 import shopifyAuth from './routes/shopify-auth.js';
 import ucpRoutes from './routes/ucp.js';
+import { injectLayout } from './middleware/inject-layout.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -36,6 +37,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+
+// Inject header/footer dynamically into HTML responses
+app.use(injectLayout);
 
 // Serve static files
 app.use('/static', express.static(path.join(__dirname, 'public')));
