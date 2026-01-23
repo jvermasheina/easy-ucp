@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title || 'Easy UCP Hub - Your Store, Discoverable by AI' %></title>
+  <% if (typeof description !== 'undefined') { %>
+  <meta name="description" content="<%= description %>">
+  <% } %>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white">
+  <%- include('partials/header') %>
+
+  <%- body %>
+
+  <%- include('partials/footer') %>
+</body>
+</html>
