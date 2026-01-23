@@ -8,6 +8,7 @@ import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import fs from 'fs/promises';
 import expressLayouts from 'express-ejs-layouts';
 import shopifyAuth from './routes/shopify-auth.js';
 import ucpRoutes from './routes/ucp.js';
@@ -45,8 +46,13 @@ app.use(injectLayout);
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
 // Landing page route
-app.get('/landing', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'landing.html'));
+app.get('/landing', async (req, res) => {
+  try {
+    const html = await fs.readFile(path.join(__dirname, 'public', 'landing.html'), 'utf8');
+    res.send(html);
+  } catch (err) {
+    res.status(404).send('Page not found');
+  }
 });
 
 // Health check
@@ -61,7 +67,7 @@ app.use('/auth', shopifyAuth);
 app.use('/', ucpRoutes);
 
 // Serve landing page for root domain
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
   // If accessed with shop parameter, show Shopify success page
   const shop = req.query.shop;
   if (shop) {
@@ -541,11 +547,16 @@ app.get('/', (req, res) => {
   }
 
   // Default: serve landing page
-  res.sendFile(path.join(__dirname, 'public', 'landing.html'));
+  try {
+    const html = await fs.readFile(path.join(__dirname, 'public', 'landing.html'), 'utf8');
+    res.send(html);
+  } catch (err) {
+    res.status(404).send('Page not found');
+  }
 });
 
 // Serve HTML pages (blog posts, resources, etc.)
-app.get('/:page', (req, res, next) => {
+app.get('/:page', async (req, res, next) => {
   const page = req.params.page;
 
   // Skip if it's an API route or has extension
@@ -555,12 +566,12 @@ app.get('/:page', (req, res, next) => {
 
   const htmlPath = path.join(__dirname, 'public', `${page}.html`);
 
-  // Check if file exists
-  res.sendFile(htmlPath, (err) => {
-    if (err) {
-      next(); // Pass to 404 handler
-    }
-  });
+  try {
+    const html = await fs.readFile(htmlPath, 'utf8');
+    res.send(html);
+  } catch (err) {
+    next(); // Pass to 404 handler
+  }
 });
 
 // 404
