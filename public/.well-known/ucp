@@ -1,0 +1,14 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Easy Google UCP Shop",
+  "ucp_version": "2026-01-11",
+  "services": [
+    {
+      "@type": "Service",
+      "serviceType": "dev.ucp.shopping",
+      "url": "/api/ucp/v1"
+    }
+  ],
+  "capabilities": ["checkout"]
+}

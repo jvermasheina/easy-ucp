@@ -52,10 +52,17 @@ export interface UCPAnalytics {
   created_at: string;
 }
 
+// Table names with prefix to avoid conflicts in shared Supabase project
+const TABLES = {
+  SHOPS: 'easy_ucp_shops',
+  CHECKOUT_SESSIONS: 'easy_ucp_checkout_sessions',
+  ANALYTICS: 'easy_ucp_analytics',
+} as const;
+
 // Helper functions
 export async function getShop(shopDomain: string): Promise<Shop | null> {
   const { data, error } = await supabase
-    .from('shops')
+    .from(TABLES.SHOPS)
     .select('*')
     .eq('shop_domain', shopDomain)
     .single();
@@ -70,7 +77,7 @@ export async function getShop(shopDomain: string): Promise<Shop | null> {
 
 export async function createShop(shop: Partial<Shop>): Promise<Shop | null> {
   const { data, error } = await supabase
-    .from('shops')
+    .from(TABLES.SHOPS)
     .insert([shop])
     .select()
     .single();
@@ -85,7 +92,7 @@ export async function createShop(shop: Partial<Shop>): Promise<Shop | null> {
 
 export async function updateShop(shopDomain: string, updates: Partial<Shop>): Promise<Shop | null> {
   const { data, error } = await supabase
-    .from('shops')
+    .from(TABLES.SHOPS)
     .update({ ...updates, updated_at: new Date().toISOString() })
     .eq('shop_domain', shopDomain)
     .select()
@@ -101,7 +108,7 @@ export async function updateShop(shopDomain: string, updates: Partial<Shop>): Pr
 
 export async function createCheckoutSession(session: Partial<CheckoutSession>): Promise<CheckoutSession | null> {
   const { data, error } = await supabase
-    .from('checkout_sessions')
+    .from(TABLES.CHECKOUT_SESSIONS)
     .insert([session])
     .select()
     .single();
@@ -116,7 +123,7 @@ export async function createCheckoutSession(session: Partial<CheckoutSession>): 
 
 export async function getCheckoutSession(sessionId: string): Promise<CheckoutSession | null> {
   const { data, error } = await supabase
-    .from('checkout_sessions')
+    .from(TABLES.CHECKOUT_SESSIONS)
     .select('*')
     .eq('session_id', sessionId)
     .single();
@@ -134,7 +141,7 @@ export async function updateCheckoutSession(
   updates: Partial<CheckoutSession>
 ): Promise<CheckoutSession | null> {
   const { data, error } = await supabase
-    .from('checkout_sessions')
+    .from(TABLES.CHECKOUT_SESSIONS)
     .update({ ...updates, updated_at: new Date().toISOString() })
     .eq('session_id', sessionId)
     .select()
@@ -150,7 +157,7 @@ export async function updateCheckoutSession(
 
 export async function trackEvent(event: Partial<UCPAnalytics>): Promise<void> {
   const { error } = await supabase
-    .from('ucp_analytics')
+    .from(TABLES.ANALYTICS)
     .insert([event]);
 
   if (error) {
@@ -163,7 +170,7 @@ export async function getMonthlyUsage(shopId: string): Promise<number> {
   const startOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
 
   const { data, error } = await supabase
-    .from('checkout_sessions')
+    .from(TABLES.CHECKOUT_SESSIONS)
     .select('id', { count: 'exact' })
     .eq('shop_id', shopId)
     .gte('created_at', startOfMonth.toISOString());

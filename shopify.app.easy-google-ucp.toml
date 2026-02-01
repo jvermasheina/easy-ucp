@@ -1,0 +1,32 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "413c15a706dc04d18f5c516152086bf9"
+name = "Easy Google UCP"
+application_url = "https://easy-ucp.railway.app"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+include_config_on_deploy = true
+dev_store_url = "size-chart-dev-2.myshopify.com"
+
+[webhooks]
+api_version = "2026-04"
+
+[[webhooks.subscriptions]]
+topics = ["app/uninstalled"]
+uri = "/api/webhooks"
+
+[[webhooks.subscriptions]]
+topics = ["app_subscriptions/update"]
+uri = "/api/webhooks"
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_customers,read_products,write_orders"
+
+[auth]
+redirect_urls = [
+  "https://easy-ucp.railway.app/auth/shopify/callback",
+  "http://localhost:3000/auth/shopify/callback"
+]
