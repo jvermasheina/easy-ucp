@@ -5,17 +5,17 @@ const router = express.Router();
 
 /**
  * UCP Business Profile - /.well-known/ucp
- * Google discovery endpoint
+ * Global discovery endpoint (platform-level)
  */
 router.get('/.well-known/ucp', async (req, res) => {
-  // Use HTTPS in production (Railway uses reverse proxy)
   const protocol = req.headers['x-forwarded-proto'] || req.protocol;
   const baseUrl = `${protocol}://${req.headers.host}`;
 
   res.json({
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Easy UCP Store",
+    "name": "Easy UCP",
+    "description": "Platform-agnostic UCP endpoints for any e-commerce store. Upload your product catalog and become discoverable by AI shopping agents.",
     "ucp_version": "2026-01-11",
     "services": [
       {
@@ -24,12 +24,204 @@ router.get('/.well-known/ucp', async (req, res) => {
         "url": `${baseUrl}/api/ucp/v1`
       }
     ],
-    "capabilities": ["checkout"]
+    "capabilities": ["product_discovery", "catalog_browse"],
+    "merchants_endpoint": `${baseUrl}/api/ucp/v1/merchants`
   });
 });
 
 /**
- * Create checkout session
+ * UCP Business Profile - /.well-known/ucp/:slug
+ * Merchant-specific UCP discovery endpoint
+ */
+router.get('/.well-known/ucp/:slug', async (req, res) => {
+  const { slug } = req.params;
+  const protocol = req.headers['x-forwarded-proto'] || req.protocol;
+  const baseUrl = `${protocol}://${req.headers.host}`;
+
+  const { data: merchant, error } = await supabase
+    .from('easy_ucp_merchants')
+    .select('id, store_name, store_url, slug, product_count')
+    .eq('slug', slug)
+    .eq('is_active', true)
+    .single();
+
+  if (error || !merchant) {
+    return res.status(404).json({ error: 'Merchant not found' });
+  }
+
+  res.json({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": merchant.store_name,
+    "url": merchant.store_url,
+    "ucp_version": "2026-01-11",
+    "services": [
+      {
+        "@type": "Service",
+        "serviceType": "dev.ucp.shopping",
+        "url": `${baseUrl}/api/ucp/v1/${merchant.slug}/products`
+      }
+    ],
+    "capabilities": ["product_discovery", "catalog_browse"],
+    "product_count": merchant.product_count,
+    "checkout_info": {
+      "type": "redirect",
+      "description": "Customers are redirected to the merchant's own checkout. Each product includes a 'url' field with the direct purchase link."
+    }
+  });
+});
+
+/**
+ * GET /api/ucp/v1/merchants
+ * List all active merchants with products
+ */
+router.get('/api/ucp/v1/merchants', async (req, res) => {
+  const protocol = req.headers['x-forwarded-proto'] || req.protocol;
+  const baseUrl = `${protocol}://${req.headers.host}`;
+
+  const { data: merchants, error } = await supabase
+    .from('easy_ucp_merchants')
+    .select('store_name, store_url, slug, product_count')
+    .eq('is_active', true)
+    .gt('product_count', 0)
+    .order('store_name');
+
+  if (error) {
+    return res.status(500).json({ error: 'Failed to fetch merchants' });
+  }
+
+  res.json({
+    merchants: merchants.map(m => ({
+      name: m.store_name,
+      url: m.store_url,
+      ucp_profile: `${baseUrl}/.well-known/ucp/${m.slug}`,
+      catalog: `${baseUrl}/api/ucp/v1/${m.slug}/products`,
+      product_count: m.product_count
+    }))
+  });
+});
+
+/**
+ * GET /api/ucp/v1/:slug/products
+ * UCP-compliant product catalog for a specific merchant
+ * This is what AI agents consume to discover products
+ */
+router.get('/api/ucp/v1/:slug/products', async (req, res) => {
+  const { slug } = req.params;
+  const protocol = req.headers['x-forwarded-proto'] || req.protocol;
+  const baseUrl = `${protocol}://${req.headers.host}`;
+
+  // Find merchant
+  const { data: merchant, error: merchantError } = await supabase
+    .from('easy_ucp_merchants')
+    .select('id, store_name, store_url, slug')
+    .eq('slug', slug)
+    .eq('is_active', true)
+    .single();
+
+  if (merchantError || !merchant) {
+    return res.status(404).json({ error: 'Merchant not found' });
+  }
+
+  // Pagination
+  const page = parseInt(req.query.page) || 1;
+  const limit = Math.min(parseInt(req.query.limit) || 100, 500);
+  const offset = (page - 1) * limit;
+
+  // Optional filters
+  const category = req.query.category;
+  const query = req.query.q;
+
+  let dbQuery = supabase
+    .from('easy_ucp_products')
+    .select('*', { count: 'exact' })
+    .eq('merchant_id', merchant.id)
+    .eq('active', true);
+
+  if (category) {
+    dbQuery = dbQuery.eq('category', category);
+  }
+  if (query) {
+    dbQuery = dbQuery.or(`name.ilike.%${query}%,description.ilike.%${query}%`);
+  }
+
+  const { data: products, error: productsError, count } = await dbQuery
+    .order('name')
+    .range(offset, offset + limit - 1);
+
+  if (productsError) {
+    return res.status(500).json({ error: 'Failed to fetch products' });
+  }
+
+  // Log this catalog access for analytics
+  if (supabase) {
+    supabase
+      .from('easy_ucp_analytics')
+      .insert([{
+        shop_id: null,
+        event_type: 'catalog_view',
+        metadata: {
+          merchant_slug: slug,
+          merchant_id: merchant.id,
+          user_agent: req.headers['user-agent'],
+          query: query || null,
+          category: category || null,
+          page
+        }
+      }])
+      .then(() => {})
+      .catch(() => {});
+  }
+
+  // Return UCP-compliant product listings with JSON-LD
+  res.json({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": `${merchant.store_name} Product Catalog`,
+    "url": merchant.store_url,
+    "numberOfItems": count,
+    "itemListElement": products.map((product, index) => ({
+      "@type": "ListItem",
+      "position": offset + index + 1,
+      "item": {
+        "@type": "Product",
+        "name": product.name,
+        "description": product.description,
+        "sku": product.sku,
+        "category": product.category,
+        "brand": product.brand ? { "@type": "Brand", "name": product.brand } : undefined,
+        "image": product.image_url,
+        "url": product.url,
+        "offers": {
+          "@type": "Offer",
+          "price": product.price,
+          "priceCurrency": product.currency,
+          "availability": "https://schema.org/InStock",
+          "url": product.url,
+          "seller": {
+            "@type": "Organization",
+            "name": merchant.store_name,
+            "url": merchant.store_url
+          }
+        }
+      }
+    })),
+    "pagination": {
+      "page": page,
+      "limit": limit,
+      "total": count,
+      "total_pages": Math.ceil(count / limit),
+      "next": page * limit < count ? `${baseUrl}/api/ucp/v1/${slug}/products?page=${page + 1}&limit=${limit}` : null
+    },
+    "checkout_info": {
+      "type": "redirect",
+      "description": "To purchase, follow the product 'url' field to the merchant's checkout page."
+    }
+  });
+});
+
+/**
+ * Create checkout session (kept for backward compatibility)
  * POST /api/ucp/v1/checkout-sessions
  */
 router.post('/api/ucp/v1/checkout-sessions', async (req, res) => {
@@ -42,10 +234,8 @@ router.post('/api/ucp/v1/checkout-sessions', async (req, res) => {
       });
     }
 
-    // Create session ID
     const sessionId = `ucp_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
 
-    // Store in Supabase
     const { data, error } = await supabase
       .from('easy_ucp_checkout_sessions')
       .insert([{

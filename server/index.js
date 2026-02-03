@@ -12,6 +12,8 @@ import fs from 'fs/promises';
 import expressLayouts from 'express-ejs-layouts';
 import shopifyAuth from './routes/shopify-auth.js';
 import ucpRoutes from './routes/ucp.js';
+import productsUpload from './routes/products-upload.js';
+import merchantAuth from './routes/merchant-auth.js';
 import { injectLayout } from './middleware/inject-layout.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -65,6 +67,12 @@ app.use('/auth', shopifyAuth);
 
 // UCP routes
 app.use('/', ucpRoutes);
+
+// CSV/JSON product upload routes
+app.use('/', productsUpload);
+
+// Merchant registration routes
+app.use('/', merchantAuth);
 
 // Serve landing page for root domain
 app.get('/', async (req, res) => {
@@ -585,14 +593,26 @@ app.use((err, _req, res, _next) => {
   res.status(500).json({ error: 'Internal server error' });
 });
 
+// Merchant dashboard route
+app.get('/dashboard/:slug', async (req, res) => {
+  try {
+    const html = await fs.readFile(path.join(__dirname, 'public', 'dashboard.html'), 'utf8');
+    res.send(html);
+  } catch (err) {
+    res.status(404).send('Dashboard not found');
+  }
+});
+
 // Start server
 app.listen(PORT, () => {
   console.log('');
-  console.log('🚀 Easy Google UCP Server Running');
-  console.log(`📍 http://localhost:${PORT}`);
+  console.log('Easy UCP Server Running');
+  console.log(`http://localhost:${PORT}`);
   console.log('');
-  console.log('Next steps:');
-  console.log('  1. Install app: http://localhost:' + PORT + '/auth/shopify?shop=YOUR_SHOP.myshopify.com');
-  console.log('  2. Test UCP: curl http://localhost:' + PORT + '/.well-known/ucp');
+  console.log('Endpoints:');
+  console.log(`  UCP Discovery:  http://localhost:${PORT}/.well-known/ucp`);
+  console.log(`  Register:       POST http://localhost:${PORT}/api/merchants/register`);
+  console.log(`  Upload CSV:     POST http://localhost:${PORT}/api/products/upload`);
+  console.log(`  Upload JSON:    POST http://localhost:${PORT}/api/products/json`);
   console.log('');
 });

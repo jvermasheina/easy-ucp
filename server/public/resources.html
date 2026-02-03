@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UCP Resources & Guides - Easy UCP</title>
-  <meta name="description" content="Complete guide to Universal Commerce Protocol. Learn how to integrate UCP with your ecommerce store and make it discoverable by AI shopping agents.">
+  <meta name="description" content="Learn about Universal Commerce Protocol (UCP) and how to make your store discoverable by AI shopping agents like ChatGPT, Claude, and Gemini.">
 
   <!-- Privacy-friendly analytics by Plausible -->
   <script async src="https://plausible.io/js/pa-a3ozIUstaRW5J0m3xd7je.js"></script>
@@ -14,591 +14,116 @@
   </script>
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#14B8A6',
+            'primary-dark': '#0D9488',
+          }
+        }
+      }
+    }
+  </script>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
   </style>
 </head>
-<body class="bg-gray-50">
-  <!-- Header -->
-  <header class="bg-white border-b border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-      <nav class="flex items-center justify-between">
-        <a href="/" class="text-2xl font-bold text-teal-600">Easy UCP</a>
-        <div class="flex items-center gap-6">
-          <a href="/resources" class="text-gray-700 hover:text-teal-600 font-medium">Resources</a>
-          <a href="/#signup" class="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 font-medium">Join Waitlist</a>
-        </div>
-      </nav>
+<body class="bg-white">
+
+  <!-- Navigation -->
+  <nav class="bg-white border-b border-gray-100">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+      <a href="/" class="text-xl font-bold text-gray-900">Easy UCP</a>
+      <div class="flex items-center gap-6">
+        <a href="/#how-it-works" class="text-sm text-gray-600 hover:text-gray-900">How it works</a>
+        <a href="/resources" class="text-sm font-medium text-primary">Resources</a>
+        <a href="/dashboard" class="text-sm font-medium text-primary hover:text-primary-dark">Dashboard</a>
+      </div>
     </div>
-  </header>
+  </nav>
 
   <!-- Hero -->
-  <div class="bg-gradient-to-br from-teal-50 to-blue-50 py-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-        Universal Commerce Protocol
-        <span class="block text-teal-600">Knowledge Base</span>
+  <div class="bg-gradient-to-b from-gray-50 to-white py-16">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">
+        UCP Resources & Guides
       </h1>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Everything you need to know about UCP and making your store discoverable by AI shopping agents
+      <p class="text-lg text-gray-600">
+        Learn about the Universal Commerce Protocol and how AI shopping works
       </p>
-      <p class="mt-4 text-sm text-gray-500">109 comprehensive guides and tutorials</p>
     </div>
   </div>
 
-  <!-- Content -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    
-          <div class="mb-16">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-teal-500">Understanding UCP</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              
-            <a href="/agentic-commerce-explained" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Agentic Commerce Explained: How AI Agents Are Transforming Online Shopping</h3>
-              
-            </a>
-          
-            <a href="/ai-commerce-protocol" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">AI Commerce Protocol: The Universal Language for Agentic Shopping</h3>
-              
-            </a>
-          
-            <a href="/ai-shopping-agents-explained" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">AI Shopping Agents Explained: The Future of E-Commerce</h3>
-              
-            </a>
-          
-            <a href="/bigcommerce-ai-shopping-integration" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">BigCommerce AI Shopping Integration: Complete Guide to Universal Commerce Protocol</h3>
-              
-            </a>
-          
-            <a href="/bigcommerce-universal-commerce-protocol" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">BigCommerce Universal Commerce Protocol: Complete Implementation Guide</h3>
-              
-            </a>
-          
-            <a href="/conversational-commerce-protocol" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Conversational Commerce Protocol: The Universal Language for AI Shopping</h3>
-              
-            </a>
-          
-            <a href="/how-does-mcp-work" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How Does MCP Work? Understanding Model Context Protocol</h3>
-              
-            </a>
-          
-            <a href="/how-to-add-ucp-to-ecommerce-store" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Add Universal Commerce Protocol to Your Ecommerce Store</h3>
-              
-            </a>
-          
-            <a href="/how-to-implement-universal-commerce-protocol" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Implement Universal Commerce Protocol: Complete Technical Guide</h3>
-              
-            </a>
-          
-            <a href="/how-to-integrate-universal-commerce-protocol-ucp" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Integrate Universal Commerce Protocol (UCP): A Complete Technical Guide</h3>
-              
-            </a>
-          
-            <a href="/set-up-universal-commerce-protocol" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Set Up Universal Commerce Protocol (UCP) for AI-Powered Shopping</h3>
-              
-            </a>
-          
-            <a href="/shopping-agent-protocol" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Shopping Agent Protocol: How AI Agents Shop on Your Store</h3>
-              
-            </a>
-          
-            <a href="/ucp-advantages-universal-commerce-protocol-benefits" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP Advantages: Why Universal Commerce Protocol Is Transforming E-Commerce</h3>
-              
-            </a>
-          
-            <a href="/ucp-benefits-universal-commerce-protocol" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Universal Commerce Protocol (UCP) Benefits: The Complete Guide</h3>
-              
-            </a>
-          
-            <a href="/ucp-endpoints-guide" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Understanding UCP Endpoints: The Foundation of Universal Commerce</h3>
-              
-            </a>
-          
-            <a href="/ucp-for-beginners" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP for Beginners: Your Complete Guide to Universal Commerce Protocol</h3>
-              
-            </a>
-          
-            <a href="/ucp-protocol-explained" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP Protocol Explained: The Open Standard Powering AI Commerce</h3>
-              
-            </a>
-          
-            <a href="/ucp-protocol-overview" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Universal Commerce Protocol (UCP): The Complete Technical Overview</h3>
-              
-            </a>
-          
-            <a href="/ucp-protocol-standards" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP Protocol Standards: The Open Standard Powering AI Commerce</h3>
-              
-            </a>
-          
-            <a href="/ucp-quick-start-guide" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP Quick Start Guide: Implement Google&#039;s Universal Commerce Protocol in 2 Weeks</h3>
-              
-            </a>
-          
-            <a href="/ucp-specification-guide" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Understanding the UCP Specification: The Open Standard for AI-Discoverable Commerce</h3>
-              
-            </a>
-          
-            <a href="/ucp-technical-documentation" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP Technical Documentation: Complete Protocol Specification</h3>
-              
-            </a>
-          
-            <a href="/understanding-ucp-protocol" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Understanding Universal Commerce Protocol (UCP): The Open Standard Powering AI Shopping</h3>
-              
-            </a>
-          
-            <a href="/universal-commerce-protocol-guide" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Universal Commerce Protocol (UCP): The Complete Implementation Guide</h3>
-              
-            </a>
-          
-            <a href="/universal-commerce-protocol-spec" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Universal Commerce Protocol Specification: The Complete Technical Guide</h3>
-              
-            </a>
-          
-            <a href="/universal-commerce-protocol-vs-custom-api" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Universal Commerce Protocol vs Custom API: The Complete Technical Comparison</h3>
-              
-            </a>
-          
-            <a href="/what-is-agentic-commerce" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">What is Agentic Commerce?</h3>
-              
-            </a>
-          
-            <a href="/what-is-ai-shopping" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">What is AI Shopping? Your Complete Guide to AI-Powered Commerce</h3>
-              
-            </a>
-          
-            <a href="/what-is-ucp-protocol" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">What is UCP Protocol? The Open Standard Powering AI Commerce</h3>
-              
-            </a>
-          
-            <a href="/what-is-universal-commerce-protocol" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">What is Universal Commerce Protocol (UCP)?</h3>
-              
-            </a>
-          
-            <a href="/why-use-ucp-protocol" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Why Use UCP Protocol: Enabling AI Agents to Shop Your Store</h3>
-              
-            </a>
-          
-            </div>
-          </div>
-        
-          <div class="mb-16">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-teal-500">Platform Guides</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              
-            <a href="/add-ucp-to-shopify-store" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Add UCP to Your Shopify Store: Complete Implementation Guide</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Shopify</span>
-            </a>
-          
-            <a href="/connect-magento-to-ai-shopping-agents" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Connect Your Magento Store to AI Shopping Agents</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Magento</span>
-            </a>
-          
-            <a href="/conversational-checkout-alternative-woocommerce" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Conversational Checkout Alternative for WooCommerce: The Complete UCP Guide</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">WooCommerce</span>
-            </a>
-          
-            <a href="/integrate-ucp-with-magento" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Integrate UCP with Magento: Complete Implementation Guide</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Magento</span>
-            </a>
-          
-            <a href="/integrate-ucp-with-shopify" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Integrate UCP with Shopify: Complete Implementation Guide</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Shopify</span>
-            </a>
-          
-            <a href="/integrate-ucp-with-woocommerce" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Integrate UCP with WooCommerce: Complete Implementation Guide</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">WooCommerce</span>
-            </a>
-          
-            <a href="/magento-ai-shopping" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Magento AI Shopping: The Complete Guide to AI-Powered Commerce</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Magento</span>
-            </a>
-          
-            <a href="/magento-conversational-commerce-ucp-guide" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Magento Conversational Commerce: The Complete UCP Implementation Guide</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Magento</span>
-            </a>
-          
-            <a href="/magento-shopping-agents" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Magento Shopping Agents: The Complete Guide to AI-Powered Commerce</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Magento</span>
-            </a>
-          
-            <a href="/magento-ucp-extension" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Magento UCP Extension: Connect Your Store to AI Shopping Agents</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Magento</span>
-            </a>
-          
-            <a href="/magento-universal-commerce-protocol" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Magento Universal Commerce Protocol: Complete Implementation Guide</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Magento</span>
-            </a>
-          
-            <a href="/make-woocommerce-store-work-with-chatgpt" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Make Your WooCommerce Store Work with ChatGPT</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">WooCommerce</span>
-            </a>
-          
-            <a href="/shopify-agentic-commerce-ucp-guide" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Shopify Agentic Commerce: How UCP Enables AI Agents to Shop Your Store</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Shopify</span>
-            </a>
-          
-            <a href="/shopify-ai-agents" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Shopify AI Agents: The Complete Guide to Agentic Commerce</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Shopify</span>
-            </a>
-          
-            <a href="/shopify-ai-shopping-integration" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Shopify AI Shopping Integration: Your Complete Guide to Universal Commerce Protocol</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Shopify</span>
-            </a>
-          
-            <a href="/shopify-chatgpt-integration-ucp-guide" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Shopify ChatGPT Integration: The Complete UCP Guide</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Shopify</span>
-            </a>
-          
-            <a href="/shopify-ucp-app-alternative" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Shopify UCP App Alternative: Universal Commerce Protocol for Any Platform</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Shopify</span>
-            </a>
-          
-            <a href="/shopify-universal-commerce-protocol" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Shopify Universal Commerce Protocol: Making Your Store AI-Discoverable</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Shopify</span>
-            </a>
-          
-            <a href="/ucp-for-magento" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP for Magento: Connect Your Store to AI Shopping Agents</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Magento</span>
-            </a>
-          
-            <a href="/ucp-for-shopify-alternatives" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP for Shopify Alternatives: Making Your Store AI-Discoverable</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Shopify</span>
-            </a>
-          
-            <a href="/ucp-for-shopify" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP for Shopify: Enable AI Agents to Shop Your Store</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Shopify</span>
-            </a>
-          
-            <a href="/ucp-for-woocommerce" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP for WooCommerce: Complete Implementation Guide</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">WooCommerce</span>
-            </a>
-          
-            <a href="/ucp-vs-shopify-checkout" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP vs Shopify Checkout: Understanding the Future of AI Commerce</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">Shopify</span>
-            </a>
-          
-            <a href="/woocommerce-agentic-commerce" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">WooCommerce Agentic Commerce: Your Complete Guide to Universal Commerce Protocol</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">WooCommerce</span>
-            </a>
-          
-            <a href="/woocommerce-ai-agents" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">WooCommerce AI Agents: The Complete Guide to Agentic Commerce in 2026</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">WooCommerce</span>
-            </a>
-          
-            <a href="/woocommerce-ai-shopping-integration" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">WooCommerce AI Shopping Integration: Complete Guide to Universal Commerce Protocol</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">WooCommerce</span>
-            </a>
-          
-            <a href="/woocommerce-chatgpt-integration-ucp-guide" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">WooCommerce ChatGPT Integration: Complete UCP Protocol Guide for AI Shopping</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">WooCommerce</span>
-            </a>
-          
-            <a href="/woocommerce-ucp-plugin-guide" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">WooCommerce UCP Plugin: Your Complete Guide to AI Shopping Integration</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">WooCommerce</span>
-            </a>
-          
-            <a href="/woocommerce-universal-commerce-protocol" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">WooCommerce Universal Commerce Protocol: Complete Implementation Guide</h3>
-              <span class="inline-block px-2 py-1 text-xs font-medium text-teal-700 bg-teal-50 rounded">WooCommerce</span>
-            </a>
-          
-            </div>
-          </div>
-        
-          <div class="mb-16">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-teal-500">Getting Started</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              
-            <a href="/add-ucp-to-website" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Add UCP to Your Website: Complete Implementation Guide</h3>
-              
-            </a>
-          
-            <a href="/ai-shopping-for-small-business" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">AI Shopping for Small Business: The Complete Guide</h3>
-              
-            </a>
-          
-            <a href="/ai-shopping-vs-traditional-ecommerce" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">AI Shopping vs Traditional Ecommerce: The Complete 2026 Guide</h3>
-              
-            </a>
-          
-            <a href="/bigcommerce-chatgpt-shopping-ucp-guide" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">BigCommerce ChatGPT Shopping: Complete UCP Integration Guide</h3>
-              
-            </a>
-          
-            <a href="/building-ucp-compatible-store" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Building a UCP-Compatible Store: Your Complete Implementation Guide</h3>
-              
-            </a>
-          
-            <a href="/claude-shopping-integration" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Claude Shopping Integration: Your Complete UCP Implementation Guide</h3>
-              
-            </a>
-          
-            <a href="/connect-store-to-chatgpt" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Connect Your Store to ChatGPT: The Complete 2025 Guide</h3>
-              
-            </a>
-          
-            <a href="/custom-ecommerce-ucp-integration" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Custom E-commerce UCP Integration: Complete Implementation Guide</h3>
-              
-            </a>
-          
-            <a href="/custom-platform-ucp-setup-guide" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Custom Platform UCP Setup: Complete Installation Guide</h3>
-              
-            </a>
-          
-            <a href="/enable-ai-product-discovery-ecommerce" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Enable AI Product Discovery for Ecommerce: The Complete 2026 Guide</h3>
-              
-            </a>
-          
-            <a href="/gemini-shopping-integration" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Gemini Shopping Integration: Your Complete Guide to AI-Powered Commerce</h3>
-              
-            </a>
-          
-            <a href="/make-products-ai-searchable" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Make Your Products AI Searchable: The Complete Implementation Guide</h3>
-              
-            </a>
-          
-            <a href="/open-source-ucp-integration" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Open Source UCP Integration: The Complete Implementation Guide</h3>
-              
-            </a>
-          
-            <a href="/self-hosted-ecommerce-ucp" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Self-Hosted Ecommerce UCP: Complete Implementation Guide</h3>
-              
-            </a>
-          
-            <a href="/ucp-api-documentation-guide" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP API Documentation: Your Complete Implementation Guide</h3>
-              
-            </a>
-          
-            <a href="/ucp-api-integration-guide" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP API Integration: Your Complete Implementation Guide</h3>
-              
-            </a>
-          
-            <a href="/ucp-checkout-flow" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP Checkout Flow: The Complete Guide to AI-Native Commerce</h3>
-              
-            </a>
-          
-            <a href="/ucp-developer-guide" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP Developer Guide: Complete Implementation Tutorial</h3>
-              
-            </a>
-          
-            <a href="/ucp-for-online-retailers" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP for Online Retailers: The Complete Integration Guide</h3>
-              
-            </a>
-          
-            <a href="/ucp-implementation-steps" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP Implementation Steps: Your Complete Guide to AI-Powered Commerce</h3>
-              
-            </a>
-          
-            <a href="/ucp-integration-checklist" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP Integration Checklist: Your Complete Implementation Guide</h3>
-              
-            </a>
-          
-            <a href="/ucp-integration-guide" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Complete UCP Integration Guide: From Setup to Production</h3>
-              
-            </a>
-          
-            <a href="/ucp-product-discovery-guide" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP Product Discovery: Making Your Store AI-Discoverable</h3>
-              
-            </a>
-          
-            <a href="/ucp-setup-tutorial-docker-universal-control-plane" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Complete UCP Setup Tutorial: Master Docker Universal Control Plane</h3>
-              
-            </a>
-          
-            </div>
-          </div>
-        
-          <div class="mb-16">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-teal-500">AI & Agentic Commerce</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              
-            <a href="/add-store-to-ai-shopping" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Add Your Store to AI Shopping in 2025</h3>
-              
-            </a>
-          
-            <a href="/agentic-commerce-for-smb" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Agentic Commerce for SMBs: How Small Businesses Can Thrive in the AI Shopping Era</h3>
-              
-            </a>
-          
-            <a href="/connect-store-to-ai-agents" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Connect Your E-commerce Store to AI Agents</h3>
-              
-            </a>
-          
-            <a href="/headless-commerce-ucp" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Headless Commerce UCP: The Open Standard Connecting AI Agents to Any E-Commerce Platform</h3>
-              
-            </a>
-          
-            <a href="/how-to-enable-ai-shopping" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Enable AI Shopping for Your E-commerce Store</h3>
-              
-            </a>
-          
-            <a href="/integrate-ai-shopping-agents" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Integrate AI Shopping Agents into Your E-commerce Store</h3>
-              
-            </a>
-          
-            <a href="/multi-agent-commerce-platform" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Multi-Agent Commerce Platform: The Universal Standard for AI Shopping</h3>
-              
-            </a>
-          
-            <a href="/platform-agnostic-ai-commerce-integration" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Platform-Agnostic AI Commerce Integration: The Universal Approach</h3>
-              
-            </a>
-          
-            <a href="/ucp-authentication" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP Authentication: Secure Identity Linking for Agentic Commerce</h3>
-              
-            </a>
-          
-            <a href="/ucp-vs-native-checkout" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP vs Native Checkout: How AI Agents Are Changing E-commerce</h3>
-              
-            </a>
-          
-            <a href="/ucp-vs-proprietary-solutions" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP vs Proprietary Solutions: Why Open Standards Win in AI Commerce</h3>
-              
-            </a>
-          
-            <a href="/ucp-vs-traditional-checkout" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP vs Traditional Checkout: How AI Agents Are Transforming E-commerce Transactions</h3>
-              
-            </a>
-          
-            <a href="/voice-commerce-with-ucp" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">Voice Commerce with UCP: How AI Agents Are Transforming Shopping</h3>
-              
-            </a>
-          
-            </div>
-          </div>
-        
-          <div class="mb-16">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b-2 border-teal-500">Integration Tutorials</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              
-            <a href="/chatgpt-shopping-integration" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">ChatGPT Shopping Integration: Make Your Store AI-Discoverable</h3>
-              
-            </a>
-          
-            <a href="/conversational-shopping-implementation" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Implement Conversational Shopping for Your E-commerce Store</h3>
-              
-            </a>
-          
-            <a href="/enable-chatgpt-shopping" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Enable ChatGPT Shopping for Your E-commerce Store</h3>
-              
-            </a>
-          
-            <a href="/how-to-make-store-ai-discoverable" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Make Your Store AI Discoverable in 2025</h3>
-              
-            </a>
-          
-            <a href="/implement-ucp-in-online-store" class="block p-6 bg-white rounded-lg border border-gray-200 hover:border-teal-500 hover:shadow-lg transition-all duration-200">
-              <h3 class="text-lg font-semibold text-gray-900 mb-2">How to Implement UCP in Your Online Store</h3>
-              
-            </a>
-          
-            </div>
-          </div>
-        
+  <!-- Featured Articles -->
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+    <div class="space-y-8">
+
+      <!-- Article 1 -->
+      <a href="/what-is-ucp" class="block bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:border-primary hover:shadow-lg transition group">
+        <div class="text-xs font-medium text-primary uppercase tracking-wide mb-2">Fundamentals</div>
+        <h2 class="text-2xl font-bold text-gray-900 group-hover:text-primary transition mb-3">What is UCP? The Universal Commerce Protocol Explained</h2>
+        <p class="text-gray-600">Google launched UCP on January 11, 2026. Learn what it is, why it matters, and how it enables AI agents like ChatGPT, Claude, and Gemini to shop on behalf of users.</p>
+      </a>
+
+      <!-- Article 2 -->
+      <a href="/ai-shopping-agents-explained" class="block bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:border-primary hover:shadow-lg transition group">
+        <div class="text-xs font-medium text-primary uppercase tracking-wide mb-2">AI Commerce</div>
+        <h2 class="text-2xl font-bold text-gray-900 group-hover:text-primary transition mb-3">How AI Shopping Agents Work</h2>
+        <p class="text-gray-600">Understand how ChatGPT, Claude, and Gemini discover products, make recommendations, and help users shop — and what your store needs to be part of the conversation.</p>
+      </a>
+
+      <!-- Article 3 -->
+      <a href="/ucp-integration-guide-any-platform" class="block bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:border-primary hover:shadow-lg transition group">
+        <div class="text-xs font-medium text-primary uppercase tracking-wide mb-2">Implementation</div>
+        <h2 class="text-2xl font-bold text-gray-900 group-hover:text-primary transition mb-3">UCP Integration Guide: Any E-commerce Platform</h2>
+        <p class="text-gray-600">Step-by-step guide to making your products AI-discoverable, whether you're on WooCommerce, Magento, BigCommerce, or a custom platform.</p>
+      </a>
+
+      <!-- Article 4 -->
+      <a href="/woocommerce-ucp-setup" class="block bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:border-primary hover:shadow-lg transition group">
+        <div class="text-xs font-medium text-primary uppercase tracking-wide mb-2">Platform Guide</div>
+        <h2 class="text-2xl font-bold text-gray-900 group-hover:text-primary transition mb-3">WooCommerce UCP Setup Guide</h2>
+        <p class="text-gray-600">The most popular open-source e-commerce platform has zero native UCP support. Here's how WooCommerce store owners can get AI-ready today.</p>
+      </a>
+
+      <!-- Article 5 -->
+      <a href="/ucp-for-small-business" class="block bg-gray-50 rounded-2xl p-8 border border-gray-200 hover:border-primary hover:shadow-lg transition group">
+        <div class="text-xs font-medium text-primary uppercase tracking-wide mb-2">Strategy</div>
+        <h2 class="text-2xl font-bold text-gray-900 group-hover:text-primary transition mb-3">UCP for Small Business: Why Early Movers Win</h2>
+        <p class="text-gray-600">AI commerce is brand new. The window for early-mover advantage is 6-12 months before platforms build native support. Here's why acting now matters.</p>
+      </a>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-16 text-center bg-gray-50 rounded-2xl p-10 border border-gray-200">
+      <h2 class="text-2xl font-bold text-gray-900 mb-4">Ready to make your store AI-discoverable?</h2>
+      <p class="text-gray-600 mb-6">Upload your product catalog and go live. Free during beta.</p>
+      <a href="/#signup" class="inline-flex items-center bg-primary hover:bg-primary-dark text-white px-8 py-3 rounded-lg font-semibold transition">
+        Get Started Free
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </a>
+    </div>
   </div>
 
-  <!-- Footer (will be added by footer injector) -->
-  
-  <!-- FOOTER -->
-  
+  <!-- Footer -->
+  <div class="bg-gray-900 text-gray-400 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>&copy; 2026 Easy UCP</p>
+        <div class="flex gap-6 text-sm">
+          <a href="/privacy" class="hover:text-white transition">Privacy</a>
+          <a href="/terms" class="hover:text-white transition">Terms</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

@@ -77,7 +77,7 @@
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
-        <a href="#signup" class="bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-lg font-semibold text-lg transition shadow-lg shadow-primary/25 inline-flex items-center">
+        <a href="/#signup" class="bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-lg font-semibold text-lg transition shadow-lg shadow-primary/25 inline-flex items-center">
           Join Founder&#039;s List
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -206,7 +206,7 @@
           
           <li>
             <a href="#section-7" class="text-primary hover:text-primary-dark font-medium">
-              8. Making Your Store AI-Discoverable with Easy UCP Hub
+              8. Making Your Store AI-Discoverable with Easy UCP
             </a>
           </li>
           
@@ -417,7 +417,7 @@
           Integration with Existing Systems
         </h3>
         <div class="prose max-w-none text-gray-700 mb-4">
-          <p class="mb-4"><a href="https://singhajit.com/universal-commerce-protocol-explained/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP integrates with existing systems</a> by providing a standardized translation layer. Rather than replacing your current e-commerce platform, UCP sits between your store and AI agents, translating requests and responses into the common protocol format.</p><p class="mb-4"><a href="https://www.ucp-commerce.com/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP Commerce is the universal translator connecting WooCommerce, Magento, and custom ecommerce stores to both UCP (Google Gemini) and ACP (OpenAI ChatGPT) protocols</a>. This bridge approach means merchants can support multiple AI shopping assistants without building separate integrations for each one.</p>
+          <p class="mb-4"><a href="https://singhajit.com/universal-commerce-protocol-explained/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP integrates with existing systems</a> by providing a standardized translation layer. Rather than replacing your current e-commerce platform, UCP sits between your store and AI agents, translating requests and responses into the common protocol format.</p><p class="mb-4"><a href="https://easyucp.com/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP Commerce is the universal translator connecting WooCommerce, Magento, and custom ecommerce stores to the UCP protocol for AI shopping agents protocols</a>. This bridge approach means merchants can support multiple AI shopping assistants without building separate integrations for each one.</p>
         </div>
         
         <div class="bg-gray-900 rounded-lg p-6 overflow-x-auto">
@@ -700,7 +700,7 @@ GET /ucp/v1/products?query=wireless+headphones&amp;limit=10
 
       
       <div class="prose prose-lg max-w-none text-gray-700 mb-8">
-        <p class="mb-4">Implementing UCP requires building <a href="https://developers.google.com/merchant/ucp/guides/checkout/native" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">a RESTful API that can be called to create and manage checkout sessions</a>, along with discovery and authentication endpoints. <a href="https://github.com/Universal-Commerce-Protocol/ucp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The full specification and documentation are available on GitHub</a>, providing detailed technical requirements.</p><p class="mb-4">Key implementation requirements include:</p><p class="mb-4"><strong>API Endpoints</strong>: Discovery, checkout, and authentication endpoints following <a href="https://ucp.dev/specification/overview" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">the UCP specification</a></p><p class="mb-4"><strong>Data Structures</strong>: Standardized JSON formats for products, orders, and user data</p><p class="mb-4"><strong>Security</strong>: HTTPS, authentication tokens, and secure session management</p><p class="mb-4"><strong>Real-Time Updates</strong>: <a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">APIs must expose structured data such as inventory levels and pricing</a> in real-time</p><p class="mb-4">For most merchants, building a complete UCP implementation from scratch represents significant development effort. <a href="https://www.revize.app/blog/universal-commerce-protocol-ucp-shopify-developer-guide" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Custom development can take 6 months and cost $20,000 or more</a>, making it prohibitive for small to medium-sized stores.</p><p class="mb-4"><a href="https://www.ucp-commerce.com/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP Commerce serves as the universal translator connecting WooCommerce, Magento, and custom ecommerce stores to both UCP (Google Gemini) and ACP (OpenAI ChatGPT) protocols</a>. This bridge approach enables stores to become AI-discoverable without building everything from scratch.</p>
+        <p class="mb-4">Implementing UCP requires building <a href="https://developers.google.com/merchant/ucp/guides/checkout/native" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">a RESTful API that can be called to create and manage checkout sessions</a>, along with discovery and authentication endpoints. <a href="https://github.com/Universal-Commerce-Protocol/ucp" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">The full specification and documentation are available on GitHub</a>, providing detailed technical requirements.</p><p class="mb-4">Key implementation requirements include:</p><p class="mb-4"><strong>API Endpoints</strong>: Discovery, checkout, and authentication endpoints following <a href="https://ucp.dev/specification/overview" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">the UCP specification</a></p><p class="mb-4"><strong>Data Structures</strong>: Standardized JSON formats for products, orders, and user data</p><p class="mb-4"><strong>Security</strong>: HTTPS, authentication tokens, and secure session management</p><p class="mb-4"><strong>Real-Time Updates</strong>: <a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">APIs must expose structured data such as inventory levels and pricing</a> in real-time</p><p class="mb-4">For most merchants, building a complete UCP implementation from scratch represents significant development effort. <a href="https://www.revize.app/blog/universal-commerce-protocol-ucp-shopify-developer-guide" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Custom development can take 6 months and cost $20,000 or more</a>, making it prohibitive for small to medium-sized stores.</p><p class="mb-4"><a href="https://easyucp.com/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP Commerce serves as the universal translator connecting WooCommerce, Magento, and custom ecommerce stores to the UCP protocol for AI shopping agents protocols</a>. This bridge approach enables stores to become AI-discoverable without building everything from scratch.</p>
       </div>
       
 
@@ -749,7 +749,7 @@ GET /ucp/v1/products?query=wireless+headphones&amp;limit=10
           Platform-Specific Considerations
         </h3>
         <div class="prose max-w-none text-gray-700 mb-4">
-          <p class="mb-4">Different e-commerce platforms have varying levels of native UCP support. <a href="https://www.americanbanker.com/payments/news/google-shopify-unveil-new-agentic-protocol-for-retailers" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Shopify announced the Agentic Plan with built-in UCP support</a>, making it easier for Shopify merchants to adopt the protocol.</p><p class="mb-4">For other platforms like WooCommerce, Magento, and BigCommerce, <a href="https://www.ucp-commerce.com/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">universal translator solutions can connect stores to both UCP and ACP protocols</a>, enabling AI discoverability across multiple AI shopping assistants without platform-specific development.</p>
+          <p class="mb-4">Different e-commerce platforms have varying levels of native UCP support. <a href="https://www.americanbanker.com/payments/news/google-shopify-unveil-new-agentic-protocol-for-retailers" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Shopify announced the Agentic Plan with built-in UCP support</a>, making it easier for Shopify merchants to adopt the protocol.</p><p class="mb-4">For other platforms like WooCommerce, Magento, and BigCommerce, <a href="https://easyucp.com/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">universal translator solutions can connect stores to the UCP protocol</a>, enabling AI discoverability across multiple AI shopping assistants without platform-specific development.</p>
         </div>
         
       </div>
@@ -770,85 +770,61 @@ GET /ucp/v1/products?query=wireless+headphones&amp;limit=10
   </div>
     
   
-  <div class="py-20 bg-gradient-to-br from-gray-50 to-gray-100 border-t-2 border-primary">
+    <div class="py-20 bg-gradient-to-br from-gray-50 to-gray-100 border-t-2 border-primary" data-block="solution-pitch" data-block-version="2.0.0">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 text-center">
-        Make Your Store AI-Discoverable in 2 Weeks with Easy UCP Hub
+        Make Your Products AI-Discoverable with Easy UCP
       </h2>
 
-      
       <div class="text-lg text-gray-700 mb-8 text-center max-w-3xl mx-auto">
-        While <a href="https://ucp.dev" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP is an open standard</a> that any developer can implement, <a href="https://www.revize.app/blog/universal-commerce-protocol-ucp-shopify-developer-guide" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">custom development typically takes 6 months and costs $20,000 or more</a>. For most e-commerce store owners, this timeline and investment is prohibitive—especially when <a href="https://almcorp.com/blog/universal-commerce-protocol-agentic-commerce-guide-2026/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">the agentic commerce market is growing rapidly</a> and early adopters will capture the most value.
-
-Easy UCP Hub provides a <strong>platform-agnostic solution</strong> that makes your store AI-discoverable in 2 weeks instead of 6 months, at a fraction of the cost.
+        While custom UCP implementation typically requires 6+ months and $20,000+ in development costs, Easy UCP gives any e-commerce store a faster path to AI shopping visibility.
       </div>
-      
 
       <div class="prose prose-lg max-w-none text-gray-700 mb-12">
-        <strong>Easy UCP Hub</strong> is the fastest way to implement <a href="https://ucp.dev" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Universal Commerce Protocol</a> support for your e-commerce store, regardless of platform. Whether you&#039;re running WooCommerce, Magento, BigCommerce, or a custom solution, Easy UCP Hub provides the complete UCP infrastructure you need.
+        <strong>Easy UCP</strong> creates UCP-compliant product endpoints for your store. Upload your product catalog (CSV or JSON), and AI shopping agents like ChatGPT, Claude, and Gemini can discover and recommend your products. Customers click through to buy on your existing checkout—nothing changes in your store operations.
 
-<strong>Lifetime Access at Launch Pricing</strong>: Get permanent UCP access for $199-$999 (one-time payment), compared to the $49-$199/month competitors will charge when they launch. This represents <strong>lifetime savings of $5,880-$23,880</strong> over 10 years.
+<strong>Platform-Agnostic</strong> — Works with WooCommerce, Magento, BigCommerce, PrestaShop, or any custom e-commerce platform. If you sell products online, you can upload your catalog and be AI-discoverable.
 
-<strong>Platform-Agnostic Architecture</strong>: Unlike platform-specific solutions, Easy UCP Hub works with any e-commerce system. <a href="https://www.ucp-commerce.com/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Connect WooCommerce, Magento, and custom stores to both UCP (Google Gemini) and ACP (OpenAI ChatGPT) protocols</a> through a single integration.
+<strong>Lifetime Access, One-Time Payment</strong> — Get lifetime UCP access for $199–$999 based on your product catalog size. No monthly fees, no recurring costs. Lock in founder pricing before launch.
 
-<strong>2-Week Implementation</strong>: While <a href="https://www.revize.app/blog/universal-commerce-protocol-ucp-shopify-developer-guide" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">custom UCP development takes 6 months</a>, Easy UCP Hub gets your store AI-discoverable in 2 weeks. Our pre-built implementation handles all <a href="https://ucp.dev/specification/overview" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">three core components: discovery, checkout, and authentication</a>.
-
-<strong>Complete Protocol Coverage</strong>: Easy UCP Hub implements the full <a href="https://ucp.dev/specification/overview" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP specification</a>, including:
-
-- <strong>Discovery APIs</strong>: <a href="https://feedonomics.com/blog/how-ai-finds-products/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Expose structured product data with real-time inventory and pricing</a>
-- <strong>Checkout Integration</strong>: <a href="https://developers.google.com/merchant/ucp/guides/checkout/native" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">RESTful APIs for checkout session management</a>
-- <strong>Authentication</strong>: Secure user identity and session handling
-- <strong>Extension Support</strong>: <a href="https://singhajit.com/universal-commerce-protocol-explained/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">Standard support for loyalty programs and subscriptions</a>
-
-<strong>Multi-Protocol Support</strong>: Be discoverable by AI agents across multiple platforms. Easy UCP Hub supports both <a href="https://blog.google/products/ads-commerce/agentic-commerce-ai-tools-protocol-retailers-platforms/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">UCP (Google Gemini)</a> and ACP (OpenAI ChatGPT), ensuring maximum visibility as <a href="https://almcorp.com/blog/universal-commerce-protocol-agentic-commerce-guide-2026/" class="text-primary hover:text-primary-dark underline" target="_blank" rel="noopener">the agentic commerce market grows to $190-385 billion by 2030</a>.
+<strong>Your Checkout, Your Revenue</strong> — We handle product discovery only. Your existing checkout, payment processing, and fulfillment stay exactly as they are. AI agents recommend your products and link directly to your store.
       </div>
 
-      
       <div class="grid md:grid-cols-2 gap-6 mb-12">
-        
         <div class="bg-white rounded-xl p-6 shadow-sm">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Lifetime Access vs Monthly Fees</h3>
-          <p class="text-gray-600">Pay once ($199-$999) instead of $49-$199/month. Save $5,880-$23,880 over 10 years compared to subscription competitors.</p>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">CSV/JSON Upload</h3>
+          <p class="text-gray-600">Upload your product catalog in CSV or JSON format. We generate UCP-compliant endpoints that AI agents can discover.</p>
         </div>
-        
         <div class="bg-white rounded-xl p-6 shadow-sm">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">2 Weeks vs 6 Months</h3>
-          <p class="text-gray-600">Get AI-discoverable in 2 weeks with Easy UCP Hub instead of 6 months for custom development. Start capturing agentic commerce revenue immediately.</p>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Works With Any Platform</h3>
+          <p class="text-gray-600">WooCommerce, Magento, BigCommerce, custom builds—if you sell online, Easy UCP works for you. No plugins or extensions needed.</p>
         </div>
-        
         <div class="bg-white rounded-xl p-6 shadow-sm">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Platform-Agnostic Solution</h3>
-          <p class="text-gray-600">Works with WooCommerce, Magento, BigCommerce, and custom e-commerce platforms. One solution for any store architecture.</p>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">AI Referral Tracking</h3>
+          <p class="text-gray-600">See which AI agents are discovering your products and how often. Understand your AI shopping visibility.</p>
         </div>
-        
         <div class="bg-white rounded-xl p-6 shadow-sm">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Multi-Protocol Support</h3>
-          <p class="text-gray-600">Support both UCP (Google Gemini) and ACP (OpenAI ChatGPT) through a single integration. Be discoverable across all major AI shopping assistants.</p>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Lifetime Pricing</h3>
+          <p class="text-gray-600">One-time payment of $199–$999 based on catalog size. No monthly fees, no recurring charges. All future updates included.</p>
         </div>
-        
         <div class="bg-white rounded-xl p-6 shadow-sm">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Complete Specification Coverage</h3>
-          <p class="text-gray-600">Full implementation of discovery, checkout, authentication, and extensions. No partial implementations or missing features.</p>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">Your Checkout Stays Yours</h3>
+          <p class="text-gray-600">Customers buy on your existing store. We never touch your checkout, payments, or fulfillment. Zero operational changes.</p>
         </div>
-        
         <div class="bg-white rounded-xl p-6 shadow-sm">
-          <h3 class="text-lg font-semibold text-gray-900 mb-2">Early Adopter Advantage</h3>
-          <p class="text-gray-600">Join the agentic commerce revolution early and capture market share before competitors. The $190-385B market is forming now.</p>
+          <h3 class="text-lg font-semibold text-gray-900 mb-2">UCP-Compliant Endpoints</h3>
+          <p class="text-gray-600">Proper JSON-LD Schema.org product data, .well-known/ucp discovery endpoint, and structured catalog browsing for AI agents.</p>
         </div>
-        
       </div>
-      
 
-      
       <div class="text-center">
-        <a href="#signup" class="inline-flex items-center bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-lg font-semibold text-lg transition shadow-lg shadow-primary/25">
-          Get lifetime UCP access at launch pricing—$199-$999 one-time payment. Make your store AI-discoverable in 2 weeks instead of 6 months.
+        <a href="/#signup" class="inline-flex items-center bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-lg font-semibold text-lg transition shadow-lg shadow-primary/25">
+          Join the founders list and secure lifetime pricing. Upload your catalog, get AI-discoverable.
           <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
           </svg>
         </a>
       </div>
-      
     </div>
   </div>
     
@@ -871,17 +847,17 @@ Easy UCP Hub provides a <strong>platform-agnostic solution</strong> that makes y
         
         <div class="border-b border-gray-200 pb-6">
           <h3 class="text-lg font-semibold text-gray-900 mb-2">Which e-commerce platforms do you support?</h3>
-          <div class="text-gray-600">Easy UCP Hub works with any e-commerce platform—WooCommerce, Magento, BigCommerce, custom builds, and more. We&#039;re platform-agnostic by design. If you sell products online, we can integrate UCP for your store regardless of your platform choice.</div>
+          <div class="text-gray-600">Easy UCP works with any e-commerce platform—WooCommerce, Magento, BigCommerce, custom builds, and more. We&#039;re platform-agnostic by design. If you sell products online, you can upload your product catalog and get UCP-compliant endpoints regardless of your platform.</div>
         </div>
         
         <div class="border-b border-gray-200 pb-6">
           <h3 class="text-lg font-semibold text-gray-900 mb-2">How long does implementation actually take?</h3>
-          <div class="text-gray-600">Your store becomes AI-discoverable within 2 weeks from signup. This includes our team setting up your UCP endpoint, configuring your product catalog, testing the integration, and going live. Compare this to 6+ months for custom development or indefinite waiting for platform-native UCP support.</div>
+          <div class="text-gray-600">Your store becomes AI-discoverable within 2 weeks from signup. Upload your product catalog (CSV or JSON), and we generate UCP-compliant endpoints. AI agents can then discover and recommend your products. Compare this to 6+ months for custom development or indefinite waiting for platform-native UCP support.</div>
         </div>
         
         <div class="border-b border-gray-200 pb-6">
           <h3 class="text-lg font-semibold text-gray-900 mb-2">What if my platform adds native UCP support later?</h3>
-          <div class="text-gray-600">You keep your lifetime Easy UCP Hub access regardless. Even if WooCommerce or Magento eventually adds native UCP, you&#039;ve already captured months or years of AI commerce sales. Plus, our multi-platform approach means you&#039;re never locked in—migrate platforms without losing UCP integration.</div>
+          <div class="text-gray-600">You keep your lifetime Easy UCP access regardless. Even if WooCommerce or Magento eventually adds native UCP, you&#039;ve already been visible to AI shopping agents for months or years. Plus, our multi-platform approach means you&#039;re never locked in—migrate platforms without losing UCP integration.</div>
         </div>
         
       </div>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Easy UCP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#14B8A6',
+            'primary-dark': '#0D9488',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+    body { font-family: 'Inter', sans-serif; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+  <!-- Nav -->
+  <nav class="bg-white border-b border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+      <a href="/" class="text-xl font-bold text-gray-900">Easy UCP</a>
+      <span id="merchantName" class="text-sm text-gray-500"></span>
+    </div>
+  </nav>
+
+  <!-- Auth Gate -->
+  <div id="authGate" class="max-w-md mx-auto mt-20 px-4">
+    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+      <h1 class="text-2xl font-bold text-gray-900 mb-2">Merchant Dashboard</h1>
+      <p class="text-gray-600 mb-6">Enter your API key to access your dashboard.</p>
+      <form id="authForm" class="space-y-4">
+        <input
+          type="text"
+          id="apiKeyInput"
+          placeholder="eucp_..."
+          required
+          class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-mono text-sm"
+        />
+        <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-3 rounded-lg transition">
+          Access Dashboard
+        </button>
+      </form>
+      <p id="authError" class="mt-3 text-sm text-red-600 hidden"></p>
+      <div class="mt-6 pt-6 border-t border-gray-200">
+        <p class="text-sm text-gray-500">Don't have an account? <a href="/#signup" class="text-primary font-medium">Register here</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard Content (hidden until auth) -->
+  <div id="dashboardContent" class="hidden max-w-6xl mx-auto px-4 py-8">
+
+    <!-- Overview Cards -->
+    <div class="grid md:grid-cols-3 gap-6 mb-8">
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <div class="text-sm text-gray-500 mb-1">Active Products</div>
+        <div id="productCount" class="text-3xl font-bold text-gray-900">0</div>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <div class="text-sm text-gray-500 mb-1">UCP Endpoint</div>
+        <div class="text-sm font-mono text-primary break-all" id="ucpEndpoint"></div>
+      </div>
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <div class="text-sm text-gray-500 mb-1">Status</div>
+        <div id="statusBadge" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-sm font-medium bg-green-100 text-green-800">Active</div>
+      </div>
+    </div>
+
+    <!-- Upload Section -->
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <!-- CSV Upload -->
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <h2 class="text-lg font-semibold text-gray-900 mb-4">Upload CSV</h2>
+        <p class="text-sm text-gray-600 mb-4">Required columns: <code class="bg-gray-100 px-1 rounded">name, price, url</code><br>
+          Optional: <code class="bg-gray-100 px-1 rounded">description, currency, image_url, sku, category, brand</code></p>
+        <form id="csvUploadForm" class="space-y-4">
+          <div class="flex items-center gap-3">
+            <label class="flex items-center">
+              <input type="checkbox" id="csvReplace" class="rounded text-primary focus:ring-primary mr-2">
+              <span class="text-sm text-gray-700">Replace existing products</span>
+            </label>
+          </div>
+          <input type="file" id="csvFile" accept=".csv" required class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary/10 file:text-primary hover:file:bg-primary/20" />
+          <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-2.5 rounded-lg transition text-sm">
+            Upload CSV
+          </button>
+        </form>
+        <p id="csvResult" class="mt-3 text-sm hidden"></p>
+      </div>
+
+      <!-- JSON Upload -->
+      <div class="bg-white rounded-xl p-6 border border-gray-200">
+        <h2 class="text-lg font-semibold text-gray-900 mb-4">Upload JSON</h2>
+        <p class="text-sm text-gray-600 mb-4">Paste a JSON array of products.</p>
+        <form id="jsonUploadForm" class="space-y-4">
+          <div class="flex items-center gap-3">
+            <label class="flex items-center">
+              <input type="checkbox" id="jsonReplace" class="rounded text-primary focus:ring-primary mr-2">
+              <span class="text-sm text-gray-700">Replace existing products</span>
+            </label>
+          </div>
+          <textarea id="jsonInput" rows="6" placeholder='[{"name": "Product", "price": 29.99, "url": "https://..."}]' class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary font-mono text-xs"></textarea>
+          <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-semibold py-2.5 rounded-lg transition text-sm">
+            Upload JSON
+          </button>
+        </form>
+        <p id="jsonResult" class="mt-3 text-sm hidden"></p>
+      </div>
+    </div>
+
+    <!-- Products Table -->
+    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+      <div class="px-6 py-4 border-b border-gray-200 flex justify-between items-center">
+        <h2 class="text-lg font-semibold text-gray-900">Your Products</h2>
+        <button id="deleteAllBtn" class="text-sm text-red-600 hover:text-red-800 font-medium">Delete All</button>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Name</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Price</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Category</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">SKU</th>
+              <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">URL</th>
+            </tr>
+          </thead>
+          <tbody id="productsTableBody" class="divide-y divide-gray-200">
+            <tr><td colspan="5" class="px-6 py-8 text-center text-gray-400">No products uploaded yet</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="paginationControls" class="px-6 py-3 border-t border-gray-200 flex justify-between items-center hidden">
+        <span id="paginationInfo" class="text-sm text-gray-500"></span>
+        <div class="flex gap-2">
+          <button id="prevPage" class="px-3 py-1 rounded border text-sm hover:bg-gray-50 disabled:opacity-50">Prev</button>
+          <button id="nextPage" class="px-3 py-1 rounded border text-sm hover:bg-gray-50 disabled:opacity-50">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- API Reference -->
+    <div class="bg-white rounded-xl p-6 border border-gray-200 mt-8">
+      <h2 class="text-lg font-semibold text-gray-900 mb-4">API Reference</h2>
+      <div class="space-y-4 text-sm">
+        <div>
+          <div class="font-medium text-gray-900">Upload CSV</div>
+          <code class="block bg-gray-50 p-3 rounded-lg text-xs font-mono mt-1">curl -X POST <span id="apiBaseUrl"></span>/api/products/upload \<br>  -H "X-API-Key: YOUR_API_KEY" \<br>  -F "file=@products.csv"</code>
+        </div>
+        <div>
+          <div class="font-medium text-gray-900">Upload JSON</div>
+          <code class="block bg-gray-50 p-3 rounded-lg text-xs font-mono mt-1">curl -X POST <span id="apiBaseUrl2"></span>/api/products/json \<br>  -H "X-API-Key: YOUR_API_KEY" \<br>  -H "Content-Type: application/json" \<br>  -d '{"products": [{"name": "...", "price": 29.99, "url": "https://..."}]}'</code>
+        </div>
+        <div>
+          <div class="font-medium text-gray-900">List Products</div>
+          <code class="block bg-gray-50 p-3 rounded-lg text-xs font-mono mt-1">curl <span id="apiBaseUrl3"></span>/api/products/mine -H "X-API-Key: YOUR_API_KEY"</code>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let apiKey = localStorage.getItem('eucp_api_key') || '';
+    let currentPage = 1;
+    const baseUrl = window.location.origin;
+
+    // Set API base URLs in reference section
+    function setApiUrls() {
+      document.querySelectorAll('[id^="apiBaseUrl"]').forEach(el => el.textContent = baseUrl);
+    }
+
+    // Auth
+    document.getElementById('authForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      apiKey = document.getElementById('apiKeyInput').value.trim();
+      await authenticate();
+    });
+
+    async function authenticate() {
+      if (!apiKey) return;
+
+      try {
+        const res = await fetch('/api/merchants/me', {
+          headers: { 'X-API-Key': apiKey }
+        });
+
+        if (!res.ok) {
+          document.getElementById('authError').textContent = 'Invalid API key';
+          document.getElementById('authError').classList.remove('hidden');
+          return;
+        }
+
+        const data = await res.json();
+        localStorage.setItem('eucp_api_key', apiKey);
+
+        // Show dashboard
+        document.getElementById('authGate').classList.add('hidden');
+        document.getElementById('dashboardContent').classList.remove('hidden');
+
+        // Populate
+        document.getElementById('merchantName').textContent = data.merchant.store_name;
+        document.getElementById('productCount').textContent = data.merchant.product_count;
+        document.getElementById('ucpEndpoint').textContent = data.ucp_endpoint;
+        setApiUrls();
+
+        // Load products
+        loadProducts();
+      } catch (err) {
+        document.getElementById('authError').textContent = 'Connection error';
+        document.getElementById('authError').classList.remove('hidden');
+      }
+    }
+
+    // Auto-login if key saved
+    if (apiKey) {
+      authenticate();
+    }
+
+    // Load products
+    async function loadProducts(page = 1) {
+      currentPage = page;
+      try {
+        const res = await fetch(`/api/products/mine?page=${page}&limit=20`, {
+          headers: { 'X-API-Key': apiKey }
+        });
+        const data = await res.json();
+        const tbody = document.getElementById('productsTableBody');
+
+        if (!data.products || data.products.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="5" class="px-6 py-8 text-center text-gray-400">No products uploaded yet</td></tr>';
+          document.getElementById('paginationControls').classList.add('hidden');
+          document.getElementById('productCount').textContent = '0';
+          return;
+        }
+
+        document.getElementById('productCount').textContent = data.pagination.total;
+
+        tbody.innerHTML = data.products.map(p => `
+          <tr class="hover:bg-gray-50">
+            <td class="px-6 py-3 font-medium text-gray-900">${escapeHtml(p.name)}</td>
+            <td class="px-6 py-3 text-gray-600">${p.price} ${p.currency}</td>
+            <td class="px-6 py-3 text-gray-600">${escapeHtml(p.category || '-')}</td>
+            <td class="px-6 py-3 text-gray-600 font-mono text-xs">${escapeHtml(p.sku || '-')}</td>
+            <td class="px-6 py-3"><a href="${escapeHtml(p.url)}" target="_blank" class="text-primary hover:underline text-xs truncate block max-w-[200px]">${escapeHtml(p.url)}</a></td>
+          </tr>
+        `).join('');
+
+        // Pagination
+        if (data.pagination.total_pages > 1) {
+          document.getElementById('paginationControls').classList.remove('hidden');
+          document.getElementById('paginationInfo').textContent = `Page ${data.pagination.page} of ${data.pagination.total_pages} (${data.pagination.total} products)`;
+          document.getElementById('prevPage').disabled = page <= 1;
+          document.getElementById('nextPage').disabled = page >= data.pagination.total_pages;
+        } else {
+          document.getElementById('paginationControls').classList.add('hidden');
+        }
+      } catch (err) {
+        console.error('Failed to load products:', err);
+      }
+    }
+
+    document.getElementById('prevPage').addEventListener('click', () => loadProducts(currentPage - 1));
+    document.getElementById('nextPage').addEventListener('click', () => loadProducts(currentPage + 1));
+
+    // CSV Upload
+    document.getElementById('csvUploadForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const file = document.getElementById('csvFile').files[0];
+      if (!file) return;
+
+      const replace = document.getElementById('csvReplace').checked;
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const resultEl = document.getElementById('csvResult');
+      resultEl.classList.remove('hidden');
+      resultEl.className = 'mt-3 text-sm text-gray-500';
+      resultEl.textContent = 'Uploading...';
+
+      try {
+        const res = await fetch(`/api/products/upload${replace ? '?replace=true' : ''}`, {
+          method: 'POST',
+          headers: { 'X-API-Key': apiKey },
+          body: formData
+        });
+        const data = await res.json();
+
+        if (res.ok) {
+          resultEl.className = 'mt-3 text-sm text-green-600 font-medium';
+          resultEl.textContent = `Uploaded ${data.products_uploaded} products. Total: ${data.total_active_products}`;
+          loadProducts();
+        } else {
+          resultEl.className = 'mt-3 text-sm text-red-600';
+          resultEl.textContent = data.error + (data.errors ? ': ' + data.errors.slice(0, 3).join(', ') : '');
+        }
+      } catch (err) {
+        resultEl.className = 'mt-3 text-sm text-red-600';
+        resultEl.textContent = 'Upload failed';
+      }
+    });
+
+    // JSON Upload
+    document.getElementById('jsonUploadForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const jsonText = document.getElementById('jsonInput').value.trim();
+      const replace = document.getElementById('jsonReplace').checked;
+
+      const resultEl = document.getElementById('jsonResult');
+      resultEl.classList.remove('hidden');
+
+      let products;
+      try {
+        const parsed = JSON.parse(jsonText);
+        products = Array.isArray(parsed) ? parsed : parsed.products;
+        if (!Array.isArray(products)) throw new Error('Must be array');
+      } catch (err) {
+        resultEl.className = 'mt-3 text-sm text-red-600';
+        resultEl.textContent = 'Invalid JSON. Must be an array of products or {products: [...]}';
+        return;
+      }
+
+      resultEl.className = 'mt-3 text-sm text-gray-500';
+      resultEl.textContent = 'Uploading...';
+
+      try {
+        const res = await fetch(`/api/products/json${replace ? '?replace=true' : ''}`, {
+          method: 'POST',
+          headers: { 'X-API-Key': apiKey, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ products })
+        });
+        const data = await res.json();
+
+        if (res.ok) {
+          resultEl.className = 'mt-3 text-sm text-green-600 font-medium';
+          resultEl.textContent = `Uploaded ${data.products_uploaded} products. Total: ${data.total_active_products}`;
+          loadProducts();
+        } else {
+          resultEl.className = 'mt-3 text-sm text-red-600';
+          resultEl.textContent = data.error + (data.errors ? ': ' + data.errors.slice(0, 3).join(', ') : '');
+        }
+      } catch (err) {
+        resultEl.className = 'mt-3 text-sm text-red-600';
+        resultEl.textContent = 'Upload failed';
+      }
+    });
+
+    // Delete All
+    document.getElementById('deleteAllBtn').addEventListener('click', async () => {
+      if (!confirm('Delete all products? This cannot be undone.')) return;
+
+      try {
+        const res = await fetch('/api/products/mine', {
+          method: 'DELETE',
+          headers: { 'X-API-Key': apiKey }
+        });
+
+        if (res.ok) {
+          loadProducts();
+        }
+      } catch (err) {
+        console.error('Delete failed:', err);
+      }
+    });
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+  </script>
+</body>
+</html>
