@@ -4,6 +4,8 @@
 
 **Easy UCP tekee minkä tahansa verkkokaupan tuotteet löydettäviksi tekoälyostosagentille (ChatGPT, Claude, Gemini) — lataa tuotekatalogi ja ole valmis.**
 
+**Palvelu:** [https://easyucp.com](https://easyucp.com)
+
 ---
 
 ## Mahdollisuus
